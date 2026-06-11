@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Swift Express Cargo - Fast, reliable international shipping from USA to Bangladesh and worldwide.">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Swift Express Cargo - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary-green: #6DA015;
+      --color-secondary-green: #46C0A2;
+      --color-primary-blue: #0B2A77;
+      --color-secondary-blue: #e4eded;
+      --color-secondary-white: #F9FAFC;
+      --color-transparent-black: #1818181A;
+      --color-cyan: #606060;
+      --color-secondary-black: #333333;
+      --color-dark-white: #C0C0C0;
+      --color-light-black: #555555;
+      --color-secondary-cyan: #EAEAEA;
+      --breakpoint-md: 650px;
+      --container-max-width: 1320px;
+      --container-padding-x: 1rem;
+    }
+    .container {
+      max-width: var(--container-max-width);
+      padding-left: var(--container-padding-x);
+      padding-right: var(--container-padding-x);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    input:checked+label .button { background: linear-gradient(to right, #6DA015, #46C0A2); }
+    input:checked+label .plus { display: none; }
+    input:checked+label .minus { display: flex; }
+    input:checked~.content { max-height: 200px; }
+  </style>
+</head>
+<body class="font-roboto">
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="flex flex-col items-center gap-4">
+    <div class="spinner"></div>
+    <p class="text-[#6DA015] font-semibold text-sm">Loading...</p>
+  </div>
+</div>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Back to Top -->
+<button id="backToTop" title="Back to top"><i class="fas fa-arrow-up text-sm"></i></button>
+
+<!-- Toast -->
+<div class="toast"></div>
+
+<!-- ===== HERO HEADER ===== -->
+<header id="heroHeader"
+  style="background-image:url('./assets/boat.png'); background-size:cover; background-position:center; background-repeat:no-repeat; transition: background-image 0.8s ease;"
+  class="relative h-auto w-full min-h-[600px] md:min-h-[750px]">
+
+  <!-- Mobile Nav -->
+  <div class="md:hidden py-4 px-6 bg-transparent-black backdrop-blur-lg flex flex-row justify-between items-center">
+    <img src="./assets/logo.png" alt="Swift Express Cargo" class="cursor-pointer w-[101px] h-[53px] object-cover">
+    <button id="menubtn" class="text-white text-2xl w-10 h-10 flex items-center justify-center transition-transform duration-300">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Desktop Nav -->
+  <div class="bg-transparent-black backdrop-blur-lg hidden md:flex justify-center sticky top-0 z-50">
+    <nav class="container flex items-center justify-between py-4 px-4">
+          <img
+            src="./assets/logo.png"
+            alt="Logo"
+            class="w-[101px] h-[53px] object-cover"
+          />
+          <ul class="flex gap-8">
+            <li>
+              <a
+                href="./index.html"
+                class="text-[#46C0A2] font-medium"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="./services.html" class="text-white font-medium hover:text-[#6DA015] transition-colors"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="./About.html"
+                class="text-white font-medium hover:text-[#6DA015] transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./rates.html"
+                class="text-white font-medium hover:text-[#6DA015] transition-colors"
+                >Rates</a
+              >
+            </li>
+            <li>
+              <a
+                href="./cost-calculator copy.html"
+                class="text-white font-medium hover:text-[#6DA015] transition-colors"
+                >Cost Calculator</a
+              >
+            </li>
+            <li>
+              <a
+                href="./tracking.html"
+                class="text-white font-medium hover:text-[#6DA015] transition-colors"
+                >Track</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contact.html"
+                class="text-white font-medium hover:text-[#6DA015] transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="flex gap-3">
+            <a href="./signin_up/login.html"
+              ><button class="btn-primary text-sm px-5 py-2.5">
+                Sign In
+              </button></a
+            >
+            <a href="./signin_up/sign_up.html"
+              ><button
+                class="border border-white text-white text-sm px-5 py-2.5 rounded-full hover:bg-white/20 transition"
+              >
+                Sign Up
+              </button></a
+            >
+          </div>
+        </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav class="hidden absolute z-50 right-0 top-[72px] w-full md:hidden" id="mobileMenu">
+    <div class="mx-4 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6">
+      <ul class="flex flex-col gap-4 mb-6">
+        <li><a href="./index.html" class="flex items-center gap-3 text-[#333] font-medium hover:text-[#6DA015] transition-colors py-2 border-b border-gray-100"><i class="fas fa-home w-5 text-[#6DA015]"></i>Home</a></li>
+        <li><a href="./services.html" class="flex items-center gap-3 text-[#333] font-medium hover:text-[#6DA015] transition-colors py-2 border-b border-gray-100"><i class="fas fa-shipping-fast w-5 text-[#6DA015]"></i>Services</a></li>
+        <li><a href="./About.html" class="flex items-center gap-3 text-[#333] font-medium hover:text-[#6DA015] transition-colors py-2 border-b border-gray-100"><i class="fas fa-info-circle w-5 text-[#6DA015]"></i>About Us</a></li>
+        <li><a href="./rates.html" class="flex items-center gap-3 text-[#333] font-medium hover:text-[#6DA015] transition-colors py-2 border-b border-gray-100"><i class="fas fa-tags w-5 text-[#6DA015]"></i>Rates</a></li>
+        <li><a href="./cost-calculator copy.html" class="flex items-center gap-3 text-[#333] font-medium hover:text-[#6DA015] transition-colors py-2 border-b border-gray-100"><i class="fas fa-calculator w-5 text-[#6DA015]"></i>Cost Calculator</a></li>
+        <li><a href="./tracking.html" class="flex items-center gap-3 text-[#333] font-medium hover:text-[#6DA015] transition-colors py-2 border-b border-gray-100"><i class="fas fa-search-location w-5 text-[#6DA015]"></i>Track Shipment</a></li>
+        <li><a href="./contact.html" class="flex items-center gap-3 text-[#333] font-medium hover:text-[#6DA015] transition-colors py-2"><i class="fas fa-envelope w-5 text-[#6DA015]"></i>Contact</a></li>
+      </ul>
+      <div class="flex gap-3">
+        <a href="./signin_up/login.html" class="flex-1">
+          <button class="btn-primary w-full" style="font-size:14px; padding:10px 16px;">Sign In</button>
+        </a>
+        <a href="./signin_up/sign_up.html" class="flex-1">
+          <button class="btn-outline w-full" style="font-size:14px; padding:10px 16px;">Sign Up</button>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="flex justify-center h-auto">
+    <div class="flex flex-col items-center justify-center max-w-2xl mx-auto pt-20 md:pt-32 px-6 pb-16">
+      <div class="hero-text">
+        <span class="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-full mb-6 border border-white/30">
+          🚀 Fast & Reliable Shipping Worldwide
+        </span>
+      </div>
+      <h1 class="hero-text font-bold text-[40px] md:text-[68px] leading-[110%] text-white text-center mb-6">
+        Welcome to <span class="text-[#46C0A2]">Swift Express</span> Cargo
+      </h1>
+      <p class="hero-text-delay text-[18px] md:text-[20px] font-light text-white/90 text-center mb-8 max-w-lg">
+        Your trusted partner for USA to Bangladesh shipping. Fast, secure, and affordable cargo solutions.
+      </p>
+
+      <!-- Tracking Bar -->
+      <div class="hero-text-delay2 w-full max-w-md">
+        <div class="bg-white/15 backdrop-blur-lg border border-white/30 rounded-full p-2 flex items-center gap-2 shadow-2xl">
+          <div class="flex-1 flex items-center gap-3 pl-3">
+            <i class="fas fa-search text-white/70 text-sm"></i>
+            <input type="text" id="trackingInput"
+              class="bg-transparent text-white placeholder-white/60 focus:outline-none text-sm w-full font-light"
+              placeholder="Enter tracking number..." />
+          </div>
+          <a href="./tracking.html">
+            <button class="btn-primary text-sm px-5 py-2.5 whitespace-nowrap">
+              Track Now
+            </button>
+          </a>
+        </div>
+        <p class="text-white/60 text-xs text-center mt-3">e.g. SEC-2025-001234</p>
+      </div>
+
+      <!-- Slider Dots -->
+      <div class="flex gap-2 mt-16">
+        <div class="slider-dot h-[10px] w-[40px] bg-[#6DA015] rounded-full cursor-pointer transition-all duration-300"></div>
+        <div class="slider-dot h-[10px] w-[40px] bg-[#6DA015]/40 rounded-full cursor-pointer hover:bg-[#6DA015]/70 transition-all duration-300"></div>
+        <div class="slider-dot h-[10px] w-[40px] bg-[#6DA015]/40 rounded-full cursor-pointer hover:bg-[#6DA015]/70 transition-all duration-300"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Arrows (Desktop) -->
+  <div class="hidden md:block">
+    <button id="leftbtn1" class="absolute left-[40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group">
+      <i class="fas fa-chevron-left text-white text-sm group-hover:scale-110 transition-transform"></i>
+    </button>
+    <button id="rightbtn1" class="absolute right-[40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group">
+      <i class="fas fa-chevron-right text-white text-sm group-hover:scale-110 transition-transform"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Arrows -->
+  <div class="md:hidden">
+    <button id="leftArrow" class="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/20 rounded-full flex items-center justify-center">
+      <i class="fas fa-chevron-left text-white text-xs"></i>
+    </button>
+    <button id="rightArrow" class="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/20 rounded-full flex items-center justify-center">
+      <i class="fas fa-chevron-right text-white text-xs"></i>
+    </button>
+  </div>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/8801715825331" target="_blank" rel="noopener noreferrer"
+    class="absolute right-5 bottom-5 md:right-[40px] md:bottom-[40px] whatsapp-btn">
+    <div class="bg-gradient-to-r from-[#6DA015] to-[#46C0A2] h-[52px] w-[52px] md:h-[60px] md:w-[60px] rounded-full flex justify-center items-center shadow-lg pulse-green">
+      <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </div>
+  </a>
+</header>
+
+<!-- ===== STATS SECTION ===== -->
+<section class="bg-white py-10 border-b border-gray-100">
+  <div class="container">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center stagger reveal">
+      <div class="flex flex-col items-center gap-2 p-4">
+        <div class="w-14 h-14 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-full flex items-center justify-center mb-2">
+          <i class="fas fa-box text-[#6DA015] text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold gradient-text" data-target="50000" data-suffix="+">0</div>
+        <div class="text-[#606060] text-sm">Packages Delivered</div>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4">
+        <div class="w-14 h-14 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-full flex items-center justify-center mb-2">
+          <i class="fas fa-users text-[#6DA015] text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold gradient-text" data-target="15000" data-suffix="+">0</div>
+        <div class="text-[#606060] text-sm">Happy Customers</div>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4">
+        <div class="w-14 h-14 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-full flex items-center justify-center mb-2">
+          <i class="fas fa-globe text-[#6DA015] text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold gradient-text" data-target="25" data-suffix="+">0</div>
+        <div class="text-[#606060] text-sm">Countries Served</div>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4">
+        <div class="w-14 h-14 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-full flex items-center justify-center mb-2">
+          <i class="fas fa-star text-[#6DA015] text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold gradient-text" data-target="98" data-suffix="%">0</div>
+        <div class="text-[#606060] text-sm">Satisfaction Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POPULAR BRANDS ===== -->
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="flex justify-between items-center mb-10 reveal">
+      <div>
+        <div class="section-divider mb-3" style="margin:0 0 12px 0;"></div>
+        <h2 class="font-bold text-2xl md:text-[36px] text-[#333333]">Popular Brands</h2>
+        <p class="text-[#606060] mt-2">Shop from top US brands and we'll ship it to you</p>
+      </div>
+      <a href="./popular-shop.html">
+        <button class="btn-primary text-sm px-5 py-2.5">All Brands</button>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-3 md:grid-cols-7 gap-4 stagger reveal">
+      <!-- Fila -->
+      <a href="https://www.fila.com/" target="_blank" class="card-hover border border-[#EAEAEA] rounded-xl p-4 flex flex-col items-center gap-2 shadow-sm hover:border-[#6DA015] hover:shadow-lg">
+        <img src="./assets/Fila_logo.svg" alt="Fila" class="h-14 object-contain">
+        <span class="text-[#606060] text-sm font-medium">Fila</span>
+      </a>
+      <!-- Puma -->
+      <a href="https://us.puma.com/" target="_blank" class="card-hover border border-[#EAEAEA] rounded-xl p-4 flex flex-col items-center gap-2 shadow-sm hover:border-[#6DA015] hover:shadow-lg">
+        <img src="./assets/puma-logo.svg" alt="Puma" class="h-14 object-contain">
+        <span class="text-[#606060] text-sm font-medium">Puma</span>
+      </a>
+      <!-- Chanel -->
+      <a href="https://www.chanel.com/" target="_blank" class="card-hover border border-[#EAEAEA] rounded-xl p-4 flex flex-col items-center gap-2 shadow-sm hover:border-[#6DA015] hover:shadow-lg">
+        <img src="./assets/chanel-2.svg" alt="Chanel" class="h-14 object-contain">
+        <span class="text-[#606060] text-sm font-medium">Chanel</span>
+      </a>
+      <!-- Honda -->
+      <a href="https://www.honda.com/" target="_blank" class="card-hover border border-[#EAEAEA] rounded-xl p-4 flex flex-col items-center gap-2 shadow-sm hover:border-[#6DA015] hover:shadow-lg">
+        <img src="./assets/honda-11.svg" alt="Honda" class="h-14 object-contain">
+        <span class="text-[#606060] text-sm font-medium">Honda</span>
+      </a>
+      <!-- Apple -->
+      <a href="https://www.apple.com/" target="_blank" class="card-hover border border-[#EAEAEA] rounded-xl p-4 flex flex-col items-center gap-2 shadow-sm hover:border-[#6DA015] hover:shadow-lg">
+        <img src="./assets/apple-11.svg" alt="Apple" class="h-14 object-contain">
+        <span class="text-[#606060] text-sm font-medium">Apple</span>
+      </a>
+      <!-- Amazon -->
+      <a href="https://www.amazon.com/" target="_blank" class="card-hover border border-[#EAEAEA] rounded-xl p-4 flex flex-col items-center gap-2 shadow-sm hover:border-[#6DA015] hover:shadow-lg">
+        <img src="./assets/logo-amazon.svg" alt="Amazon" class="h-14 object-contain">
+        <span class="text-[#606060] text-sm font-medium">Amazon</span>
+      </a>
+      <!-- Adidas -->
+      <a href="https://www.adidas.com/" target="_blank" class="card-hover border border-[#EAEAEA] rounded-xl p-4 flex flex-col items-center gap-2 shadow-sm hover:border-[#6DA015] hover:shadow-lg">
+        <img src="./assets/adidas.svg" alt="Adidas" class="h-14 object-contain">
+        <span class="text-[#606060] text-sm font-medium">Adidas</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="py-16 bg-[#F9FAFC]">
+  <div class="container">
+    <div class="text-center mb-12 reveal">
+      <div class="section-divider"></div>
+      <h3 class="font-bold text-2xl md:text-[36px] text-[#333333] mt-4">Why Choose Us</h3>
+      <p class="text-[#606060] text-lg mt-3 max-w-lg mx-auto">We provide the best shipping experience with top-notch service and reliability</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger reveal">
+      <div class="card-hover bg-white rounded-2xl border border-[#DCE8C6] p-6 flex flex-col items-center text-center gap-4 shadow-sm">
+        <div class="w-16 h-16 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-2xl flex items-center justify-center">
+          <i class="fas fa-box-open text-[#6DA015] text-2xl"></i>
+        </div>
+        <h4 class="font-semibold text-lg text-[#333]">Package Consolidation</h4>
+        <p class="text-[#606060] text-sm leading-relaxed">Combine multiple packages into one shipment to save on shipping costs.</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl border border-[#DCE8C6] p-6 flex flex-col items-center text-center gap-4 shadow-sm">
+        <div class="w-16 h-16 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-2xl flex items-center justify-center">
+          <i class="fas fa-shield-alt text-[#6DA015] text-2xl"></i>
+        </div>
+        <h4 class="font-semibold text-lg text-[#333]">Security & Reliability</h4>
+        <p class="text-[#606060] text-sm leading-relaxed">Your packages are insured and handled with utmost care and security.</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl border border-[#DCE8C6] p-6 flex flex-col items-center text-center gap-4 shadow-sm">
+        <div class="w-16 h-16 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-2xl flex items-center justify-center">
+          <i class="fas fa-map-marker-alt text-[#6DA015] text-2xl"></i>
+        </div>
+        <h4 class="font-semibold text-lg text-[#333]">Real-time Tracking</h4>
+        <p class="text-[#606060] text-sm leading-relaxed">Track your shipment at every step from pickup to final delivery.</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl border border-[#DCE8C6] p-6 flex flex-col items-center text-center gap-4 shadow-sm">
+        <div class="w-16 h-16 bg-gradient-to-r from-[#6DA015]/10 to-[#46C0A2]/10 rounded-2xl flex items-center justify-center">
+          <i class="fas fa-headset text-[#6DA015] text-2xl"></i>
+        </div>
+        <h4 class="font-semibold text-lg text-[#333]">24/7 Support</h4>
+        <p class="text-[#606060] text-sm leading-relaxed">Our dedicated team is always available to help you around the clock.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="text-center mb-12 reveal">
+      <div class="section-divider"></div>
+      <h3 class="font-bold text-2xl md:text-[36px] text-[#333333] mt-4">How It Works</h3>
+      <p class="text-[#606060] text-lg mt-3">Simple steps to get your packages delivered</p>
+    </div>
+    <div class="relative">
+      <!-- Connection line (desktop) -->
+      <div class="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] z-0"></div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 stagger reveal relative z-10">
+        <!-- Step 1 -->
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="w-20 h-20 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-2xl flex items-center justify-center shadow-lg">
+            <span class="text-white font-bold text-2xl">1</span>
+          </div>
+          <h4 class="font-bold text-lg text-[#333]">Free Sign Up</h4>
+          <p class="text-[#606060] text-sm">Create your free account and get a unique US address instantly.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="w-20 h-20 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-2xl flex items-center justify-center shadow-lg">
+            <span class="text-white font-bold text-2xl">2</span>
+          </div>
+          <h4 class="font-bold text-lg text-[#333]">Shop Online</h4>
+          <p class="text-[#606060] text-sm">Shop from any US store using your Swift Express US address.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="w-20 h-20 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-2xl flex items-center justify-center shadow-lg">
+            <span class="text-white font-bold text-2xl">3</span>
+          </div>
+          <h4 class="font-bold text-lg text-[#333]">We Ship It</h4>
+          <p class="text-[#606060] text-sm">We receive, process and ship your package to Bangladesh.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="w-20 h-20 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-2xl flex items-center justify-center shadow-lg">
+            <span class="text-white font-bold text-2xl">4</span>
+          </div>
+          <h4 class="font-bold text-lg text-[#333]">Receive Package</h4>
+          <p class="text-[#606060] text-sm">Get your package delivered right to your doorstep.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUICK TRACK SECTION ===== -->
+<section class="py-16 bg-[#F9FAFC]">
+  <div class="container">
+    <div class="bg-gradient-to-r from-[#0B2A77] to-[#1a3d8c] rounded-3xl p-8 md:p-16 reveal">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="text-white">
+          <div class="section-divider mb-4" style="margin:0 0 16px 0; background:linear-gradient(135deg,#6DA015,#46C0A2);"></div>
+          <h3 class="font-bold text-2xl md:text-4xl mb-4">Track Your Shipment</h3>
+          <p class="text-white/80 text-lg mb-2">Get real-time updates on your package location and estimated delivery date.</p>
+          <ul class="mt-6 flex flex-col gap-3">
+            <li class="flex items-center gap-3 text-white/90"><i class="fas fa-check-circle text-[#46C0A2]"></i> Live location tracking</li>
+            <li class="flex items-center gap-3 text-white/90"><i class="fas fa-check-circle text-[#46C0A2]"></i> SMS & email notifications</li>
+            <li class="flex items-center gap-3 text-white/90"><i class="fas fa-check-circle text-[#46C0A2]"></i> Delivery history</li>
+          </ul>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+          <div class="mb-4">
+            <label class="text-white font-medium block mb-2">Enter Tracking Number</label>
+            <div class="flex gap-3">
+              <input type="text" id="trackInput2" placeholder="e.g. SEC-2025-001234"
+                class="flex-1 bg-white/20 text-white placeholder-white/50 border border-white/30 rounded-xl px-4 py-3 focus:outline-none focus:border-[#46C0A2] text-sm">
+              <a href="./tracking.html">
+                <button class="btn-primary px-5 py-3 whitespace-nowrap">
+                  <i class="fas fa-search mr-2"></i>Track
+                </button>
+              </a>
+            </div>
+          </div>
+          <a href="./tracking.html" class="text-[#46C0A2] hover:text-white text-sm transition-colors flex items-center gap-2">
+            <i class="fas fa-arrow-right"></i> View full tracking page
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="text-center mb-12 reveal">
+      <div class="section-divider"></div>
+      <h3 class="font-bold text-2xl md:text-[36px] text-[#333333] mt-4">Frequently Asked Questions</h3>
+      <p class="text-[#606060] text-lg mt-3">Find answers to common questions about our services</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto stagger reveal">
+      <!-- FAQ 1 -->
+      <div class="border border-[#DCE8C6] rounded-2xl overflow-hidden">
+        <input type="checkbox" id="faq1" class="hidden">
+        <label for="faq1" class="flex justify-between items-center p-6 cursor-pointer hover:bg-[#F9FAFC] transition-colors">
+          <span class="font-semibold text-[#333] pr-4">How long does shipping take?</span>
+          <span class="button w-9 h-9 min-w-9 rounded-lg flex items-center justify-center bg-[#E1F0E7] transition-all duration-300 relative">
+            <span class="plus absolute"><i class="fas fa-plus text-[#6DA015] text-xs"></i></span>
+            <span class="minus hidden absolute"><i class="fas fa-minus text-white text-xs"></i></span>
+          </span>
+        </label>
+        <div class="content max-h-0 overflow-hidden transition-all duration-400">
+          <p class="px-6 pb-6 text-[#606060] text-sm leading-relaxed">Standard shipping from USA to Bangladesh takes 7-14 business days. Express shipping takes 3-5 business days. We also offer economy shipping which takes 14-21 business days at reduced rates.</p>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="border border-[#DCE8C6] rounded-2xl overflow-hidden">
+        <input type="checkbox" id="faq2" class="hidden">
+        <label for="faq2" class="flex justify-between items-center p-6 cursor-pointer hover:bg-[#F9FAFC] transition-colors">
+          <span class="font-semibold text-[#333] pr-4">What items are restricted?</span>
+          <span class="button w-9 h-9 min-w-9 rounded-lg flex items-center justify-center bg-[#E1F0E7] transition-all duration-300 relative">
+            <span class="plus absolute"><i class="fas fa-plus text-[#6DA015] text-xs"></i></span>
+            <span class="minus hidden absolute"><i class="fas fa-minus text-white text-xs"></i></span>
+          </span>
+        </label>
+        <div class="content max-h-0 overflow-hidden transition-all duration-400">
+          <p class="px-6 pb-6 text-[#606060] text-sm leading-relaxed">Restricted items include hazardous materials, flammable liquids, batteries over a certain size, firearms, and perishable goods. Please check our full restricted items list before placing your order.</p>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="border border-[#DCE8C6] rounded-2xl overflow-hidden">
+        <input type="checkbox" id="faq3" class="hidden">
+        <label for="faq3" class="flex justify-between items-center p-6 cursor-pointer hover:bg-[#F9FAFC] transition-colors">
+          <span class="font-semibold text-[#333] pr-4">How is the shipping cost calculated?</span>
+          <span class="button w-9 h-9 min-w-9 rounded-lg flex items-center justify-center bg-[#E1F0E7] transition-all duration-300 relative">
+            <span class="plus absolute"><i class="fas fa-plus text-[#6DA015] text-xs"></i></span>
+            <span class="minus hidden absolute"><i class="fas fa-minus text-white text-xs"></i></span>
+          </span>
+        </label>
+        <div class="content max-h-0 overflow-hidden transition-all duration-400">
+          <p class="px-6 pb-6 text-[#606060] text-sm leading-relaxed">Shipping cost is based on the weight and dimensions of your package. Use our cost calculator to get an instant estimate. Consolidating multiple packages can save you up to 40% on shipping costs.</p>
+        </div>
+      </div>
+      <!-- FAQ 4 -->
+      <div class="border border-[#DCE8C6] rounded-2xl overflow-hidden">
+        <input type="checkbox" id="faq4" class="hidden">
+        <label for="faq4" class="flex justify-between items-center p-6 cursor-pointer hover:bg-[#F9FAFC] transition-colors">
+          <span class="font-semibold text-[#333] pr-4">Is there a weight limit per package?</span>
+          <span class="button w-9 h-9 min-w-9 rounded-lg flex items-center justify-center bg-[#E1F0E7] transition-all duration-300 relative">
+            <span class="plus absolute"><i class="fas fa-plus text-[#6DA015] text-xs"></i></span>
+            <span class="minus hidden absolute"><i class="fas fa-minus text-white text-xs"></i></span>
+          </span>
+        </label>
+        <div class="content max-h-0 overflow-hidden transition-all duration-400">
+          <p class="px-6 pb-6 text-[#606060] text-sm leading-relaxed">Individual packages can weigh up to 70 lbs (32 kg). For heavier items, we offer freight shipping services. Contact us for special arrangements for oversized or heavy cargo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section class="py-16 bg-[#F9FAFC]">
+  <div class="container">
+    <div class="flex justify-between items-start mb-10 reveal">
+      <div>
+        <div class="section-divider mb-3" style="margin:0 0 12px 0;"></div>
+        <h2 class="font-bold text-2xl md:text-[36px] text-[#333333]">Our Blog</h2>
+        <p class="text-[#606060] mt-2">Tips, guides and shipping news</p>
+      </div>
+      <a href="./all-blog.html"><button class="btn-primary text-sm px-5 py-2.5">View All</button></a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger reveal">
+      <article class="card-hover bg-white rounded-2xl shadow-sm overflow-hidden border border-[#DCE8C6]">
+        <div class="img-zoom h-52"><img src="./assets/Rectangle 2041.png" alt="Blog" class="w-full h-full object-cover"></div>
+        <div class="p-6">
+          <span class="badge text-xs mb-3 inline-block">Shipping Tips</span>
+          <h3 class="font-bold text-lg text-[#333] mb-2">How to Package Your Items for International Shipping</h3>
+          <p class="text-[#606060] text-sm leading-relaxed mb-4">Learn the best practices for packaging your items to ensure they arrive safely.</p>
+          <a href="./read-more.html" class="inline-flex items-center gap-2 text-[#6DA015] font-semibold text-sm hover:gap-3 transition-all">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+      <article class="card-hover bg-white rounded-2xl shadow-sm overflow-hidden border border-[#DCE8C6]">
+        <div class="img-zoom h-52"><img src="./assets/Rectangle 2042 (2).png" alt="Blog" class="w-full h-full object-cover"></div>
+        <div class="p-6">
+          <span class="badge text-xs mb-3 inline-block">Savings Guide</span>
+          <h3 class="font-bold text-lg text-[#333] mb-2">Top 5 Ways to Save on Shipping Costs from USA</h3>
+          <p class="text-[#606060] text-sm leading-relaxed mb-4">Discover smart strategies to reduce your international shipping expenses significantly.</p>
+          <a href="./read-more.html" class="inline-flex items-center gap-2 text-[#6DA015] font-semibold text-sm hover:gap-3 transition-all">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+      <article class="card-hover bg-white rounded-2xl shadow-sm overflow-hidden border border-[#DCE8C6]">
+        <div class="img-zoom h-52"><img src="./assets/Rectangle 2042 (3).png" alt="Blog" class="w-full h-full object-cover"></div>
+        <div class="p-6">
+          <span class="badge text-xs mb-3 inline-block">Guide</span>
+          <h3 class="font-bold text-lg text-[#333] mb-2">Understanding Customs & Duties for Bangladesh</h3>
+          <p class="text-[#606060] text-sm leading-relaxed mb-4">A complete guide to navigating customs procedures for your international shipments.</p>
+          <a href="./read-more.html" class="inline-flex items-center gap-2 text-[#6DA015] font-semibold text-sm hover:gap-3 transition-all">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUSTOMER FEEDBACK ===== -->
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="text-center mb-12 reveal">
+      <div class="section-divider"></div>
+      <h2 class="font-bold text-2xl md:text-[36px] text-[#333333] mt-4">Customer Reviews</h2>
+      <p class="text-[#606060] text-lg mt-3">What our customers say about us</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger reveal">
+      <div class="card-hover bg-white border border-[#DCE8C6] rounded-2xl p-6 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="./assets/ronald.png" alt="Ronald" class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <h4 class="font-semibold text-[#333]">Ronald Richards</h4>
+            <div class="flex gap-1 mt-1">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+        </div>
+        <p class="text-[#606060] text-sm leading-relaxed">"Excellent service! My package arrived in perfect condition and right on time. The tracking system is very accurate. Highly recommended!"</p>
+      </div>
+      <div class="card-hover bg-white border border-[#DCE8C6] rounded-2xl p-6 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="./assets/lady.png" alt="Floyd" class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <h4 class="font-semibold text-[#333]">Floyd Miles</h4>
+            <div class="flex gap-1 mt-1">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+        </div>
+        <p class="text-[#606060] text-sm leading-relaxed">"I've been using Swift Express for 2 years now. The customer service is amazing and the prices are very competitive. Won't use anyone else!"</p>
+      </div>
+      <div class="card-hover bg-white border border-[#DCE8C6] rounded-2xl p-6 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="./assets/savanna.png" alt="Savannah" class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <h4 class="font-semibold text-[#333]">Savannah Nguyen</h4>
+            <div class="flex gap-1 mt-1">
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star text-yellow-400 text-xs"></i>
+              <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+            </div>
+          </div>
+        </div>
+        <p class="text-[#606060] text-sm leading-relaxed">"Package consolidation saved me so much money! The interface is easy to use and their team is always helpful. Great experience overall!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="py-16 px-4">
+  <div class="container">
+    <div class="relative bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-[40px] md:rounded-[60px] px-8 md:px-16 py-14 md:py-20 overflow-hidden text-center reveal">
+      <!-- Decorative circles -->
+      <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
+      <div class="absolute -bottom-10 -left-10 w-52 h-52 bg-white/10 rounded-full"></div>
+      <div class="relative z-10">
+        <h2 class="font-bold text-white text-3xl md:text-5xl mb-6">Hassle-Free Shipping, Every Time</h2>
+        <p class="text-white/90 text-lg mb-10 max-w-2xl mx-auto">Join thousands of satisfied customers shipping from USA to Bangladesh with Swift Express Cargo. Sign up for free today!</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="./signin_up/sign_up.html">
+            <button class="bg-[#0B2A77] text-white font-semibold px-10 py-4 rounded-full hover:bg-[#0d337a] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              Sign Up For Free
+            </button>
+          </a>
+          <a href="./contact.html">
+            <button class="bg-white/20 backdrop-blur-sm text-white font-semibold px-10 py-4 rounded-full border border-white/40 hover:bg-white/30 transition-all duration-300 hover:-translate-y-1">
+              Contact Us
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="w-full bg-[#0B2A77] py-16">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <!-- Logo + About -->
+      <div class="md:col-span-1">
+        <img src="./assets/logo.png" alt="Swift Express Cargo" class="w-[120px] mb-4">
+        <p class="text-white/70 text-sm leading-relaxed mb-6">Your trusted partner for USA to Bangladesh shipping. Fast, secure, and affordable cargo solutions since 2020.</p>
+        <div class="flex gap-3">
+          <a href="https://www.facebook.com/" target="_blank" class="w-10 h-10 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+            <i class="fab fa-facebook-f text-white text-sm"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" class="w-10 h-10 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+            <i class="fab fa-instagram text-white text-sm"></i>
+          </a>
+          <a href="https://x.com/" target="_blank" class="w-10 h-10 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+            <i class="fab fa-x-twitter text-white text-sm"></i>
+          </a>
+          <a href="https://wa.me/8801715825331" target="_blank" class="w-10 h-10 bg-gradient-to-r from-[#6DA015] to-[#46C0A2] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+            <i class="fab fa-whatsapp text-white text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h6 class="font-bold text-[#6DA015] text-base mb-5">Quick Links</h6>
+        <ul class="flex flex-col gap-3">
+          <li><a href="./index.html" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Home</a></li>
+          <li><a href="./services.html" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Services</a></li>
+          <li><a href="./About.html" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>About Us</a></li>
+          <li><a href="./rates.html" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Rates</a></li>
+          <li><a href="./tracking.html" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Track Shipment</a></li>
+        </ul>
+      </div>
+      <!-- Support -->
+      <div>
+        <h6 class="font-bold text-[#6DA015] text-base mb-5">Support</h6>
+        <ul class="flex flex-col gap-3">
+          <li><a href="./contact.html" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Contact Us</a></li>
+          <li><a href="#" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>FAQ</a></li>
+          <li><a href="#" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Restricted Items</a></li>
+          <li><a href="#" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Privacy Policy</a></li>
+          <li><a href="#" class="text-white/70 hover:text-[#46C0A2] transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-[#6DA015]"></i>Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div>
+        <h6 class="font-bold text-[#6DA015] text-base mb-5">Newsletter</h6>
+        <p class="text-white/70 text-sm mb-4">Get the latest updates and offers directly in your inbox.</p>
+        <div class="bg-white rounded-full flex items-center justify-between px-3 py-1 mb-4">
+          <input type="email" placeholder="Your email address" class="flex-1 bg-transparent text-gray-600 focus:outline-none pl-2 text-sm py-2">
+          <button class="subscribe-btn bg-gradient-to-r from-[#6DA015] to-[#46C0A2] text-white text-sm font-medium px-4 py-2 rounded-full hover:shadow-md transition-all">
+            Subscribe
+          </button>
+        </div>
+        <div class="flex items-center gap-2 text-white/60 text-xs">
+          <i class="fas fa-lock text-[#46C0A2]"></i>
+          <span>No spam. Unsubscribe anytime.</span>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-white/60 text-sm">© Swift Express Cargo 2025. All Rights Reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="text-white/60 hover:text-white text-xs transition-colors">Privacy Policy</a>
+        <a href="#" class="text-white/60 hover:text-white text-xs transition-colors">Terms of Service</a>
+        <a href="#" class="text-white/60 hover:text-white text-xs transition-colors">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Init tracking input
+  const trackInput = document.getElementById('trackingInput');
+  if (trackInput) {
+    trackInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') window.location.href = `tracking.html?id=${trackInput.value}`;
+    });
+  }
+</script>
+</body>
+</html>

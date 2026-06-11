@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Verify Email - Swift Express Cargo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+      * {
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f0f9f0 0%, #e8f8f5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 28px;
+        padding: 48px 40px;
+        width: 100%;
+        max-width: 440px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        animation: slideUp 0.5s ease;
+        text-align: center;
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .icon-wrap {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #6da015, #46c0a2);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        box-shadow: 0 8px 24px rgba(109, 160, 21, 0.3);
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 8px 24px rgba(109, 160, 21, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(109, 160, 21, 0.5);
+        }
+      }
+
+      /* OTP Inputs */
+      .otp-wrap {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin: 28px 0;
+      }
+      .otp-input {
+        width: 60px;
+        height: 68px;
+        border: 2px solid #e8f0dc;
+        border-radius: 16px;
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+        background: linear-gradient(
+          to bottom,
+          rgba(109, 160, 21, 0.04),
+          rgba(70, 192, 162, 0.04)
+        );
+        outline: none;
+        transition: all 0.2s ease;
+        caret-color: #6da015;
+      }
+      .otp-input:focus {
+        border-color: #6da015;
+        background: white;
+        box-shadow: 0 0 0 4px rgba(109, 160, 21, 0.12);
+        transform: scale(1.05);
+      }
+      .otp-input.filled {
+        border-color: #46c0a2;
+        background: linear-gradient(
+          to bottom,
+          rgba(70, 192, 162, 0.08),
+          rgba(109, 160, 21, 0.08)
+        );
+      }
+      .otp-input.error {
+        border-color: #ef4444;
+        animation: shake 0.4s ease;
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        75% {
+          transform: translateX(5px);
+        }
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #6da015, #46c0a2);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(109, 160, 21, 0.35);
+      }
+      .btn-submit:disabled {
+        opacity: 0.7;
+        transform: none;
+        cursor: not-allowed;
+      }
+
+      /* Timer */
+      .timer {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: #606060;
+      }
+      .timer-count {
+        color: #6da015;
+        font-weight: 700;
+      }
+      .resend-btn {
+        background: none;
+        border: none;
+        color: #6da015;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: underline;
+        display: none;
+      }
+      .resend-btn:hover {
+        color: #46c0a2;
+      }
+
+      /* Progress dots */
+      .dots {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #e5e7eb;
+      }
+      .dot.done {
+        background: linear-gradient(135deg, #6da015, #46c0a2);
+      }
+
+      /* Email mask display */
+      .email-display {
+        background: linear-gradient(
+          to right,
+          rgba(109, 160, 21, 0.07),
+          rgba(70, 192, 162, 0.07)
+        );
+        border: 1px solid #dce8c6;
+        border-radius: 12px;
+        padding: 10px 16px;
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+        display: inline-block;
+        margin: 8px 0 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- Logo -->
+      <a
+        href="../index.html"
+        style="display: inline-block; margin-bottom: 20px"
+      >
+        <img
+          src="../assets/logo.png"
+          alt="Logo"
+          style="height: 40px; object-fit: contain"
+        />
+      </a>
+
+      <!-- Progress -->
+      <div class="dots">
+        <div class="dot done"></div>
+        <div class="dot done"></div>
+        <div class="dot"></div>
+      </div>
+
+      <!-- Icon -->
+      <div class="icon-wrap">
+        <i
+          class="fas fa-envelope-open-text"
+          style="color: white; font-size: 30px"
+        ></i>
+      </div>
+
+      <h2
+        style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 8px;
+        "
+      >
+        Verify Your Email
+      </h2>
+      <p
+        style="
+          font-size: 14px;
+          color: #606060;
+          line-height: 1.6;
+          margin-bottom: 4px;
+        "
+      >
+        We've sent a 4-digit verification code to
+      </p>
+      <div class="email-display" id="emailDisplay">j***@example.com</div>
+      <p style="font-size: 12px; color: #999; margin-top: 4px">
+        Check your spam folder if you don't see it
+      </p>
+
+      <!-- OTP Inputs -->
+      <div class="otp-wrap">
+        <input
+          class="otp-input"
+          type="text"
+          maxlength="1"
+          id="otp1"
+          inputmode="numeric"
+          pattern="[0-9]"
+        />
+        <input
+          class="otp-input"
+          type="text"
+          maxlength="1"
+          id="otp2"
+          inputmode="numeric"
+          pattern="[0-9]"
+        />
+        <input
+          class="otp-input"
+          type="text"
+          maxlength="1"
+          id="otp3"
+          inputmode="numeric"
+          pattern="[0-9]"
+        />
+        <input
+          class="otp-input"
+          type="text"
+          maxlength="1"
+          id="otp4"
+          inputmode="numeric"
+          pattern="[0-9]"
+        />
+      </div>
+
+      <!-- Verify Button -->
+      <button class="btn-submit" id="verifyBtn" onclick="verifyCode()">
+        <i class="fas fa-shield-check" style="margin-right: 8px"></i>Verify Code
+      </button>
+
+      <!-- Timer + Resend -->
+      <div style="margin-top: 20px">
+        <div class="timer" id="timerWrap">
+          <i class="fas fa-clock"></i>
+          Resend code in <span class="timer-count" id="timer">60</span>s
+        </div>
+        <button class="resend-btn" id="resendBtn" onclick="resendCode()">
+          <i class="fas fa-redo" style="margin-right: 4px; font-size: 12px"></i
+          >Resend Code
+        </button>
+      </div>
+
+      <!-- Back -->
+      <p style="margin-top: 20px; font-size: 13px; color: #999">
+        <a
+          href="./login.html"
+          style="
+            color: #606060;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+          "
+        >
+          <i class="fas fa-arrow-left" style="font-size: 11px"></i>Back to Sign
+          In
+        </a>
+      </p>
+    </div>
+
+    <script>
+      // Auto-advance OTP inputs
+      const inputs = document.querySelectorAll('.otp-input');
+      inputs.forEach((inp, i) => {
+        inp.addEventListener('input', function () {
+          const val = this.value.replace(/[^0-9]/g, '');
+          this.value = val;
+          if (val) {
+            this.classList.add('filled');
+            if (i < inputs.length - 1) inputs[i + 1].focus();
+          } else {
+            this.classList.remove('filled');
+          }
+          // Auto verify when all filled
+          const allFilled = [...inputs].every(inp => inp.value.length === 1);
+          if (allFilled) {
+            setTimeout(verifyCode, 300);
+          }
+        });
+        inp.addEventListener('keydown', function (e) {
+          if (e.key === 'Backspace' && !this.value && i > 0) {
+            inputs[i - 1].focus();
+            inputs[i - 1].classList.remove('filled');
+          }
+        });
+        inp.addEventListener('paste', function (e) {
+          e.preventDefault();
+          const text = e.clipboardData.getData('text').replace(/[^0-9]/g, '');
+          [...text].slice(0, 4).forEach((char, j) => {
+            if (inputs[j]) {
+              inputs[j].value = char;
+              inputs[j].classList.add('filled');
+            }
+          });
+          if (inputs[Math.min(text.length, 3)])
+            inputs[Math.min(text.length, 3)].focus();
+        });
+      });
+
+      // Timer
+      let timeLeft = 60;
+      const timerEl = document.getElementById('timer');
+      const timerWrap = document.getElementById('timerWrap');
+      const resendBtn = document.getElementById('resendBtn');
+      const interval = setInterval(() => {
+        timeLeft--;
+        timerEl.textContent = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          timerWrap.style.display = 'none';
+          resendBtn.style.display = 'inline-flex';
+        }
+      }, 1000);
+
+      function resendCode() {
+        resendBtn.style.display = 'none';
+        timerWrap.style.display = 'inline-flex';
+        timeLeft = 60;
+        timerEl.textContent = 60;
+        inputs.forEach(i => {
+          i.value = '';
+          i.classList.remove('filled', 'error');
+        });
+        inputs[0].focus();
+        // Restart timer
+        const t = setInterval(() => {
+          timeLeft--;
+          timerEl.textContent = timeLeft;
+          if (timeLeft <= 0) {
+            clearInterval(t);
+            timerWrap.style.display = 'none';
+            resendBtn.style.display = 'inline-flex';
+          }
+        }, 1000);
+      }
+
+      function verifyCode() {
+        const code = [...inputs].map(i => i.value).join('');
+        if (code.length < 4) {
+          inputs.forEach(i => {
+            if (!i.value) i.classList.add('error');
+          });
+          return;
+        }
+        const btn = document.getElementById('verifyBtn');
+        btn.innerHTML =
+          '<i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Verifying...';
+        btn.disabled = true;
+        setTimeout(() => {
+          // Demo: any 4-digit code works
+          btn.innerHTML =
+            '<i class="fas fa-check-circle" style="margin-right:8px;"></i>Verified!';
+          btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+          setTimeout(() => {
+            window.location.href = '../index.html';
+          }, 800);
+        }, 1200);
+      }
+
+      // Set email display from localStorage or default
+      const storedEmail =
+        localStorage.getItem('signupEmail') || 'j***@example.com';
+      document.getElementById('emailDisplay').textContent = storedEmail.replace(
+        /(.{2})(.*)(@.*)/,
+        '$1***$3',
+      );
+
+      // Focus first input
+      inputs[0].focus();
+    </script>
+  </body>
+</html>
