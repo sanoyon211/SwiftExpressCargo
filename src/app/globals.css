@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== GLOBAL STYLES & ANIMATIONS ===== */
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --primary-green: #6da015;
+  --secondary-green: #46c0a2;
+  --primary-blue: #0b2a77;
+  --dark-text: #333333;
+  --medium-text: #606060;
+  --light-text: #8d8d8d;
+  --border-light: #dce8c6;
+  --bg-light: #f9fafc;
+  --white: #ffffff;
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --gradient: linear-gradient(135deg, #6da015, #46c0a2);
+  --gradient-reverse: linear-gradient(135deg, #46c0a2, #6da015);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gradient);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: rgba(109, 160, 21, 0.2);
+  color: var(--primary-green);
+}
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== SCROLLBAR HIDE UTILITY ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== PAGE TRANSITION ===== */
+body {
+  opacity: 0;
+  animation: fadeInPage 0.5s ease forwards;
+}
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== NAV SCROLL EFFECT ===== */
+.nav-scrolled {
+  background: rgba(11, 42, 119, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* ===== HERO ANIMATIONS ===== */
+.hero-text {
+  animation: slideUp 0.8s ease forwards;
+}
+.hero-text-delay {
+  animation: slideUp 0.8s ease 0.2s forwards;
+  opacity: 0;
+}
+.hero-text-delay2 {
+  animation: slideUp 0.8s ease 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== FLOATING ANIMATION ===== */
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== PULSE ANIMATION ===== */
+.pulse-green {
+  animation: pulseGreen 2s ease-in-out infinite;
+}
+@keyframes pulseGreen {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(109, 160, 21, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(109, 160, 21, 0);
+  }
+}
+
+/* ===== SHIMMER LOADING ===== */
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays for children */
+.stagger > *:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.stagger > *:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.stagger > *:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.stagger > *:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.stagger > *:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.stagger > *:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn-primary {
+  background: linear-gradient(135deg, #6da015, #46c0a2);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border: 2px solid transparent;
+  border-radius: 26px;
+  padding: 10px 28px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.5;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::before {
+  left: 100%;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(109, 160, 21, 0.4);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-green) !important;
+  -webkit-text-fill-color: var(--primary-green) !important;
+  border: 2px solid var(--primary-green);
+  border-radius: 26px;
+  padding: 10px 28px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.5;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+.btn-outline:hover {
+  background: linear-gradient(135deg, #6da015, #46c0a2);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(109, 160, 21, 0.3);
+}
+
+/* ===== CARD HOVER EFFECTS ===== */
+.card-hover {
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(70, 192, 162, 0.2);
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== GRADIENT BORDER ===== */
+.gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: var(--gradient);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ===== TOAST NOTIFICATION ===== */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--gradient);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: var(--shadow-lg);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== LOADING SPINNER ===== */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(109, 160, 21, 0.2);
+  border-top-color: var(--primary-green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== MOBILE MENU ANIMATION ===== */
+#mobileMenu {
+  transition: all 0.3s ease;
+  transform-origin: top right;
+}
+#mobileMenu.hidden {
+  display: none !important;
+}
+
+/* ===== COUNTER ANIMATION ===== */
+.counter {
+  transition: all 0.1s ease;
+}
+
+/* ===== IMAGE HOVER ZOOM ===== */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.5s ease;
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== INPUT FOCUS STYLES ===== */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(109, 160, 21, 0.15);
+  transition: all 0.2s ease;
+}
+
+/* ===== SECTION DIVIDER ===== */
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--gradient);
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp-btn {
+  transition: all 0.3s ease;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 8px 25px rgba(109, 160, 21, 0.4);
+}
+
+/* ===== BACK TO TOP ===== */
+#backToTop {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--gradient);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+#backToTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#backToTop:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ===== ACTIVE NAV LINK ===== */
+a.nav-active,
+li.nav-active > a {
+  background: linear-gradient(135deg, #6da015, #46c0a2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* Make sure btn-primary inside nav always shows white text */
+nav .btn-primary,
+nav a .btn-primary,
+.nav-btn-signin {
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+@media (max-width: 768px) {
+  .mobile-center {
+    text-align: center;
+  }
+  .mobile-full {
+    width: 100% !important;
+  }
+  #backToTop {
+    right: 15px;
+    bottom: 80px;
+  }
+}
+
+/* ===== PROGRESS BAR ===== */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient);
+  z-index: 99999;
+  transition: width 0.1s ease;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ===== TYPING CURSOR ===== */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--primary-green);
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ===== NUMBER COUNT BADGE ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient);
+  color: white;
+  border-radius: 50px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===== ACCORDION ANIMATION ===== */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* toggle background */
+input:checked + label .button {
+  background: linear-gradient(to right, #6da015, #46c0a2);
+}
+/* plus minus icon toggle */
+input:checked + label .plus {
+  display: none;
+}
+input:checked + label .minus {
+  display: flex;
+}
+/* content expand */
+input:checked ~ .content {
+  max-height: 200px;
+}
