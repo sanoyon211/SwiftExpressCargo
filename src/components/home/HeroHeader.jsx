@@ -41,7 +41,7 @@ export default function HeroHeader() {
       ))}
 
       {/* Hero Content */}
-      <div className="container relative z-20 pt-32 pb-20 flex flex-col items-center text-center">
+      <div className="container relative z-20 pt-32 pb-32 flex flex-col items-center text-center">
         <StaggerContainer>
           <div className="hero-text">
             <StaggerItem>
@@ -90,7 +90,7 @@ export default function HeroHeader() {
         </StaggerContainer>
 
         {/* Slider Dots */}
-        <div className="flex gap-3 mt-auto absolute bottom-10">
+        <div className="flex gap-3 mt-auto absolute bottom-16">
           {bgImages.map((_, index) => (
             <button
               key={index}
@@ -114,7 +114,7 @@ export default function HeroHeader() {
 
       {/* WhatsApp Floating Button */}
       <a href="https://wa.me/8801715825331" target="_blank" rel="noopener noreferrer"
-        className="fixed right-6 bottom-6 md:right-10 md:bottom-10 whatsapp-btn z-40 group">
+        className="absolute right-6 bottom-10 md:right-10 md:bottom-16 whatsapp-btn z-40 group">
         <div className="absolute inset-0 bg-emerald-500 rounded-full animate-ping opacity-20 group-hover:opacity-40 transition-opacity"></div>
         <div className="relative bg-emerald-500 hover:bg-emerald-400 h-14 w-14 md:h-16 md:w-16 rounded-full flex justify-center items-center shadow-lg shadow-emerald-500/30 transition-all">
           <i className="fab fa-whatsapp text-white text-3xl"></i>

@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const signUpSchema = z.object({
   firstName: z.string().min(2, { message: "First name is too short" }),
@@ -21,6 +22,7 @@ const signUpSchema = z.object({
 });
 
 export default function SignUpForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,

@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const signInSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
@@ -13,6 +14,7 @@ const signInSchema = z.object({
 });
 
 export default function SignInForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -25,7 +27,7 @@ export default function SignInForm() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(data);
-    toast.success("Signed in successfully! Redirecting...");
+    toast.success("Signed in successfully! Redirecting...");`n    router.push("/dashboard");
   };
 
   return (
