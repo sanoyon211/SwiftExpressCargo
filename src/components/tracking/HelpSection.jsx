@@ -15,7 +15,7 @@ export default function HelpSection() {
           <a
             href="https://wa.me/8801715825331"
             target="_blank"
-            className="card-hover bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] p-6 text-center"
+            className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] p-6 text-center"
           >
             <div
               className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3"
@@ -27,7 +27,7 @@ export default function HelpSection() {
           </a>
           <a
             href="mailto:support@swiftexpress.com"
-            className="card-hover bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] p-6 text-center"
+            className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] p-6 text-center"
           >
             <div
               className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3"
@@ -39,7 +39,7 @@ export default function HelpSection() {
           </a>
           <a
             href="/contact"
-            className="card-hover bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] p-6 text-center"
+            className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] p-6 text-center"
           >
             <div
               className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3"

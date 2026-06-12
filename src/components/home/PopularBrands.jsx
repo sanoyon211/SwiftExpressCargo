@@ -12,43 +12,43 @@ export default function PopularBrands() {
             <p className="text-slate-500 dark:text-slate-400 mt-3 text-lg">Shop your favorite US brands and we'll deliver them safely.</p>
           </div>
           <Link href="/shop">
-            <button className="btn-outline">View All Brands</button>
+            <button className="bg-transparent text-teal-600 border-[1.5px] border-teal-600 rounded-full px-8 py-3 font-medium hover:bg-teal-50 hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center">View All Brands</button>
           </Link>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 stagger reveal">
           {/* Fila */}
-          <a href="https://www.fila.com/" target="_blank" rel="noopener noreferrer" className="card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
+          <a href="https://www.fila.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
             <img src="/assets/Fila_logo.svg" alt="Fila" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
             <span className="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-teal-600 transition-colors">Fila</span>
           </a>
           {/* Puma */}
-          <a href="https://us.puma.com/" target="_blank" rel="noopener noreferrer" className="card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
+          <a href="https://us.puma.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
             <img src="/assets/puma-logo.svg" alt="Puma" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
             <span className="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-teal-600 transition-colors">Puma</span>
           </a>
           {/* Chanel */}
-          <a href="https://www.chanel.com/" target="_blank" rel="noopener noreferrer" className="card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
+          <a href="https://www.chanel.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
             <img src="/assets/chanel-2.svg" alt="Chanel" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
             <span className="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-teal-600 transition-colors">Chanel</span>
           </a>
           {/* Honda */}
-          <a href="https://www.honda.com/" target="_blank" rel="noopener noreferrer" className="card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
+          <a href="https://www.honda.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
             <img src="/assets/honda-11.svg" alt="Honda" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
             <span className="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-teal-600 transition-colors">Honda</span>
           </a>
           {/* Apple */}
-          <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer" className="card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
+          <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
             <img src="/assets/apple-11.svg" alt="Apple" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
             <span className="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-teal-600 transition-colors">Apple</span>
           </a>
           {/* Amazon */}
-          <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" className="card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
+          <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
             <img src="/assets/logo-amazon.svg" alt="Amazon" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
             <span className="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-teal-600 transition-colors">Amazon</span>
           </a>
           {/* Adidas */}
-          <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer" className="card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
+          <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-slate-700">
             <img src="/assets/adidas.svg" alt="Adidas" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
             <span className="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-teal-600 transition-colors">Adidas</span>
           </a>

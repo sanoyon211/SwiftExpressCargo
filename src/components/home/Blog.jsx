@@ -15,11 +15,11 @@ export default function Blog() {
               <h2 className="font-bold text-2xl md:text-[36px] text-slate-900 dark:text-slate-50">Our Blog</h2>
               <p className="text-slate-500 dark:text-slate-400 mt-2">Tips, guides and shipping news</p>
             </div>
-            <Link href="/blog"><button className="btn-primary text-sm px-5 py-2.5">View All</button></Link>
+            <Link href="/blog"><button className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md text-sm px-5 py-2.5">View All</button></Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger reveal">
             {recentPosts.map((post) => (
-              <article key={post.slug} className="card-hover bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700">
+              <article key={post.slug} className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700">
                 <div className="img-zoom h-52">
                   <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
                 </div>

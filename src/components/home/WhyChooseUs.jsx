@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 stagger reveal">
-          <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
             <div className="w-20 h-20 bg-teal-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
               <i className="fas fa-box-open text-teal-500 text-3xl"></i>
             </div>
@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Combine multiple packages into one shipment to save significantly on international shipping costs.</p>
           </div>
           
-          <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
             <div className="w-20 h-20 bg-emerald-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
               <i className="fas fa-shield-alt text-emerald-500 text-3xl"></i>
             </div>
@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Your packages are fully insured, meticulously tracked, and handled with the utmost care and security.</p>
           </div>
           
-          <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
             <div className="w-20 h-20 bg-teal-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
               <i className="fas fa-map-marker-alt text-teal-500 text-3xl"></i>
             </div>
@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Track your shipment at every step from our warehouse pickup directly to the final delivery destination.</p>
           </div>
           
-          <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors">
             <div className="w-20 h-20 bg-emerald-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
               <i className="fas fa-headset text-emerald-500 text-3xl"></i>
             </div>

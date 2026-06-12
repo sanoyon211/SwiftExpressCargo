@@ -51,7 +51,7 @@ export default function MainContent() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger reveal">
             {/* US Shipping */}
-            <div className="card-hover bg-white dark:bg-slate-800 rounded-[32px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col items-center text-center gap-6 shadow-sm dark:border dark:border-slate-700">
+            <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col items-center text-center gap-6 shadow-sm dark:border dark:border-slate-700">
               <div className="w-20 h-20 bg-teal-50 rounded-[24px] flex items-center justify-center text-teal-600">
                 <i className="fas fa-flag-usa text-3xl"></i>
               </div>
@@ -96,7 +96,7 @@ export default function MainContent() {
             </div>
             
             {/* Regional Shipping */}
-            <div className="card-hover bg-white dark:bg-slate-800 rounded-[32px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col items-center text-center gap-6 shadow-sm dark:border dark:border-slate-700">
+            <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col items-center text-center gap-6 shadow-sm dark:border dark:border-slate-700">
               <div className="w-20 h-20 bg-emerald-50 rounded-[24px] flex items-center justify-center text-emerald-600">
                 <i className="fas fa-globe text-3xl"></i>
               </div>
@@ -137,7 +137,7 @@ export default function MainContent() {
               { icon: "fa-search-dollar", title: "Personal Shopper", desc: "Can't buy from a US store? We'll shop and ship directly on your behalf." },
               { icon: "fa-passport", title: "Customs Clearance", desc: "We handle all documentation and duties for a perfectly smooth process." }
             ].map((service, index) => (
-              <div key={index} className="card-hover bg-slate-50 dark:bg-slate-800 rounded-[24px] p-8 border border-slate-100 dark:border-slate-700 flex gap-5 items-start transition-all">
+              <div key={index} className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-[24px] p-8 border border-slate-100 dark:border-slate-700 flex gap-5 items-start transition-all">
                 <div className="w-14 h-14 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-[16px] flex items-center justify-center flex-shrink-0 text-teal-600">
                   <i className={`fas ${service.icon} text-xl`}></i>
                 </div>

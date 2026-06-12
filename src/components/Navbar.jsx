@@ -89,12 +89,12 @@ export default function Navbar() {
               </button>
             )}
             <Link href="/signin">
-              <button className="btn-primary text-sm px-6 py-2.5">
+              <button className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md text-sm px-6 py-2.5">
                 Sign In
               </button>
             </Link>
             <Link href="/signup">
-              <button className="btn-outline text-sm px-6 py-2.5">
+              <button className="bg-transparent text-teal-600 border-[1.5px] border-teal-600 rounded-full px-8 py-3 font-medium hover:bg-teal-50 hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center text-sm px-6 py-2.5">
                 Sign Up
               </button>
             </Link>
@@ -139,10 +139,10 @@ export default function Navbar() {
           </ul>
           <div className="flex gap-3">
             <Link href="/signin" className="flex-1" onClick={toggleMenu}>
-              <button className="btn-primary w-full text-sm py-3 justify-center">Sign In</button>
+              <button className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md w-full text-sm py-3 justify-center">Sign In</button>
             </Link>
             <Link href="/signup" className="flex-1" onClick={toggleMenu}>
-              <button className="btn-outline w-full text-sm py-3 justify-center">Sign Up</button>
+              <button className="bg-transparent text-teal-600 border-[1.5px] border-teal-600 rounded-full px-8 py-3 font-medium hover:bg-teal-50 hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center w-full text-sm py-3 justify-center">Sign Up</button>
             </Link>
           </div>
         </div>

@@ -47,7 +47,7 @@ export default function ProfilePage() {
             </div>
           </div>
           <div className="pt-4 flex justify-end">
-            <button type="button" className="btn-primary text-sm px-6 py-2.5 rounded-[12px]">
+            <button type="button" className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md text-sm px-6 py-2.5 rounded-[12px]">
               Save Changes
             </button>
           </div>

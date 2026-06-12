@@ -25,7 +25,7 @@ export default function MainContent() {
           </p>
         </div>
       </div>
-      <a href="https://wa.me/8801715825331" target="_blank" className="absolute right-5 bottom-5 md:right-10 md:bottom-10 whatsapp-btn">
+      <a href="https://wa.me/8801715825331" target="_blank" className="absolute right-5 bottom-5 md:right-10 md:bottom-10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/40">
         <div className="bg-gradient-to-r from-teal-500 to-emerald-400 w-14 h-14 rounded-full flex items-center justify-center shadow-lg pulse-green">
           <i className="fab fa-whatsapp text-white text-2xl"></i>
         </div>
@@ -161,7 +161,7 @@ export default function MainContent() {
               placeholder="Your email address"
               className="flex-1 px-5 py-3.5 border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl focus:outline-none focus:border-teal-500 text-sm"
             />
-            <button className="subscribe-btn btn-primary px-6 py-3.5 whitespace-nowrap">
+            <button className="subscribe-btn bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md px-6 py-3.5 whitespace-nowrap">
               Subscribe
             </button>
           </div>

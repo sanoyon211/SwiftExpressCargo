@@ -40,7 +40,7 @@ export default function MainContent() {
       <a
         href="https://wa.me/8801715825331"
         target="_blank"
-        className="absolute right-5 bottom-5 md:right-10 md:bottom-10 whatsapp-btn"
+        className="absolute right-5 bottom-5 md:right-10 md:bottom-10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/40"
       >
         <div className="bg-gradient-to-r from-teal-500 to-emerald-400 w-14 h-14 rounded-full flex items-center justify-center shadow-lg pulse-green">
           <i className="fab fa-whatsapp text-white text-2xl"></i>
@@ -52,28 +52,28 @@ export default function MainContent() {
     <section className="py-16 px-4">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 stagger reveal">
-          <a href="tel:+10123456789" className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
+          <a href="tel:+10123456789" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
             <div className="w-14 h-14 bg-teal-50 rounded-[24px] flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-r group-hover:from-teal-500 group-hover:to-teal-400 transition-all duration-300">
               <i className="fas fa-phone text-teal-500 text-xl group-hover:text-white transition-colors"></i>
             </div>
             <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-1">Phone</h4>
             <p className="text-slate-500 dark:text-slate-400 text-sm">+1 (012) 345-6789</p>
           </a>
-          <a href="mailto:info@swiftexpress.com" className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
+          <a href="mailto:info@swiftexpress.com" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
             <div className="w-14 h-14 bg-teal-50 rounded-[24px] flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-r group-hover:from-teal-500 group-hover:to-teal-400 transition-all duration-300">
               <i className="fas fa-envelope text-teal-500 text-xl group-hover:text-white transition-colors"></i>
             </div>
             <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-1">Email</h4>
             <p className="text-slate-500 dark:text-slate-400 text-sm">info@swiftexpress.com</p>
           </a>
-          <a href="https://wa.me/8801715825331" target="_blank" className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
+          <a href="https://wa.me/8801715825331" target="_blank" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
             <div className="w-14 h-14 bg-teal-50 rounded-[24px] flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-r group-hover:from-teal-500 group-hover:to-teal-400 transition-all duration-300">
               <i className="fab fa-whatsapp text-teal-500 text-xl group-hover:text-white transition-colors"></i>
             </div>
             <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-1">WhatsApp</h4>
             <p className="text-slate-500 dark:text-slate-400 text-sm">+880 1715-825331</p>
           </a>
-          <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">
             <div className="w-14 h-14 bg-teal-50 rounded-[24px] flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-r group-hover:from-teal-500 group-hover:to-teal-400 transition-all duration-300">
               <i className="fas fa-map-marker-alt text-teal-500 text-xl group-hover:text-white transition-colors"></i>
             </div>
@@ -183,7 +183,7 @@ export default function MainContent() {
                     I agree to the <a href="#" className="text-teal-500 hover:underline">Privacy Policy</a> and consent to being contacted.
                   </label>
                 </div>
-                <button type="submit" disabled={isSubmitting} className="btn-primary py-4 rounded-xl text-base font-semibold w-full sm:w-auto sm:px-12 disabled:opacity-70 flex items-center justify-center">
+                <button type="submit" disabled={isSubmitting} className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md py-4 rounded-xl text-base font-semibold w-full sm:w-auto sm:px-12 disabled:opacity-70 flex items-center justify-center">
                   {isSubmitting ? (
                     <><i className="fas fa-spinner fa-spin mr-2"></i>Sending...</>
                   ) : (

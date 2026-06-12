@@ -26,7 +26,7 @@ export default function MainContent() {
             
           </div>
         </div>
-        <a href="https://wa.me/8801715825331" target="_blank" className="absolute right-5 bottom-5 md:right-10 md:bottom-10 whatsapp-btn">
+        <a href="https://wa.me/8801715825331" target="_blank" className="absolute right-5 bottom-5 md:right-10 md:bottom-10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/40">
           <div className="bg-gradient-to-r from-teal-500 to-emerald-400 w-14 h-14 rounded-full flex items-center justify-center shadow-lg pulse-green">
             <i className="fab fa-whatsapp text-white text-2xl"></i>
           </div>
@@ -329,64 +329,64 @@ export default function MainContent() {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
+                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-teal-500/15 to-teal-400/15 rounded-xl flex items-center justify-center">
                       <i className="fas fa-truck text-teal-500"></i>
                     </div>
                     <h4 className="font-bold text-slate-900 dark:text-slate-50">Local Delivery</h4>
                   </div>
-                  <p className="text-2xl font-bold gradient-text mb-1">FREE</p>
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-400 bg-clip-text text-transparent mb-1">FREE</p>
                   <p className="text-slate-500 dark:text-slate-400 text-xs">Within Dhaka city (some exceptions apply)</p>
                 </div>
-                <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
+                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-teal-500/15 to-teal-400/15 rounded-xl flex items-center justify-center">
                       <i className="fas fa-plane text-teal-500"></i>
                     </div>
                     <h4 className="font-bold text-slate-900 dark:text-slate-50">Express Shipping</h4>
                   </div>
-                  <p className="text-2xl font-bold gradient-text mb-1">+$100</p>
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-400 bg-clip-text text-transparent mb-1">+$100</p>
                   <p className="text-slate-500 dark:text-slate-400 text-xs">Per shipment, delivered in 3-5 days</p>
                 </div>
-                <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
+                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-teal-500/15 to-teal-400/15 rounded-xl flex items-center justify-center">
                       <i className="fas fa-shield-alt text-teal-500"></i>
                     </div>
                     <h4 className="font-bold text-slate-900 dark:text-slate-50">Package Insurance</h4>
                   </div>
-                  <p className="text-2xl font-bold gradient-text mb-1">1.5%</p>
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-400 bg-clip-text text-transparent mb-1">1.5%</p>
                   <p className="text-slate-500 dark:text-slate-400 text-xs">Of declared value (min. $5 per shipment)</p>
                 </div>
-                <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
+                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-teal-500/15 to-teal-400/15 rounded-xl flex items-center justify-center">
                       <i className="fas fa-user-check text-teal-500"></i>
                     </div>
                     <h4 className="font-bold text-slate-900 dark:text-slate-50">Membership Fee</h4>
                   </div>
-                  <p className="text-2xl font-bold gradient-text mb-1">FREE</p>
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-400 bg-clip-text text-transparent mb-1">FREE</p>
                   <p className="text-slate-500 dark:text-slate-400 text-xs">No monthly or annual fees ever</p>
                 </div>
-                <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
+                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-teal-500/15 to-teal-400/15 rounded-xl flex items-center justify-center">
                       <i className="fas fa-camera text-teal-500"></i>
                     </div>
                     <h4 className="font-bold text-slate-900 dark:text-slate-50">Package Photography</h4>
                   </div>
-                  <p className="text-2xl font-bold gradient-text mb-1">$2.00</p>
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-400 bg-clip-text text-transparent mb-1">$2.00</p>
                   <p className="text-slate-500 dark:text-slate-400 text-xs">Per package, photos sent before shipping</p>
                 </div>
-                <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
+                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-200 dark:border-slate-700 p-5 shadow-sm dark:border dark:border-slate-700">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-teal-500/15 to-teal-400/15 rounded-xl flex items-center justify-center">
                       <i className="fas fa-boxes text-teal-500"></i>
                     </div>
                     <h4 className="font-bold text-slate-900 dark:text-slate-50">Consolidation</h4>
                   </div>
-                  <p className="text-2xl font-bold gradient-text mb-1">FREE</p>
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-400 bg-clip-text text-transparent mb-1">FREE</p>
                   <p className="text-slate-500 dark:text-slate-400 text-xs">Combine packages at no extra charge</p>
                 </div>
               </div>
@@ -420,7 +420,7 @@ export default function MainContent() {
                 </div>
               </div>
               <a href="/cost-calculator">
-                <button className="btn-primary px-8 py-3 w-full sm:w-auto">Open Cost Calculator</button>
+                <button className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md px-8 py-3 w-full sm:w-auto">Open Cost Calculator</button>
               </a>
             </div>
           </div>

@@ -11,7 +11,7 @@ export default function DashboardOverview() {
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">Overview</h1>
           <p className="text-slate-500 dark:text-slate-400">Welcome back, John Doe. Here is what's happening with your cargo today.</p>
         </div>
-        <button className="btn-primary text-sm px-6 py-2.5 rounded-[16px]">
+        <button className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md text-sm px-6 py-2.5 rounded-[16px]">
           <i className="fa-solid fa-plus mr-2"></i> New Booking
         </button>
       </div>

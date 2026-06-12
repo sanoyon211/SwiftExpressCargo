@@ -87,7 +87,7 @@ export default function MainContent() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 stagger reveal">
-            <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
+            <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
               <div className="w-16 h-16 bg-teal-50 rounded-[20px] flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-box-open text-teal-600 text-2xl"></i>
               </div>
@@ -97,7 +97,7 @@ export default function MainContent() {
               </div>
             </div>
             
-            <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
+            <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
               <div className="w-16 h-16 bg-emerald-50 rounded-[20px] flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-shield-alt text-emerald-600 text-2xl"></i>
               </div>
@@ -107,7 +107,7 @@ export default function MainContent() {
               </div>
             </div>
             
-            <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
+            <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
               <div className="w-16 h-16 bg-teal-50 rounded-[20px] flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-map-marker-alt text-teal-600 text-2xl"></i>
               </div>
@@ -117,7 +117,7 @@ export default function MainContent() {
               </div>
             </div>
             
-            <div className="card-hover bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
+            <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 p-8 flex flex-col sm:flex-row items-start gap-6 shadow-sm dark:border dark:border-slate-700">
               <div className="w-16 h-16 bg-emerald-50 rounded-[20px] flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-headset text-emerald-600 text-2xl"></i>
               </div>
@@ -146,7 +146,7 @@ export default function MainContent() {
               { name: "Karim Hassan", role: "Customer Support Head", exp: "Dedicated to customer satisfaction" },
               { name: "Nadia Islam", role: "Customs & Compliance", exp: "Specialist in import regulations" }
             ].map((member, index) => (
-              <div key={index} className="card-hover bg-slate-50 dark:bg-slate-800 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden text-center group">
+              <div key={index} className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-slate-50 dark:bg-slate-800 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden text-center group">
                 <div className="h-56 bg-slate-200 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent z-10"></div>
                   <div className="w-full h-full bg-slate-300 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">

@@ -114,7 +114,7 @@ export default function HeroHeader() {
 
       {/* WhatsApp Floating Button */}
       <a href="https://wa.me/8801715825331" target="_blank" rel="noopener noreferrer"
-        className="absolute right-6 bottom-10 md:right-10 md:bottom-16 whatsapp-btn z-40 group">
+        className="absolute right-6 bottom-10 md:right-10 md:bottom-16 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/40 z-40 group">
         <div className="absolute inset-0 bg-emerald-500 rounded-full animate-ping opacity-20 group-hover:opacity-40 transition-opacity"></div>
         <div className="relative bg-emerald-500 hover:bg-emerald-400 h-14 w-14 md:h-16 md:w-16 rounded-full flex justify-center items-center shadow-lg shadow-emerald-500/30 transition-all">
           <i className="fab fa-whatsapp text-white text-3xl"></i>
