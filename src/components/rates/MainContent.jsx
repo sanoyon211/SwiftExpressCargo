@@ -7,9 +7,9 @@ export default function MainContent() {
       {/*  HEADER  */}
       <header
         style={{ 'backgroundImage': 'url("/assets/image (6).png")', 'backgroundSize': 'cover', 'backgroundPosition': 'center' }}
-        className="relative h-auto w-full"
+        className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center"
       >
-        <div className="flex justify-center py-20 md:py-32 px-4 text-center hero-text">
+        <div className="flex justify-center pt-32 pb-20 px-4 text-center hero-text">
           <div>
             <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30">
               💰 Transparent Pricing
@@ -20,11 +20,7 @@ export default function MainContent() {
             <p className="text-white/80 text-lg max-w-lg mx-auto mb-8">
               Clear, competitive pricing with no hidden fees
             </p>
-            <div className="flex gap-2 justify-center">
-              <div className="h-[10px] w-[40px] bg-teal-500 rounded-full"></div>
-              <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-              <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-            </div>
+            
           </div>
         </div>
         <a href="https://wa.me/8801715825331" target="_blank" className="absolute right-5 bottom-5 md:right-10 md:bottom-10 whatsapp-btn">

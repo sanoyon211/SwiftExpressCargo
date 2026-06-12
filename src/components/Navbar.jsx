@@ -1,20 +1,11 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
@@ -31,16 +22,16 @@ export default function Navbar() {
   };
 
   return (
-    <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200 py-2' : 'bg-transparent py-4'}`}>
+    <div className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 py-2 transition-all duration-300">
       <div className="md:hidden px-6 flex justify-between items-center h-14">
         <Link href="/">
           <img
             src="/assets/logo.png"
             alt="Logo"
-            className={`w-[101px] h-[53px] object-contain transition-all ${!scrolled && pathname === '/' ? 'brightness-0 invert' : ''}`}
+            className="w-[101px] h-[53px] object-contain"
           />
         </Link>
-        <button onClick={toggleMenu} className={`text-2xl transition-colors ${scrolled || pathname !== '/' ? 'text-slate-800' : 'text-white'}`}>
+        <button onClick={toggleMenu} className="text-2xl text-slate-800 transition-colors">
           <i className={isMobileMenuOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i>
         </button>
       </div>
@@ -51,26 +42,26 @@ export default function Navbar() {
             <img
               src="/assets/logo.png"
               alt="Logo"
-              className={`w-[101px] h-[53px] object-contain transition-all ${!scrolled && pathname === '/' ? 'brightness-0 invert' : ''}`}
+              className="w-[101px] h-[53px] object-contain"
             />
           </Link>
-          <ul className={`flex gap-8 ${scrolled || pathname !== '/' ? '' : 'text-white/90 drop-shadow-md'}`}>
-            <li><Link href="/" className={scrolled || pathname !== '/' ? getLinkClass("/") : "text-white font-medium hover:text-teal-300 transition-colors"}>Home</Link></li>
-            <li><Link href="/services" className={scrolled || pathname !== '/' ? getLinkClass("/services") : "text-white font-medium hover:text-teal-300 transition-colors"}>Services</Link></li>
-            <li><Link href="/about" className={scrolled || pathname !== '/' ? getLinkClass("/about") : "text-white font-medium hover:text-teal-300 transition-colors"}>About Us</Link></li>
-            <li><Link href="/rates" className={scrolled || pathname !== '/' ? getLinkClass("/rates") : "text-white font-medium hover:text-teal-300 transition-colors"}>Rates</Link></li>
-            <li><Link href="/cost-calculator" className={scrolled || pathname !== '/' ? getLinkClass("/cost-calculator") : "text-white font-medium hover:text-teal-300 transition-colors"}>Cost Calculator</Link></li>
-            <li><Link href="/tracking" className={scrolled || pathname !== '/' ? getLinkClass("/tracking") : "text-white font-medium hover:text-teal-300 transition-colors"}>Track</Link></li>
-            <li><Link href="/contact" className={scrolled || pathname !== '/' ? getLinkClass("/contact") : "text-white font-medium hover:text-teal-300 transition-colors"}>Contact</Link></li>
+          <ul className="flex gap-8">
+            <li><Link href="/" className={getLinkClass("/")}>Home</Link></li>
+            <li><Link href="/services" className={getLinkClass("/services")}>Services</Link></li>
+            <li><Link href="/about" className={getLinkClass("/about")}>About Us</Link></li>
+            <li><Link href="/rates" className={getLinkClass("/rates")}>Rates</Link></li>
+            <li><Link href="/cost-calculator" className={getLinkClass("/cost-calculator")}>Cost Calculator</Link></li>
+            <li><Link href="/tracking" className={getLinkClass("/tracking")}>Track</Link></li>
+            <li><Link href="/contact" className={getLinkClass("/contact")}>Contact</Link></li>
           </ul>
           <div className="flex gap-3">
-            <Link href="/login">
-              <button className={`btn-primary text-sm px-6 py-2.5 ${scrolled || pathname !== '/' ? '' : 'shadow-lg shadow-black/20'}`}>
+            <Link href="/signin">
+              <button className="btn-primary text-sm px-6 py-2.5">
                 Sign In
               </button>
             </Link>
-            <Link href="/sign-up">
-              <button className={scrolled || pathname !== '/' ? "btn-outline text-sm px-6 py-2.5" : "border-2 border-white text-white font-medium text-sm px-6 py-2.5 rounded-full hover:bg-white/20 transition backdrop-blur-sm"}>
+            <Link href="/signup">
+              <button className="btn-outline text-sm px-6 py-2.5">
                 Sign Up
               </button>
             </Link>
@@ -114,10 +105,10 @@ export default function Navbar() {
             </li>
           </ul>
           <div className="flex gap-3">
-            <Link href="/login" className="flex-1" onClick={toggleMenu}>
+            <Link href="/signin" className="flex-1" onClick={toggleMenu}>
               <button className="btn-primary w-full text-sm py-3 justify-center">Sign In</button>
             </Link>
-            <Link href="/sign-up" className="flex-1" onClick={toggleMenu}>
+            <Link href="/signup" className="flex-1" onClick={toggleMenu}>
               <button className="btn-outline w-full text-sm py-3 justify-center">Sign Up</button>
             </Link>
           </div>

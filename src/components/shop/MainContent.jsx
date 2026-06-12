@@ -7,10 +7,10 @@ export default function MainContent() {
       {/*  HEADER  */}
     <header
       style={{ 'backgroundImage': 'url("/assets/image (7).png")', 'backgroundSize': 'cover', 'backgroundPosition': 'center' }}
-      className="relative h-auto w-full"
+      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center"
     >
       <div
-        className="flex justify-center py-20 md:py-32 px-4 text-center hero-text"
+        className="flex justify-center pt-32 pb-20 px-4 text-center hero-text"
       >
         <div>
           <span
@@ -26,11 +26,6 @@ export default function MainContent() {
             Shop from top US brands — we'll ship it straight to your door in
             Bangladesh
           </p>
-          <div className="flex gap-2 justify-center">
-            <div className="h-[10px] w-[40px] bg-teal-500 rounded-full"></div>
-            <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-            <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-          </div>
         </div>
       </div>
       <a
@@ -363,132 +358,6 @@ export default function MainContent() {
             <span
               className="text-xs text-teal-500 bg-[#F1F6F2] px-3 py-1 rounded-full"
               >Fashion</span
-            >
-          </a>
-          <a
-            href="https://www.chanel.com/"
-            target="_blank"
-            className="brand-card bg-white border-2 border-[#EAEAEA] rounded-[24px] p-5 flex flex-col items-center gap-3 shadow-sm"
-            data-cat="fashion"
-            data-name="chanel"
-          >
-            <img
-              src="/assets/chanel-2.svg"
-              alt="Chanel"
-              className="h-14 object-contain"
-            />
-            <span className="font-semibold text-slate-900 text-sm">Chanel</span>
-            <span
-              className="text-xs text-teal-500 bg-[#F1F6F2] px-3 py-1 rounded-full"
-              >Fashion</span
-            >
-          </a>
-          <a
-            href="https://www.honda.com/"
-            target="_blank"
-            className="brand-card bg-white border-2 border-[#EAEAEA] rounded-[24px] p-5 flex flex-col items-center gap-3 shadow-sm"
-            data-cat="auto"
-            data-name="honda"
-          >
-            <img
-              src="/assets/honda-11.svg"
-              alt="Honda"
-              className="h-14 object-contain"
-            />
-            <span className="font-semibold text-slate-900 text-sm">Honda</span>
-            <span
-              className="text-xs text-orange-600 bg-orange-50 px-3 py-1 rounded-full"
-              >Auto</span
-            >
-          </a>
-          <a
-            href="https://www.fila.com/"
-            target="_blank"
-            className="brand-card bg-white border-2 border-[#EAEAEA] rounded-[24px] p-5 flex flex-col items-center gap-3 shadow-sm"
-            data-cat="fashion"
-            data-name="fila"
-          >
-            <img
-              src="/assets/Fila_logo.svg"
-              alt="Fila"
-              className="h-14 object-contain"
-            />
-            <span className="font-semibold text-slate-900 text-sm">Fila</span>
-            <span
-              className="text-xs text-teal-500 bg-[#F1F6F2] px-3 py-1 rounded-full"
-              >Fashion</span
-            >
-          </a>
-          <a
-            href="https://us.puma.com/"
-            target="_blank"
-            className="brand-card bg-white border-2 border-[#EAEAEA] rounded-[24px] p-5 flex flex-col items-center gap-3 shadow-sm"
-            data-cat="fashion"
-            data-name="puma"
-          >
-            <img
-              src="/assets/puma-logo.svg"
-              alt="Puma"
-              className="h-14 object-contain"
-            />
-            <span className="font-semibold text-slate-900 text-sm">Puma</span>
-            <span
-              className="text-xs text-teal-500 bg-[#F1F6F2] px-3 py-1 rounded-full"
-              >Fashion</span
-            >
-          </a>
-          <a
-            href="https://www.amazon.com/"
-            target="_blank"
-            className="brand-card bg-white border-2 border-[#EAEAEA] rounded-[24px] p-5 flex flex-col items-center gap-3 shadow-sm"
-            data-cat="retail"
-            data-name="amazon"
-          >
-            <img
-              src="/assets/logo-amazon.svg"
-              alt="Amazon"
-              className="h-14 object-contain"
-            />
-            <span className="font-semibold text-slate-900 text-sm">Amazon</span>
-            <span
-              className="text-xs text-slate-900 bg-blue-50 px-3 py-1 rounded-full"
-              >Retail</span
-            >
-          </a>
-          <a
-            href="https://www.adidas.com/"
-            target="_blank"
-            className="brand-card bg-white border-2 border-[#EAEAEA] rounded-[24px] p-5 flex flex-col items-center gap-3 shadow-sm"
-            data-cat="fashion"
-            data-name="adidas"
-          >
-            <img
-              src="/assets/adidas.svg"
-              alt="Adidas"
-              className="h-14 object-contain"
-            />
-            <span className="font-semibold text-slate-900 text-sm">Adidas</span>
-            <span
-              className="text-xs text-teal-500 bg-[#F1F6F2] px-3 py-1 rounded-full"
-              >Fashion</span
-            >
-          </a>
-          <a
-            href="https://www.apple.com/"
-            target="_blank"
-            className="brand-card bg-white border-2 border-[#EAEAEA] rounded-[24px] p-5 flex flex-col items-center gap-3 shadow-sm"
-            data-cat="tech"
-            data-name="apple"
-          >
-            <img
-              src="/assets/apple-11.svg"
-              alt="Apple"
-              className="h-14 object-contain"
-            />
-            <span className="font-semibold text-slate-900 text-sm">Apple</span>
-            <span
-              className="text-xs text-teal-400 bg-[#E8F8F5] px-3 py-1 rounded-full"
-              >Tech</span
             >
           </a>
           <a

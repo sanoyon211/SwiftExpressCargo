@@ -7,10 +7,10 @@ export default function MainContent() {
       {/*  HEADER  */}
     <header
       style={{ 'backgroundImage': 'url("/assets/7771d7d86123da77de082143b78a5420695f0f81.jpg")', 'backgroundSize': 'cover', 'backgroundPosition': 'center' }}
-      className="relative h-auto w-full"
+      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center"
     >
       <div
-        className="flex justify-center py-20 md:py-32 px-4 text-center hero-text"
+        className="flex justify-center pt-32 pb-20 px-4 text-center hero-text"
       >
         <div>
           <h1

@@ -5,7 +5,7 @@ export default function MainContent() {
   return (
     <>
       {/* HEADER */}
-      <header className="relative w-full min-h-[500px] md:min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
+      <header className="relative w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-slate-900/70 mix-blend-multiply z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div>

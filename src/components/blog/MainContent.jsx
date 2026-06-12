@@ -7,10 +7,10 @@ export default function MainContent() {
       {/*  HEADER  */}
     <header
       style={{ 'backgroundImage': 'url("/assets/image.png")', 'backgroundSize': 'cover', 'backgroundPosition': 'center' }}
-      className="relative h-auto w-full"
+      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center"
     >
       <div
-        className="flex justify-center py-20 md:py-32 px-4 text-center hero-text"
+        className="flex justify-center pt-32 pb-20 px-4 text-center hero-text"
       >
         <div>
           <span
@@ -25,11 +25,7 @@ export default function MainContent() {
           <p className="text-white/80 text-lg max-w-lg mx-auto mb-8">
             Expert guides, shipping tips and industry news
           </p>
-          <div className="flex gap-2 justify-center">
-            <div className="h-[10px] w-[40px] bg-teal-500 rounded-full"></div>
-            <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-            <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-          </div>
+          
         </div>
       </div>
       <a

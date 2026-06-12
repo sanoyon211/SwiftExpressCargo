@@ -6,10 +6,10 @@ export default function Header() {
     <>
       <header
       style={{ 'backgroundImage': 'url("/assets/image (8).png")', 'backgroundSize': 'cover', 'backgroundPosition': 'center' }}
-      className="relative h-auto w-full"
+      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center"
     >
       {/*  Hero Text  */}
-      <div className="flex justify-center px-4 py-20 md:py-32 text-center">
+      <div className="flex justify-center px-4 pt-32 pb-20 text-center">
         <div className="hero-text">
           <span
             className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30"
@@ -24,11 +24,7 @@ export default function Header() {
           <p className="text-white/80 text-lg max-w-lg mx-auto mb-8">
             Get an accurate shipping estimate in seconds — no sign-up required
           </p>
-          <div className="flex gap-2 justify-center">
-            <div className="h-[10px] w-[40px] bg-teal-500 rounded-full"></div>
-            <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-            <div className="h-[10px] w-[40px] bg-teal-500/40 rounded-full"></div>
-          </div>
+          
         </div>
       </div>
 
