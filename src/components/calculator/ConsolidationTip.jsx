@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function ConsolidationTip() {
   return (
     <>
-      <section className="py-10 px-4 bg-white">
+      <section className="py-10 px-4 bg-white dark:bg-slate-900">
       <div className="container reveal">
         <div
           className="bg-gradient-to-r from-slate-900 to-[#1a3d8c] rounded-[32px] p-8 md:p-12"
@@ -12,7 +12,7 @@ export default function ConsolidationTip() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="text-white">
               <div
-                className="inline-block bg-white/20 text-white text-xs px-3 py-1.5 rounded-full mb-4 font-semibold"
+                className="inline-block bg-white/20 dark:bg-slate-800/20 text-white text-xs px-3 py-1.5 rounded-full mb-4 font-semibold"
               >
                 💡 PRO TIP
               </div>
@@ -27,7 +27,7 @@ export default function ConsolidationTip() {
             </div>
             <div className="flex flex-col gap-3">
               <div
-                className="bg-white/10 rounded-[24px] p-5 backdrop-blur-sm border border-white/20"
+                className="bg-white/10 dark:bg-slate-800/10 rounded-[24px] p-5 backdrop-blur-sm border border-white/20"
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-white/80 text-sm"
@@ -35,7 +35,7 @@ export default function ConsolidationTip() {
                   >
                   <span className="text-red-300 font-bold">5 × $15 = $75</span>
                 </div>
-                <div className="h-2 bg-white/20 rounded-full overflow-hidden">
+                <div className="h-2 bg-white/20 dark:bg-slate-800/20 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-red-400 rounded-full"
                     style={{ 'width': '100%' }}
@@ -43,13 +43,13 @@ export default function ConsolidationTip() {
                 </div>
               </div>
               <div
-                className="bg-white/10 rounded-[24px] p-5 backdrop-blur-sm border border-white/20"
+                className="bg-white/10 dark:bg-slate-800/10 rounded-[24px] p-5 backdrop-blur-sm border border-white/20"
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-white/80 text-sm">With Consolidation</span>
                   <span className="text-teal-400 font-bold">1 × $45 = $45</span>
                 </div>
-                <div className="h-2 bg-white/20 rounded-full overflow-hidden">
+                <div className="h-2 bg-white/20 dark:bg-slate-800/20 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-teal-400 rounded-full"
                     style={{ 'width': '60%' }}

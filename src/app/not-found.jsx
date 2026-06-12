@@ -5,15 +5,15 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function NotFound() {
   return (
-    <div className={`min-h-[80vh] flex items-center justify-center bg-slate-50 px-4 py-16 sm:px-6 lg:px-8 ${inter.className}`}>
+    <div className={`min-h-[80vh] flex items-center justify-center bg-slate-50 dark:bg-slate-900 px-4 py-16 sm:px-6 lg:px-8 ${inter.className}`}>
       <div className="max-w-max mx-auto text-center">
         <main className="sm:flex">
           <p className="text-4xl font-extrabold text-teal-600 sm:text-5xl">404</p>
-          <div className="sm:ml-6 sm:pl-6 sm:border-l sm:border-slate-200">
-            <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight sm:text-5xl">
+          <div className="sm:ml-6 sm:pl-6 sm:border-l sm:border-slate-200 dark:border-slate-700">
+            <h1 className="text-4xl font-extrabold text-slate-900 dark:text-slate-50 tracking-tight sm:text-5xl">
               Page not found
             </h1>
-            <p className="mt-4 text-base text-slate-500">
+            <p className="mt-4 text-base text-slate-500 dark:text-slate-400">
               Please check the URL in the address bar and try again.
             </p>
             <div className="mt-8 flex space-x-3 sm:border-l-transparent sm:pl-0">

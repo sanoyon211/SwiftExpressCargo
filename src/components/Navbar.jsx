@@ -1,47 +1,71 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useTheme } from 'next-themes';
+import { Sun, Moon } from 'lucide-react';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const getLinkClass = (path) => {
     return pathname === path
-      ? "text-teal-600 font-semibold"
-      : "text-slate-600 font-medium hover:text-teal-600 transition-colors";
+      ? "text-teal-600 dark:text-teal-400 font-semibold"
+      : "text-slate-600 dark:text-slate-300 font-medium hover:text-teal-600 dark:hover:text-teal-400 transition-colors";
   };
 
   const getMobileLinkClass = (path) => {
     return pathname === path
-      ? "text-teal-600 font-semibold py-3 border-b border-slate-100 flex items-center gap-3"
-      : "text-slate-600 font-medium py-3 border-b border-slate-100 flex items-center gap-3";
+      ? "text-teal-600 font-semibold py-3 border-b border-slate-100 dark:border-slate-700 flex items-center gap-3"
+      : "text-slate-600 dark:text-slate-300 font-medium py-3 border-b border-slate-100 dark:border-slate-700 flex items-center gap-3";
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 py-2 transition-all duration-300">
+    <div className="fixed top-0 left-0 w-full z-50 bg-white/95 dark:bg-slate-950/80 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-700 py-2 transition-colors duration-300">
       <div className="md:hidden px-6 flex justify-between items-center h-14">
         <Link href="/">
-          <img
+          <Image
             src="/assets/logo.png"
             alt="Logo"
+            width={101}
+            height={53}
             className="w-[101px] h-[53px] object-contain"
           />
         </Link>
-        <button onClick={toggleMenu} className="text-2xl text-slate-800 transition-colors">
-          <i className={isMobileMenuOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i>
-        </button>
+        <div className="flex items-center gap-4">
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
+              aria-label="Toggle Dark Mode"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          )}
+          <button onClick={toggleMenu} className="text-2xl text-slate-800 dark:text-slate-200 transition-colors">
+            <i className={isMobileMenuOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i>
+          </button>
+        </div>
       </div>
 
       <div className="hidden md:flex justify-center">
         <nav className="container flex items-center justify-between h-14">
           <Link href="/">
-            <img
+            <Image
               src="/assets/logo.png"
               alt="Logo"
+              width={101}
+              height={53}
               className="w-[101px] h-[53px] object-contain"
             />
           </Link>
@@ -54,7 +78,16 @@ export default function Navbar() {
             <li><Link href="/tracking" className={getLinkClass("/tracking")}>Track</Link></li>
             <li><Link href="/contact" className={getLinkClass("/contact")}>Contact</Link></li>
           </ul>
-          <div className="flex gap-3">
+          <div className="flex items-center gap-3 ml-4">
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
+                aria-label="Toggle Dark Mode"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+            )}
             <Link href="/signin">
               <button className="btn-primary text-sm px-6 py-2.5">
                 Sign In
@@ -71,7 +104,7 @@ export default function Navbar() {
       
       {/* Mobile Menu */}
       <nav className={`${isMobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4"} absolute z-50 right-0 top-full w-full md:hidden transition-all duration-300`}>
-        <div className="mx-4 mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 p-6">
+        <div className="mx-4 mt-2 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-6 dark:border dark:border-slate-700">
           <ul className="flex flex-col gap-2 mb-6">
             <li>
               <Link onClick={toggleMenu} href="/" className={getMobileLinkClass("/")}>

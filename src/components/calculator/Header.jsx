@@ -5,14 +5,14 @@ export default function Header() {
   return (
     <>
       <header
-      style={{ 'backgroundImage': 'url("/assets/image (8).png")', 'backgroundSize': 'cover', 'backgroundPosition': 'center' }}
-      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center"
+      style={{ backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url("/assets/image (8).png")', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center dark:border-b dark:border-slate-800"
     >
       {/*  Hero Text  */}
       <div className="flex justify-center px-4 pt-32 pb-20 text-center">
         <div className="hero-text">
           <span
-            className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30"
+            className="inline-block bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30"
           >
             🧮 Instant Price Estimate
           </span>

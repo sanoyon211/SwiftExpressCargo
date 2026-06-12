@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 pt-20 pb-10 relative overflow-hidden">
+    <footer className="bg-slate-900 pt-20 pb-10 relative overflow-hidden dark:border-t dark:border-slate-700">
       {/* Decorative gradient orb */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
@@ -21,7 +21,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-teal-500 hover:border-teal-500 transition-all duration-300 group"
+                className="w-10 h-10 bg-white/5 dark:bg-slate-800/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-teal-500 hover:border-teal-500 transition-all duration-300 group"
               >
                 <i className="fab fa-facebook-f text-slate-300 group-hover:text-white text-sm"></i>
               </a>
@@ -29,7 +29,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-teal-500 hover:border-teal-500 transition-all duration-300 group"
+                className="w-10 h-10 bg-white/5 dark:bg-slate-800/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-teal-500 hover:border-teal-500 transition-all duration-300 group"
               >
                 <i className="fab fa-instagram text-slate-300 group-hover:text-white text-sm"></i>
               </a>
@@ -37,7 +37,7 @@ export default function Footer() {
                 href="https://wa.me/8801715825331"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-teal-500 hover:border-teal-500 transition-all duration-300 group"
+                className="w-10 h-10 bg-white/5 dark:bg-slate-800/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-teal-500 hover:border-teal-500 transition-all duration-300 group"
               >
                 <i className="fab fa-whatsapp text-slate-300 group-hover:text-white text-sm"></i>
               </a>
@@ -98,7 +98,7 @@ export default function Footer() {
             <p className="text-slate-400 text-sm mb-4">
               Get premium shipping tips and exclusive updates directly in your inbox.
             </p>
-            <div className="bg-white/5 border border-white/10 rounded-full flex items-center p-1 focus-within:border-teal-500/50 focus-within:bg-white/10 transition-all">
+            <div className="bg-white/5 dark:bg-slate-800/5 border border-white/10 rounded-full flex items-center p-1 focus-within:border-teal-500/50 focus-within:bg-white/10 dark:bg-slate-800/10 transition-all">
               <i className="fas fa-envelope text-slate-400 ml-4 text-sm"></i>
               <input
                 type="email"
@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-500 dark:text-slate-400 text-sm">
             © {new Date().getFullYear()} Swift Express Cargo. All Rights Reserved.
           </p>
           <div className="flex gap-4">

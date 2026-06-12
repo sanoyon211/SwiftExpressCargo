@@ -7,7 +7,7 @@ export default function MainContent() {
     <div className="bg-teal-50 py-10 md:py-16 px-4">
       <div className="container max-w-4xl mx-auto">
         {/*  Breadcrumb  */}
-        <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6 reveal">
+        <nav className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6 reveal">
           <a href="/" className="hover:text-teal-500 transition-colors"
             >Home</a
           >
@@ -18,19 +18,19 @@ export default function MainContent() {
             >Blog</a
           >
           <i className="fas fa-chevron-right text-xs"></i>
-          <span className="text-slate-900">Blog Details</span>
+          <span className="text-slate-900 dark:text-slate-50">Blog Details</span>
         </nav>
         <div className="flex flex-wrap gap-2 mb-4 reveal">
           <span className="badge text-xs">Shipping Tips</span>
-          <span className="text-slate-500 text-sm flex items-center gap-1"
+          <span className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-1"
             ><i className="fas fa-clock text-teal-500 text-xs"></i>5 min read</span
           >
-          <span className="text-slate-500 text-sm flex items-center gap-1"
+          <span className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-1"
             ><i className="fas fa-eye text-teal-500 text-xs"></i>1,234 views</span
           >
         </div>
         <h1
-          className="font-bold text-3xl md:text-[48px] text-slate-900 leading-tight mb-6 reveal"
+          className="font-bold text-3xl md:text-[48px] text-slate-900 dark:text-slate-50 leading-tight mb-6 reveal"
         >
           How to Package Your Items for International Shipping
         </h1>
@@ -42,13 +42,13 @@ export default function MainContent() {
               <i className="fas fa-user text-white"></i>
             </div>
             <div>
-              <p className="font-semibold text-slate-900">Swift Express Team</p>
-              <p className="text-slate-500 text-sm">March 20, 2025</p>
+              <p className="font-semibold text-slate-900 dark:text-slate-50">Swift Express Team</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">March 20, 2025</p>
             </div>
           </div>
           {/*  Share buttons  */}
           <div className="flex items-center gap-3">
-            <span className="text-slate-500 text-sm">Share:</span>
+            <span className="text-slate-500 dark:text-slate-400 text-sm">Share:</span>
             <a
               href="https://facebook.com"
               target="_blank"
@@ -68,7 +68,7 @@ export default function MainContent() {
               ><i className="fab fa-whatsapp text-white text-xs"></i
             ></a>
             <button
-              className="share-btn w-9 h-9 bg-slate-500 rounded-full flex items-center justify-center hover:shadow-lg"
+              className="share-btn w-9 h-9 bg-slate-50 dark:bg-slate-8000 rounded-full flex items-center justify-center hover:shadow-lg"
               data-copy="https://swiftexpress.com/blog/packaging-tips"
               title="Copy link"
             >
@@ -96,7 +96,7 @@ export default function MainContent() {
 
             {/*  Article  */}
             <div
-              className="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-slate-200 prose reveal"
+              className="bg-white dark:bg-slate-800 rounded-[32px] p-8 md:p-10 shadow-sm border border-slate-200 dark:border-slate-700 prose reveal dark:border dark:border-slate-700"
             >
               <h2>Why Proper Packaging Matters for International Shipping</h2>
               <p>
@@ -209,28 +209,28 @@ export default function MainContent() {
 
             {/*  Tags  */}
             <div className="flex flex-wrap gap-2 mt-6 reveal">
-              <span className="text-slate-500 text-sm font-medium">Tags:</span>
+              <span className="text-slate-500 dark:text-slate-400 text-sm font-medium">Tags:</span>
               <span
-                className="bg-[#F1F6F2] text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
+                className="bg-[#F1F6F2] dark:bg-slate-700 text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
                 >Packaging</span
               >
               <span
-                className="bg-[#F1F6F2] text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
+                className="bg-[#F1F6F2] dark:bg-slate-700 text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
                 >International Shipping</span
               >
               <span
-                className="bg-[#F1F6F2] text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
+                className="bg-[#F1F6F2] dark:bg-slate-700 text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
                 >Tips</span
               >
               <span
-                className="bg-[#F1F6F2] text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
+                className="bg-[#F1F6F2] dark:bg-slate-700 text-teal-500 text-xs px-3 py-1.5 rounded-full cursor-pointer hover:bg-teal-500 hover:text-white transition-colors"
                 >Bangladesh</span
               >
             </div>
 
             {/*  Author Box  */}
             <div
-              className="bg-white rounded-[32px] p-6 mt-8 border border-slate-200 flex gap-5 items-start reveal"
+              className="bg-white dark:bg-slate-800 rounded-[32px] p-6 mt-8 border border-slate-200 dark:border-slate-700 flex gap-5 items-start reveal"
             >
               <div
                 className="w-16 h-16 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-[24px] flex items-center justify-center flex-shrink-0"
@@ -238,11 +238,11 @@ export default function MainContent() {
                 <i className="fas fa-user text-white text-2xl"></i>
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 mb-1">Swift Express Team</h4>
+                <h4 className="font-bold text-slate-900 dark:text-slate-50 mb-1">Swift Express Team</h4>
                 <p className="text-teal-500 text-sm font-medium mb-2">
                   Shipping Experts
                 </p>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                   Our team of shipping professionals with 5+ years of experience
                   in international logistics. We're dedicated to making shipping
                   from USA to Bangladesh simple and affordable.
@@ -255,44 +255,44 @@ export default function MainContent() {
           <div className="lg:col-span-1">
             {/*  Table of Contents  */}
             <div
-              className="bg-white rounded-[24px] p-6 border border-slate-200 mb-6 sticky top-24 reveal"
+              className="bg-white dark:bg-slate-800 rounded-[24px] p-6 border border-slate-200 dark:border-slate-700 mb-6 sticky top-24 reveal"
             >
-              <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <h4 className="font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
                 <i className="fas fa-list text-teal-500"></i>Contents
               </h4>
               <ul className="flex flex-col gap-2">
                 <li>
                   <a
                     href="#"
-                    className="toc-link text-slate-500 text-sm block py-1 border-l-2 border-slate-200 pl-3 hover:border-teal-500"
+                    className="toc-link text-slate-500 dark:text-slate-400 text-sm block py-1 border-l-2 border-slate-200 dark:border-slate-700 pl-3 hover:border-teal-500"
                     >Why Packaging Matters</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="toc-link text-slate-500 text-sm block py-1 border-l-2 border-slate-200 pl-3 hover:border-teal-500"
+                    className="toc-link text-slate-500 dark:text-slate-400 text-sm block py-1 border-l-2 border-slate-200 dark:border-slate-700 pl-3 hover:border-teal-500"
                     >Step-by-Step Guide</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="toc-link text-slate-500 text-sm block py-1 border-l-2 border-slate-200 pl-3 hover:border-teal-500"
+                    className="toc-link text-slate-500 dark:text-slate-400 text-sm block py-1 border-l-2 border-slate-200 dark:border-slate-700 pl-3 hover:border-teal-500"
                     >Tips for Electronics</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="toc-link text-slate-500 text-sm block py-1 border-l-2 border-slate-200 pl-3 hover:border-teal-500"
+                    className="toc-link text-slate-500 dark:text-slate-400 text-sm block py-1 border-l-2 border-slate-200 dark:border-slate-700 pl-3 hover:border-teal-500"
                     >Documentation</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="toc-link text-slate-500 text-sm block py-1 border-l-2 border-slate-200 pl-3 hover:border-teal-500"
+                    className="toc-link text-slate-500 dark:text-slate-400 text-sm block py-1 border-l-2 border-slate-200 dark:border-slate-700 pl-3 hover:border-teal-500"
                     >Final Tips</a
                   >
                 </li>
@@ -309,11 +309,11 @@ export default function MainContent() {
               <input
                 type="text"
                 placeholder="Tracking number..."
-                className="w-full bg-white/20 text-white placeholder-white/60 border border-white/30 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-white mb-3"
+                className="w-full bg-white dark:bg-slate-800/20 dark:bg-slate-800/20 text-white placeholder-white/60 border border-white/30 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-white mb-3"
               />
               <a href="/tracking"
                 ><button
-                  className="w-full bg-white text-teal-500 font-bold py-2.5 rounded-xl hover:shadow-lg transition text-sm"
+                  className="w-full bg-white dark:bg-slate-800 text-teal-500 font-bold py-2.5 rounded-xl hover:shadow-lg transition text-sm dark:border dark:border-slate-700"
                 >
                   Track Now
                 </button></a
@@ -322,13 +322,13 @@ export default function MainContent() {
 
             {/*  Related Posts  */}
             <div
-              className="bg-white rounded-[24px] p-6 border border-slate-200 reveal"
+              className="bg-white dark:bg-slate-800 rounded-[24px] p-6 border border-slate-200 dark:border-slate-700 reveal"
             >
-              <h4 className="font-bold text-slate-900 mb-4">Related Posts</h4>
+              <h4 className="font-bold text-slate-900 dark:text-slate-50 mb-4">Related Posts</h4>
               <div className="flex flex-col gap-4">
                 <a
                   href="/read-more"
-                  className="related-card flex gap-3 p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200"
+                  className="related-card flex gap-3 p-3 rounded-xl hover:bg-slate-50 dark:bg-slate-900 border border-transparent hover:border-slate-200 dark:border-slate-700"
                 >
                   <div
                     className="w-16 h-14 rounded-xl overflow-hidden flex-shrink-0"
@@ -341,7 +341,7 @@ export default function MainContent() {
                   </div>
                   <div>
                     <p
-                      className="font-medium text-slate-900 text-xs leading-tight mb-1"
+                      className="font-medium text-slate-900 dark:text-slate-50 text-xs leading-tight mb-1"
                     >
                       Top 5 Ways to Save on Shipping
                     </p>
@@ -350,7 +350,7 @@ export default function MainContent() {
                 </a>
                 <a
                   href="/read-more"
-                  className="related-card flex gap-3 p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200"
+                  className="related-card flex gap-3 p-3 rounded-xl hover:bg-slate-50 dark:bg-slate-900 border border-transparent hover:border-slate-200 dark:border-slate-700"
                 >
                   <div
                     className="w-16 h-14 rounded-xl overflow-hidden flex-shrink-0"
@@ -363,7 +363,7 @@ export default function MainContent() {
                   </div>
                   <div>
                     <p
-                      className="font-medium text-slate-900 text-xs leading-tight mb-1"
+                      className="font-medium text-slate-900 dark:text-slate-50 text-xs leading-tight mb-1"
                     >
                       Understanding Bangladesh Customs
                     </p>
@@ -372,7 +372,7 @@ export default function MainContent() {
                 </a>
                 <a
                   href="/read-more"
-                  className="related-card flex gap-3 p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200"
+                  className="related-card flex gap-3 p-3 rounded-xl hover:bg-slate-50 dark:bg-slate-900 border border-transparent hover:border-slate-200 dark:border-slate-700"
                 >
                   <div
                     className="w-16 h-14 rounded-xl overflow-hidden flex-shrink-0"
@@ -385,7 +385,7 @@ export default function MainContent() {
                   </div>
                   <div>
                     <p
-                      className="font-medium text-slate-900 text-xs leading-tight mb-1"
+                      className="font-medium text-slate-900 dark:text-slate-50 text-xs leading-tight mb-1"
                     >
                       Package Consolidation Guide
                     </p>
@@ -400,10 +400,10 @@ export default function MainContent() {
     </section>
 
     {/*  MORE ARTICLES  */}
-    <section className="py-12 px-4 bg-white">
+    <section className="py-12 px-4 bg-white dark:bg-slate-900">
       <div className="container">
         <div className="flex justify-between items-center mb-8 reveal">
-          <h3 className="font-bold text-2xl text-slate-900">More Articles</h3>
+          <h3 className="font-bold text-2xl text-slate-900 dark:text-slate-50">More Articles</h3>
           <a
             href="/blog"
             className="text-teal-500 font-semibold text-sm hover:underline inline-flex items-center gap-2"
@@ -412,7 +412,7 @@ export default function MainContent() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger reveal">
           <article
-            className="card-hover bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="card-hover bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="img-zoom h-48">
               <img
@@ -423,7 +423,7 @@ export default function MainContent() {
             </div>
             <div className="p-5">
               <span className="badge text-xs mb-3 inline-block">Savings</span>
-              <h3 className="font-bold text-base text-slate-900 mb-2">
+              <h3 className="font-bold text-base text-slate-900 dark:text-slate-50 mb-2">
                 Top 5 Ways to Save on Shipping
               </h3>
               <a
@@ -434,7 +434,7 @@ export default function MainContent() {
             </div>
           </article>
           <article
-            className="card-hover bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="card-hover bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="img-zoom h-48">
               <img
@@ -445,7 +445,7 @@ export default function MainContent() {
             </div>
             <div className="p-5">
               <span className="badge text-xs mb-3 inline-block">Customs</span>
-              <h3 className="font-bold text-base text-slate-900 mb-2">
+              <h3 className="font-bold text-base text-slate-900 dark:text-slate-50 mb-2">
                 Understanding Bangladesh Customs
               </h3>
               <a
@@ -456,7 +456,7 @@ export default function MainContent() {
             </div>
           </article>
           <article
-            className="card-hover bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="card-hover bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="img-zoom h-48">
               <img
@@ -467,7 +467,7 @@ export default function MainContent() {
             </div>
             <div className="p-5">
               <span className="badge text-xs mb-3 inline-block">Guides</span>
-              <h3 className="font-bold text-base text-slate-900 mb-2">
+              <h3 className="font-bold text-base text-slate-900 dark:text-slate-50 mb-2">
                 Package Consolidation Complete Guide
               </h3>
               <a

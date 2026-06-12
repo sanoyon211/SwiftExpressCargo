@@ -4,10 +4,10 @@ import Link from 'next/link';
 export default function QuickInfoStrip() {
   return (
     <>
-      <div className="bg-white border-b border-slate-200 py-4 px-4">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 py-4 px-4">
       <div className="container">
         <div
-          className="flex flex-wrap justify-center md:justify-between gap-4 text-sm text-slate-500"
+          className="flex flex-wrap justify-center md:justify-between gap-4 text-sm text-slate-500 dark:text-slate-400"
         >
           <div className="flex items-center gap-2">
             <i className="fas fa-bolt text-teal-500"></i

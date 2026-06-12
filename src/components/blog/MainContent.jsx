@@ -6,15 +6,13 @@ export default function MainContent() {
     <>
       {/*  HEADER  */}
     <header
-      style={{ 'backgroundImage': 'url("/assets/image.png")', 'backgroundSize': 'cover', 'backgroundPosition': 'center' }}
-      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center"
+      style={{ backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url("/assets/image.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center dark:border-b dark:border-slate-800"
     >
-      <div
-        className="flex justify-center pt-32 pb-20 px-4 text-center hero-text"
-      >
+      <div className="flex justify-center pt-32 pb-20 px-4 text-center hero-text">
         <div>
           <span
-            className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30"
+            className="inline-block bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30"
             >📝 Shipping Tips & News</span
           >
           <h1
@@ -42,11 +40,11 @@ export default function MainContent() {
     </header>
 
     {/*  FEATURED POST  */}
-    <section className="py-12 px-4 bg-white">
+    <section className="py-12 px-4 bg-white dark:bg-slate-900">
       <div className="container reveal">
         <a href="/read-more" className="group block">
           <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white rounded-[32px] overflow-hidden shadow-lg border border-slate-200 hover:shadow-2xl transition-all duration-500"
+            className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white dark:bg-slate-800 rounded-[32px] overflow-hidden shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-500 dark:border dark:border-slate-700"
           >
             <div className="overflow-hidden h-64 md:h-auto">
               <img
@@ -61,11 +59,11 @@ export default function MainContent() {
                 >Featured Post</span
               >
               <h2
-                className="font-bold text-2xl md:text-3xl text-slate-900 mb-4 group-hover:text-teal-500 transition-colors"
+                className="font-bold text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-4 group-hover:text-teal-500 transition-colors"
               >
                 How to Package Your Items for International Shipping
               </h2>
-              <p className="text-slate-500 leading-relaxed mb-6">
+              <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
                 Learn the best practices for packaging your valuable items to
                 ensure they arrive safely through international shipping routes.
               </p>
@@ -77,8 +75,8 @@ export default function MainContent() {
                     <i className="fas fa-user text-white text-xs"></i>
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900 text-sm">Swift Team</p>
-                    <p className="text-slate-500 text-xs">March 20, 2025</p>
+                    <p className="font-medium text-slate-900 dark:text-slate-50 text-sm">Swift Team</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-xs">March 20, 2025</p>
                   </div>
                 </div>
                 <span
@@ -101,37 +99,37 @@ export default function MainContent() {
         >
           <div className="relative w-full sm:w-72">
             <i
-              className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm"
+              className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 text-sm"
             ></i>
             <input
               type="text"
               placeholder="Search articles..."
-              className="w-full pl-11 pr-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-teal-500 text-sm bg-white text-slate-900"
+              className="w-full pl-11 pr-4 py-3 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:border-teal-500 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-50"
             />
           </div>
           <div className="flex flex-wrap gap-2">
             <button
-              className="filter-btn active text-sm px-4 py-2 rounded-full border-2 border-slate-200 font-medium"
+              className="filter-btn active text-sm px-4 py-2 rounded-full border-2 border-slate-200 dark:border-slate-700 font-medium"
             >
               All
             </button>
             <button
-              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 font-medium text-slate-500"
+              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 dark:border-slate-700 font-medium text-slate-500 dark:text-slate-400"
             >
               Tips
             </button>
             <button
-              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 font-medium text-slate-500"
+              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 dark:border-slate-700 font-medium text-slate-500 dark:text-slate-400"
             >
               Guides
             </button>
             <button
-              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 font-medium text-slate-500"
+              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 dark:border-slate-700 font-medium text-slate-500 dark:text-slate-400"
             >
               Customs
             </button>
             <button
-              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 font-medium text-slate-500"
+              className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-200 dark:border-slate-700 font-medium text-slate-500 dark:text-slate-400"
             >
               Savings
             </button>
@@ -144,7 +142,7 @@ export default function MainContent() {
         >
           {/*  Article 1  */}
           <article
-            className="blog-card bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="blog-card bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="overflow-hidden h-52">
               <img
@@ -156,19 +154,19 @@ export default function MainContent() {
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="badge text-xs">Tips</span>
-                <span className="text-slate-500 text-xs">March 20, 2025</span>
+                <span className="text-slate-500 dark:text-slate-400 text-xs">March 20, 2025</span>
               </div>
               <h3
-                className="font-bold text-lg text-slate-900 mb-2 hover:text-teal-500 transition-colors"
+                className="font-bold text-lg text-slate-900 dark:text-slate-50 mb-2 hover:text-teal-500 transition-colors"
               >
                 How to Package Items for International Shipping
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
                 Learn the best practices for packaging fragile and valuable
                 items for safe international delivery.
               </p>
               <div
-                className="flex items-center justify-between pt-4 border-t border-slate-200"
+                className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700"
               >
                 <div className="flex items-center gap-2">
                   <div
@@ -176,7 +174,7 @@ export default function MainContent() {
                   >
                     <i className="fas fa-user text-white text-xs"></i>
                   </div>
-                  <span className="text-slate-500 text-xs">Swift Team</span>
+                  <span className="text-slate-500 dark:text-slate-400 text-xs">Swift Team</span>
                 </div>
                 <a
                   href="/read-more"
@@ -189,7 +187,7 @@ export default function MainContent() {
 
           {/*  Article 2  */}
           <article
-            className="blog-card bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="blog-card bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="overflow-hidden h-52">
               <img
@@ -201,19 +199,19 @@ export default function MainContent() {
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="badge text-xs">Savings</span>
-                <span className="text-slate-500 text-xs">March 15, 2025</span>
+                <span className="text-slate-500 dark:text-slate-400 text-xs">March 15, 2025</span>
               </div>
               <h3
-                className="font-bold text-lg text-slate-900 mb-2 hover:text-teal-500 transition-colors"
+                className="font-bold text-lg text-slate-900 dark:text-slate-50 mb-2 hover:text-teal-500 transition-colors"
               >
                 Top 5 Ways to Save on Shipping Costs from USA
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
                 Smart strategies to reduce your international shipping expenses
                 significantly.
               </p>
               <div
-                className="flex items-center justify-between pt-4 border-t border-slate-200"
+                className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700"
               >
                 <div className="flex items-center gap-2">
                   <div
@@ -221,7 +219,7 @@ export default function MainContent() {
                   >
                     <i className="fas fa-user text-white text-xs"></i>
                   </div>
-                  <span className="text-slate-500 text-xs">Swift Team</span>
+                  <span className="text-slate-500 dark:text-slate-400 text-xs">Swift Team</span>
                 </div>
                 <a
                   href="/read-more"
@@ -234,7 +232,7 @@ export default function MainContent() {
 
           {/*  Article 3  */}
           <article
-            className="blog-card bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="blog-card bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="overflow-hidden h-52">
               <img
@@ -246,19 +244,19 @@ export default function MainContent() {
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="badge text-xs">Customs</span>
-                <span className="text-slate-500 text-xs">March 10, 2025</span>
+                <span className="text-slate-500 dark:text-slate-400 text-xs">March 10, 2025</span>
               </div>
               <h3
-                className="font-bold text-lg text-slate-900 mb-2 hover:text-teal-500 transition-colors"
+                className="font-bold text-lg text-slate-900 dark:text-slate-50 mb-2 hover:text-teal-500 transition-colors"
               >
                 Understanding Customs & Duties for Bangladesh
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
                 A complete guide to navigating Bangladesh customs procedures for
                 your packages.
               </p>
               <div
-                className="flex items-center justify-between pt-4 border-t border-slate-200"
+                className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700"
               >
                 <div className="flex items-center gap-2">
                   <div
@@ -266,7 +264,7 @@ export default function MainContent() {
                   >
                     <i className="fas fa-user text-white text-xs"></i>
                   </div>
-                  <span className="text-slate-500 text-xs">Swift Team</span>
+                  <span className="text-slate-500 dark:text-slate-400 text-xs">Swift Team</span>
                 </div>
                 <a
                   href="/read-more"
@@ -279,7 +277,7 @@ export default function MainContent() {
 
           {/*  Article 4  */}
           <article
-            className="blog-card bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="blog-card bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="overflow-hidden h-52">
               <img
@@ -291,19 +289,19 @@ export default function MainContent() {
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="badge text-xs">Guides</span>
-                <span className="text-slate-500 text-xs">March 5, 2025</span>
+                <span className="text-slate-500 dark:text-slate-400 text-xs">March 5, 2025</span>
               </div>
               <h3
-                className="font-bold text-lg text-slate-900 mb-2 hover:text-teal-500 transition-colors"
+                className="font-bold text-lg text-slate-900 dark:text-slate-50 mb-2 hover:text-teal-500 transition-colors"
               >
                 Beginner's Guide to Package Consolidation
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
                 Everything you need to know about combining multiple packages
                 for maximum savings.
               </p>
               <div
-                className="flex items-center justify-between pt-4 border-t border-slate-200"
+                className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700"
               >
                 <div className="flex items-center gap-2">
                   <div
@@ -311,7 +309,7 @@ export default function MainContent() {
                   >
                     <i className="fas fa-user text-white text-xs"></i>
                   </div>
-                  <span className="text-slate-500 text-xs">Swift Team</span>
+                  <span className="text-slate-500 dark:text-slate-400 text-xs">Swift Team</span>
                 </div>
                 <a
                   href="/read-more"
@@ -324,7 +322,7 @@ export default function MainContent() {
 
           {/*  Article 5  */}
           <article
-            className="blog-card bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="blog-card bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="overflow-hidden h-52">
               <img
@@ -336,19 +334,19 @@ export default function MainContent() {
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="badge text-xs">Tips</span>
-                <span className="text-slate-500 text-xs">Feb 28, 2025</span>
+                <span className="text-slate-500 dark:text-slate-400 text-xs">Feb 28, 2025</span>
               </div>
               <h3
-                className="font-bold text-lg text-slate-900 mb-2 hover:text-teal-500 transition-colors"
+                className="font-bold text-lg text-slate-900 dark:text-slate-50 mb-2 hover:text-teal-500 transition-colors"
               >
                 What Items Are Restricted in International Shipping?
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
                 Know what you can and cannot ship to avoid delays and additional
                 charges at customs.
               </p>
               <div
-                className="flex items-center justify-between pt-4 border-t border-slate-200"
+                className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700"
               >
                 <div className="flex items-center gap-2">
                   <div
@@ -356,7 +354,7 @@ export default function MainContent() {
                   >
                     <i className="fas fa-user text-white text-xs"></i>
                   </div>
-                  <span className="text-slate-500 text-xs">Swift Team</span>
+                  <span className="text-slate-500 dark:text-slate-400 text-xs">Swift Team</span>
                 </div>
                 <a
                   href="/read-more"
@@ -369,7 +367,7 @@ export default function MainContent() {
 
           {/*  Article 6  */}
           <article
-            className="blog-card bg-white rounded-[24px] shadow-sm overflow-hidden border border-slate-200"
+            className="blog-card bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700"
           >
             <div className="overflow-hidden h-52">
               <img
@@ -381,19 +379,19 @@ export default function MainContent() {
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="badge text-xs">Guides</span>
-                <span className="text-slate-500 text-xs">Feb 22, 2025</span>
+                <span className="text-slate-500 dark:text-slate-400 text-xs">Feb 22, 2025</span>
               </div>
               <h3
-                className="font-bold text-lg text-slate-900 mb-2 hover:text-teal-500 transition-colors"
+                className="font-bold text-lg text-slate-900 dark:text-slate-50 mb-2 hover:text-teal-500 transition-colors"
               >
                 How Real-Time Tracking Works for Your Shipment
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
                 An inside look at how our tracking system keeps you updated at
                 every step of delivery.
               </p>
               <div
-                className="flex items-center justify-between pt-4 border-t border-slate-200"
+                className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700"
               >
                 <div className="flex items-center gap-2">
                   <div
@@ -401,7 +399,7 @@ export default function MainContent() {
                   >
                     <i className="fas fa-user text-white text-xs"></i>
                   </div>
-                  <span className="text-slate-500 text-xs">Swift Team</span>
+                  <span className="text-slate-500 dark:text-slate-400 text-xs">Swift Team</span>
                 </div>
                 <a
                   href="/read-more"
@@ -421,17 +419,17 @@ export default function MainContent() {
             1
           </button>
           <button
-            className="w-10 h-10 rounded-xl border-2 border-slate-200 text-slate-500 font-semibold text-sm flex items-center justify-center hover:border-teal-500 hover:text-teal-500 transition-colors"
+            className="w-10 h-10 rounded-xl border-2 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-semibold text-sm flex items-center justify-center hover:border-teal-500 hover:text-teal-500 transition-colors"
           >
             2
           </button>
           <button
-            className="w-10 h-10 rounded-xl border-2 border-slate-200 text-slate-500 font-semibold text-sm flex items-center justify-center hover:border-teal-500 hover:text-teal-500 transition-colors"
+            className="w-10 h-10 rounded-xl border-2 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-semibold text-sm flex items-center justify-center hover:border-teal-500 hover:text-teal-500 transition-colors"
           >
             3
           </button>
           <button
-            className="w-10 h-10 rounded-xl border-2 border-slate-200 text-slate-500 font-semibold text-sm flex items-center justify-center hover:border-teal-500 hover:text-teal-500 transition-colors"
+            className="w-10 h-10 rounded-xl border-2 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-semibold text-sm flex items-center justify-center hover:border-teal-500 hover:text-teal-500 transition-colors"
           >
             <i className="fas fa-chevron-right text-xs"></i>
           </button>
@@ -440,16 +438,16 @@ export default function MainContent() {
     </section>
 
     {/*  NEWSLETTER  */}
-    <section className="py-12 px-4 bg-white">
+    <section className="py-12 px-4 bg-white dark:bg-slate-900">
       <div className="container">
         <div
-          className="bg-gradient-to-r from-[#F1F6F2] to-[#E8F8F5] rounded-[32px] p-8 md:p-12 text-center border border-slate-200 reveal"
+          className="bg-gradient-to-r from-[#F1F6F2] to-[#E8F8F5] dark:from-slate-800 dark:to-teal-900/30 rounded-[32px] p-8 md:p-12 text-center border border-slate-200 dark:border-slate-700 reveal"
         >
           <i className="fas fa-envelope-open-text text-teal-500 text-4xl mb-4"></i>
-          <h3 className="font-bold text-2xl md:text-3xl text-slate-900 mb-3">
+          <h3 className="font-bold text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-3">
             Subscribe for Shipping Tips
           </h3>
-          <p className="text-slate-500 mb-8 max-w-lg mx-auto">
+          <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-lg mx-auto">
             Get weekly guides, cost-saving tips and shipping news delivered to
             your inbox.
           </p>
@@ -457,7 +455,7 @@ export default function MainContent() {
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-5 py-3.5 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-teal-500 text-sm"
+              className="flex-1 px-5 py-3.5 border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl focus:outline-none focus:border-teal-500 text-sm"
             />
             <button
               className="subscribe-btn btn-primary px-6 py-3.5 whitespace-nowrap"
