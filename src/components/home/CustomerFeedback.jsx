@@ -11,7 +11,7 @@ export default function CustomerFeedback() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger reveal">
-          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] p-8 shadow-sm dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors dark:border dark:border-slate-700">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] p-5 md:p-8 shadow-sm dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors dark:border dark:border-slate-700">
             <div className="flex gap-1 mb-6">
               <i className="fas fa-star text-yellow-400"></i>
               <i className="fas fa-star text-yellow-400"></i>
@@ -29,7 +29,7 @@ export default function CustomerFeedback() {
             </div>
           </div>
           
-          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] p-8 shadow-sm dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors dark:border dark:border-slate-700">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] p-5 md:p-8 shadow-sm dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors dark:border dark:border-slate-700">
             <div className="flex gap-1 mb-6">
               <i className="fas fa-star text-yellow-400"></i>
               <i className="fas fa-star text-yellow-400"></i>
@@ -47,7 +47,7 @@ export default function CustomerFeedback() {
             </div>
           </div>
           
-          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] p-8 shadow-sm dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors dark:border dark:border-slate-700">
+          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[32px] p-5 md:p-8 shadow-sm dark:border dark:border-slate-700 dark:hover:border-slate-600 transition-colors dark:border dark:border-slate-700">
             <div className="flex gap-1 mb-6">
               <i className="fas fa-star text-yellow-400"></i>
               <i className="fas fa-star text-yellow-400"></i>
@@ -69,3 +69,5 @@ export default function CustomerFeedback() {
     </section>
   );
 }
+
+

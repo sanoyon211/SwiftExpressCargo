@@ -3,6 +3,21 @@ import MainContent from '@/components/read-more/MainContent';
 import { blogPosts } from '@/data/blogPosts';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  return {
+    title: post.title,
+  };
+}
+
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,

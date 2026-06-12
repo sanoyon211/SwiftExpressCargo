@@ -7,7 +7,7 @@ export default function ConsolidationTip() {
       <section className="py-10 px-4 bg-white dark:bg-slate-900">
       <div className="container reveal">
         <div
-          className="bg-gradient-to-r from-slate-900 to-[#1a3d8c] rounded-[32px] p-8 md:p-12"
+          className="bg-gradient-to-r from-slate-900 to-[#1a3d8c] rounded-[32px] p-5 md:p-12"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="text-white">
@@ -68,3 +68,5 @@ export default function ConsolidationTip() {
     </>
   );
 }
+
+

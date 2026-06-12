@@ -1,3 +1,5 @@
+export const metadata = { title: 'Home' };
+
 import React from 'react';
 import HeroHeader from '@/components/home/HeroHeader';
 import StatsSection from '@/components/home/StatsSection';
@@ -26,3 +28,4 @@ export default function Home() {
     </>
   );
 }
+

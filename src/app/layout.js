@@ -7,7 +7,10 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Swift Express Cargo | Premium Logistics",
+  title: {
+    template: "%s | Swift Express Cargo",
+    default: "Swift Express Cargo | Premium Logistics",
+  },
   description: "Fast, reliable international shipping from USA to Bangladesh and worldwide.",
 };
 

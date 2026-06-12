@@ -1,3 +1,5 @@
+export const metadata = { title: 'Cost Calculator' };
+
 import React from 'react';
 import Header from '@/components/calculator/Header';
 import QuickInfoStrip from '@/components/calculator/QuickInfoStrip';
@@ -16,3 +18,4 @@ export default function CostCalculator() {
     </>
   );
 }
+

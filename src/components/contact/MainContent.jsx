@@ -86,7 +86,7 @@ export default function MainContent() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/*  Info Card  */}
           <div className="lg:col-span-2 reveal-left">
-            <div className="bg-gradient-to-b from-teal-500 to-teal-400 rounded-[32px] p-8 h-full text-white relative overflow-hidden">
+            <div className="bg-gradient-to-b from-teal-500 to-teal-400 rounded-[32px] p-5 md:p-8 h-full text-white relative overflow-hidden">
               <h3 className="font-bold text-2xl mb-2 relative z-10">Contact Information</h3>
               <p className="text-white/80 text-sm mb-10 relative z-10">Say something to start a live chat!</p>
 
@@ -138,7 +138,7 @@ export default function MainContent() {
 
           {/*  Form  */}
           <div className="lg:col-span-3 reveal-right">
-            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm p-8 border border-slate-200 dark:border-slate-700">
+            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm p-5 md:p-8 border border-slate-200 dark:border-slate-700">
               <h3 className="font-bold text-2xl text-slate-900 dark:text-slate-50 mb-2">Send a Message</h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
@@ -217,3 +217,5 @@ export default function MainContent() {
     </>
   );
 }
+
+

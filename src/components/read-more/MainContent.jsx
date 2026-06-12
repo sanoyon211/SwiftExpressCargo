@@ -76,7 +76,7 @@ export default function MainContent({ post }) {
 
             {/* Article */}
             <div 
-              className="bg-white dark:bg-slate-800 rounded-[32px] p-8 md:p-10 shadow-sm border border-slate-200 dark:border-slate-700 prose dark:prose-invert max-w-none reveal"
+              className="bg-white dark:bg-slate-800 rounded-[32px] p-5 md:p-10 shadow-sm border border-slate-200 dark:border-slate-700 prose dark:prose-invert max-w-none reveal"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
@@ -130,3 +130,5 @@ export default function MainContent({ post }) {
     </>
   );
 }
+
+

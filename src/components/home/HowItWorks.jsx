@@ -16,7 +16,7 @@ export default function HowItWorks() {
         
         <div className="relative">
           {/* Connection line (desktop) */}
-          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-slate-100 dark:bg-slate-800 z-0">
+          <div className="hidden md:block absolute top-6 md:p-12 left-[12%] right-[12%] h-0.5 bg-slate-100 dark:bg-slate-800 z-0">
             <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-400 to-emerald-400 w-full opacity-30 dark:opacity-100"></div>
           </div>
           
@@ -62,3 +62,5 @@ export default function HowItWorks() {
     </section>
   );
 }
+
+

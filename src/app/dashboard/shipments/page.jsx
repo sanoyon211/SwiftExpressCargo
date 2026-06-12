@@ -13,7 +13,7 @@ export default function ShipmentsPage() {
         </div>
       </div>
       
-      <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+      <div className="bg-white dark:bg-slate-900 p-5 md:p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
         <div className="w-16 h-16 bg-teal-50 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
           <i className="fa-solid fa-box-open"></i>
         </div>
@@ -26,3 +26,4 @@ export default function ShipmentsPage() {
     </div>
   );
 }
+

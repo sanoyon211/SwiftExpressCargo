@@ -5,7 +5,7 @@ export default function QuickTrackSection() {
   return (
     <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-slate-50 dark:bg-slate-900">
       <div className="container">
-        <div className="bg-slate-900 rounded-[32px] p-10 md:p-16 reveal relative overflow-hidden shadow-2xl dark:border dark:border-slate-700">
+        <div className="bg-slate-900 rounded-[32px] p-6 md:p-16 reveal relative overflow-hidden shadow-2xl dark:border dark:border-slate-700">
           {/* Decorative gradients */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/20 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
@@ -38,14 +38,14 @@ export default function QuickTrackSection() {
               </ul>
             </div>
             
-            <div className="bg-white/10 dark:bg-slate-800/10 backdrop-blur-xl border border-white/10 rounded-[24px] p-8 shadow-2xl">
+            <div className="bg-white/10 dark:bg-slate-800/10 backdrop-blur-xl border border-white/10 rounded-[24px] p-5 md:p-8 shadow-2xl">
               <div className="mb-6">
                 <label className="text-white font-medium block mb-3 text-lg">Enter Tracking Number</label>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input type="text" id="trackInput2" placeholder="e.g. SEC-2025-001234"
-                    className="flex-1 bg-white/5 dark:bg-slate-800/5 text-white placeholder-slate-400 border border-white/20 rounded-xl px-5 py-4 focus:outline-none focus:border-teal-400 focus:bg-white/10 dark:bg-slate-800/10 transition-all text-base" />
-                  <Link href="/tracking">
-                    <button className="bg-teal-500 hover:bg-teal-400 text-white font-medium px-8 py-4 rounded-xl transition-colors shadow-lg shadow-teal-500/20 w-full sm:w-auto h-full flex items-center justify-center gap-2">
+                    className="flex-1 w-full bg-white/5 dark:bg-slate-800/5 text-white placeholder-slate-400 border border-white/20 rounded-xl px-5 py-4 focus:outline-none focus:border-teal-400 focus:bg-white/10 dark:bg-slate-800/10 transition-all text-base" />
+                  <Link href="/tracking" className="block w-full sm:w-auto">
+                    <button className="w-full bg-teal-500 hover:bg-teal-400 text-white font-medium px-8 py-4 rounded-xl transition-colors shadow-lg shadow-teal-500/20 flex items-center justify-center gap-2">
                       <i className="fas fa-search"></i>Track
                     </button>
                   </Link>
@@ -61,3 +61,5 @@ export default function QuickTrackSection() {
     </section>
   );
 }
+
+

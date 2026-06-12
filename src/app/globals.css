@@ -173,7 +173,12 @@ input:checked + label .minus { display: flex; }
 @layer components {
   .container {
     margin-inline: auto !important;
-    padding-inline: 1.5rem !important;
+    padding-inline: 0.5rem !important; /* Reduced for mobile */
     max-width: 1280px !important;
+  }
+  @media (min-width: 768px) {
+    .container {
+      padding-inline: 1.5rem !important; /* Original padding for tablet/desktop */
+    }
   }
 }

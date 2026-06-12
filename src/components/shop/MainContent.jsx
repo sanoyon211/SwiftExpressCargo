@@ -179,7 +179,7 @@ export default function MainContent() {
     {/*  CTA  */}
     <section className="py-12 px-4 bg-white dark:bg-slate-900">
       <div className="container mx-auto">
-        <div className="bg-gradient-to-r from-teal-500 to-emerald-400 rounded-[32px] p-8 md:p-12 text-center reveal shadow-lg">
+        <div className="bg-gradient-to-r from-teal-500 to-emerald-400 rounded-[32px] p-5 md:p-12 text-center reveal shadow-lg">
           <h3 className="font-bold text-white text-2xl md:text-3xl mb-3">
             Don't see your brand?
           </h3>
@@ -197,3 +197,4 @@ export default function MainContent() {
     </>
   );
 }
+

@@ -64,7 +64,7 @@ export default function CalculatorSection() {
 
 
       <div className="lg:col-span-7 reveal-left" suppressHydrationWarning>
-            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm border border-slate-200 dark:border-slate-700 p-6 md:p-8">
+            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm border border-slate-200 dark:border-slate-700 p-4 md:p-8">
               {/*  Header  */}
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-[24px] flex items-center justify-center shadow-lg">
@@ -328,3 +328,5 @@ export default function CalculatorSection() {
     </>
   );
 }
+
+

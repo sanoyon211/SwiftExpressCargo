@@ -399,7 +399,7 @@ export default function MainContent() {
       {/*  CALCULATOR CTA  */}
       <section className="py-12 px-4 bg-slate-50 dark:bg-slate-900">
         <div className="container">
-          <div className="bg-white dark:bg-slate-800 rounded-[32px] p-8 md:p-12 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col md:flex-row items-center gap-8 reveal dark:border dark:border-slate-700">
+          <div className="bg-white dark:bg-slate-800 rounded-[32px] p-5 md:p-12 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col md:flex-row items-center gap-8 reveal dark:border dark:border-slate-700">
             <div className="w-full md:w-1/3">
               <img src="/assets/image (4).png" alt="Calculator" className="w-full h-auto rounded-[24px]" />
             </div>
@@ -429,3 +429,5 @@ export default function MainContent() {
     </>
   );
 }
+
+

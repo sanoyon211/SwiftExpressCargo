@@ -45,7 +45,7 @@ export default function MainContent() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-8 md:p-10 flex flex-col justify-center">
+              <div className="p-5 md:p-10 flex flex-col justify-center">
                 <span className="inline-block bg-gradient-to-r from-teal-500 to-emerald-400 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-4 w-fit">
                   Featured Post
                 </span>
@@ -147,7 +147,7 @@ export default function MainContent() {
     {/* NEWSLETTER */}
     <section className="py-12 px-4 bg-white dark:bg-slate-900">
       <div className="container">
-        <div className="bg-gradient-to-r from-[#F1F6F2] to-[#E8F8F5] dark:from-slate-800 dark:to-teal-900/30 rounded-[32px] p-8 md:p-12 text-center border border-slate-200 dark:border-slate-700 reveal">
+        <div className="bg-gradient-to-r from-[#F1F6F2] to-[#E8F8F5] dark:from-slate-800 dark:to-teal-900/30 rounded-[32px] p-5 md:p-12 text-center border border-slate-200 dark:border-slate-700 reveal">
           <i className="fas fa-envelope-open-text text-teal-500 text-4xl mb-4"></i>
           <h3 className="font-bold text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-3">
             Subscribe for Shipping Tips
@@ -155,13 +155,13 @@ export default function MainContent() {
           <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-lg mx-auto">
             Get weekly guides, cost-saving tips and shipping news delivered to your inbox.
           </p>
-          <div className="max-w-md mx-auto flex gap-3">
+          <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-5 py-3.5 border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl focus:outline-none focus:border-teal-500 text-sm"
+              className="flex-1 w-full px-5 py-3.5 border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl focus:outline-none focus:border-teal-500 text-sm"
             />
-            <button className="subscribe-btn bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md px-6 py-3.5 whitespace-nowrap">
+            <button className="w-full sm:w-auto subscribe-btn bg-gradient-to-r from-teal-500 to-emerald-400 text-white rounded-xl px-8 py-3.5 font-medium hover:-translate-y-0.5 hover:shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 inline-flex items-center justify-center shadow-md whitespace-nowrap">
               Subscribe
             </button>
           </div>
@@ -171,3 +171,5 @@ export default function MainContent() {
     </>
   );
 }
+
+
