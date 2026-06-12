@@ -1,5 +1,7 @@
 # 🚀 Swift Express
 
+**🌐 Live Demo:** [https://swift-express-sa.vercel.app](https://swift-express-sa.vercel.app)
+
 ![Next.js](https://img.shields.io/badge/Next.js-16.2.9-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.4-blue?style=for-the-badge&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)
@@ -28,33 +30,6 @@ Welcome to **Swift Express**, a modern, blazing-fast web application built with 
 - **Forms**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
 - **Typography**: [@fontsource/inter](https://fontsource.org/fonts/inter)
 
-## 📂 Project Structure
-
-```text
-Swift_express/
-├── public/                 # Static assets (images, icons, etc.)
-└── src/
-    ├── app/                # Next.js App Router (pages & layouts)
-    │   ├── about/
-    │   ├── blog/
-    │   ├── contact/
-    │   ├── cost-calculator/
-    │   ├── dashboard/
-    │   ├── rates/
-    │   ├── services/
-    │   ├── shop/
-    │   ├── signin/
-    │   ├── signup/
-    │   └── tracking/
-    ├── components/         # Reusable React components
-    │   ├── home/           # Homepage specific components
-    │   ├── Navbar.jsx
-    │   ├── Footer.jsx
-    │   ├── ThemeProvider.jsx
-    │   └── ...
-    └── data/               # Mock data / Static data
-        └── blogPosts.js
-```
 
 ## 🚀 Getting Started
 
