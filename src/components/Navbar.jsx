@@ -104,7 +104,7 @@ export default function Navbar() {
       
       {/* Mobile Menu */}
       <nav className={`${isMobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4"} absolute z-50 right-0 top-full w-full md:hidden transition-all duration-300`}>
-        <div className="mx-4 mt-2 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-6 dark:border dark:border-slate-700">
+        <div className="mx-4 mt-2 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-6 dark:border dark:border-slate-700 max-h-[calc(100vh-100px)] overflow-y-auto scrollbar-hide">
           <ul className="flex flex-col gap-2 mb-6">
             <li>
               <Link onClick={toggleMenu} href="/" className={getMobileLinkClass("/")}>

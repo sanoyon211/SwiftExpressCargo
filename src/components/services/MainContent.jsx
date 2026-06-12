@@ -40,7 +40,7 @@ export default function MainContent() {
       </header>
 
       {/* SHIPPING SERVICES */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
+      <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div className="container relative z-10">
           <div className="text-center mb-16 reveal">
@@ -120,7 +120,7 @@ export default function MainContent() {
       </section>
 
       {/* ADDITIONAL SERVICES */}
-      <section className="py-24 bg-white dark:bg-slate-900">
+      <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-white dark:bg-slate-900">
         <div className="container">
           <div className="text-center mb-16 reveal">
             <span className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Value Added</span>
@@ -152,7 +152,7 @@ export default function MainContent() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4">
+      <section className="py-12 md:py-20 px-4 px-4">
         <div className="container">
           <div className="relative bg-slate-900 rounded-[40px] md:rounded-[60px] px-8 md:px-20 py-16 md:py-24 overflow-hidden text-center reveal shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-r from-teal-900/40 to-emerald-900/40 mix-blend-overlay"></div>

@@ -49,7 +49,7 @@ export default function MainContent() {
     </header>
 
     {/*  CONTACT CHANNELS  */}
-    <section className="py-16 px-4">
+    <section className="py-10 md:py-16 px-4 px-4">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 stagger reveal">
           <a href="tel:+10123456789" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-teal-500/10 dark:hover:shadow-2xl bg-white dark:bg-slate-800 rounded-[24px] p-6 text-center shadow-sm border border-slate-200 dark:border-slate-700 group dark:border dark:border-slate-700">

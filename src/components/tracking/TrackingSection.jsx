@@ -77,7 +77,7 @@ export default function TrackingSection() {
 
   return (
     <>
-      <section className="py-16 px-4">
+      <section className="py-10 md:py-16 px-4 px-4">
       <div className="max-w-3xl mx-auto">
         {/*  Search Box  */}
         <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-lg p-8 mb-8 dark:border dark:border-slate-700">

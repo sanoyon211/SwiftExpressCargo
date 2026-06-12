@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
       </head>
-      <body className={`${inter.variable} font-sans bg-slate-50 dark:bg-slate-900 dark:text-slate-50 antialiased transition-colors duration-300`}>
+      <body className={`${inter.variable} font-sans bg-slate-50 dark:bg-slate-900 dark:text-slate-50 antialiased transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ProgressBar />
           <Navbar />
-          {children}
+          <main className="flex-grow flex flex-col">{children}</main>
           <Footer />
           <BackToTop />
           <GlobalScripts />

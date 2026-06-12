@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 export default function PopularBrands() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-900">
+    <section className="py-10 md:py-16 px-4 md:py-20 px-4 bg-white dark:bg-slate-900">
       <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 reveal gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 reveal gap-6">
           <div>
             <span className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Top Retailers</span>
             <h2 className="font-bold text-3xl md:text-4xl text-slate-900 dark:text-slate-50">Popular Brands</h2>

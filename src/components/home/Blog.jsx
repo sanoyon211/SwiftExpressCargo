@@ -7,7 +7,7 @@ export default function Blog() {
 
   return (
     <>
-      <section className="py-16 bg-slate-50 dark:bg-slate-900">
+      <section className="py-10 md:py-16 px-4 bg-slate-50 dark:bg-slate-900">
         <div className="container">
           <div className="flex justify-between items-start mb-10 reveal">
             <div>

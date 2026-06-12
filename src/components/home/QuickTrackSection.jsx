@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function QuickTrackSection() {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900">
+    <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-slate-50 dark:bg-slate-900">
       <div className="container">
         <div className="bg-slate-900 rounded-[32px] p-10 md:p-16 reveal relative overflow-hidden shadow-2xl dark:border dark:border-slate-700">
           {/* Decorative gradients */}

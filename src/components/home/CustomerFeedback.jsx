@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CustomerFeedback() {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900">
+    <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-slate-50 dark:bg-slate-900">
       <div className="container">
         <div className="text-center mb-16 reveal">
           <span className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Testimonials</span>

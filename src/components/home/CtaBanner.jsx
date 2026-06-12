@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function CtaBanner() {
   return (
-    <section className="py-20 px-4">
+    <section className="py-12 md:py-20 px-4 px-4">
       <div className="container">
         <div className="relative bg-slate-900 rounded-[40px] md:rounded-[60px] px-8 md:px-20 py-16 md:py-24 overflow-hidden text-center reveal shadow-2xl dark:border dark:border-slate-700">
           {/* Dynamic background gradients */}

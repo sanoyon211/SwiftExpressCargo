@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Faq() {
   return (
-    <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-white dark:bg-slate-900 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-slate-50 dark:bg-slate-900 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
       <div className="container relative z-10">

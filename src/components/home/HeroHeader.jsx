@@ -41,7 +41,7 @@ export default function HeroHeader() {
       ))}
 
       {/* Hero Content */}
-      <div className="container relative z-20 pt-32 pb-32 flex flex-col items-center text-center">
+      <div className="container relative z-20 pt-24 pb-24 md:pt-32 md:pb-32 px-4 flex flex-col items-center text-center">
         <StaggerContainer>
           <div className="hero-text">
             <StaggerItem>
@@ -56,14 +56,14 @@ export default function HeroHeader() {
           </div>
           
           <StaggerItem>
-            <h1 className="hero-text text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl">
+            <h1 className="hero-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl px-2 font-bold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl">
               Shipping Excellence, <br className="hidden md:block" />
               Delivered <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Swiftly</span>
             </h1>
           </StaggerItem>
           
           <StaggerItem>
-            <p className="hero-text-delay text-lg md:text-xl text-slate-300 mb-10 max-w-2xl font-light">
+            <p className="hero-text-delay text-base md:text-lg lg:text-xl px-4 text-slate-300 mb-10 max-w-2xl font-light">
               Your trusted partner for USA to Bangladesh shipping. Fast, secure, and fully trackable cargo solutions tailored for your business.
             </p>
           </StaggerItem>
@@ -79,7 +79,7 @@ export default function HeroHeader() {
                     placeholder="Enter tracking number (e.g. SEC-12345)" />
                 </div>
                 <Link href="/tracking">
-                  <button className="bg-teal-500 hover:bg-teal-400 text-white font-medium px-8 py-3 rounded-full transition-colors shadow-lg shadow-teal-500/20 flex items-center gap-2">
+                  <button className="bg-teal-500 hover:bg-teal-400 text-white font-medium px-5 py-2.5 sm:px-8 sm:py-3 rounded-full transition-colors shadow-lg shadow-teal-500/20 flex items-center gap-2">
                     Track
                     <i className="fas fa-arrow-right text-sm"></i>
                   </button>

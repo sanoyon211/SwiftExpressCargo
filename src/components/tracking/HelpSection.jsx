@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function HelpSection() {
   return (
     <>
-      <section className="py-16 bg-white dark:bg-slate-900 px-4">
+      <section className="py-10 md:py-16 px-4 bg-white dark:bg-slate-900 px-4">
       <div className="max-w-3xl mx-auto text-center reveal">
         <h3 className="font-bold text-2xl text-slate-900 dark:text-slate-50 mb-3">Need Help?</h3>
         <p className="text-slate-500 dark:text-slate-400 mb-8">

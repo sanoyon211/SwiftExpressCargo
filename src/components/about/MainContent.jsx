@@ -26,7 +26,7 @@ export default function MainContent() {
       </header>
 
       {/* OUR STORY */}
-      <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
+      <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-white dark:bg-slate-900 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-teal-50 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -76,7 +76,7 @@ export default function MainContent() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900">
+      <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-slate-50 dark:bg-slate-900">
         <div className="container">
           <div className="text-center mb-16 reveal">
             <span className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Our Advantage</span>
@@ -131,7 +131,7 @@ export default function MainContent() {
       </section>
 
       {/* TEAM */}
-      <section className="py-24 bg-white dark:bg-slate-900">
+      <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-white dark:bg-slate-900">
         <div className="container">
           <div className="text-center mb-16 reveal">
             <span className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Leadership</span>
