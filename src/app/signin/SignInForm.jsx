@@ -27,7 +27,8 @@ export default function SignInForm() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(data);
-    toast.success("Signed in successfully! Redirecting...");`n    router.push("/dashboard");
+    toast.success("Signed in successfully! Redirecting...");
+    router.push("/dashboard");
   };
 
   return (
