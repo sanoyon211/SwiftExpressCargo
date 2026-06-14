@@ -1,0 +1,201 @@
+Need to install the following packages:
+tree-cli@0.6.7
+Ok to proceed? (y) 
+
+C:\Users\USER\OneDrive\Desktop\carefirst\Swift_express
+├── AGENTS.md
+├── CLAUDE.md
+├── eslint.config.mjs
+├── jsconfig.json
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+|  ├── assets
+|  |  ├── 2nd.png
+|  |  ├── 3rd.png
+|  |  ├── 7771d7d86123da77de082143b78a5420695f0f81.jpg
+|  |  ├── adidas.svg
+|  |  ├── apple-11.svg
+|  |  ├── arialview.jpg
+|  |  ├── background.png
+|  |  ├── beefeater.png
+|  |  ├── blog 3.jpg
+|  |  ├── blog image 1.jpg
+|  |  ├── blog image 2.jpg
+|  |  ├── boat.png
+|  |  ├── box.png
+|  |  ├── bxs_phone-call.png
+|  |  ├── bxs_phone-call.svg
+|  |  ├── carbon_location-filled.svg
+|  |  ├── cargo-ship-sailing-ocean.jpg
+|  |  ├── chanel-1.svg
+|  |  ├── chanel-2.svg
+|  |  ├── clarity_cursor-hand-click-line (1).svg
+|  |  ├── clarity_cursor-hand-click-line.svg
+|  |  ├── Ellipse 793.png
+|  |  ├── Ellipse 793.svg
+|  |  ├── Ellipse 794.png
+|  |  ├── facebooklogo.png
+|  |  ├── Fila_logo.svg
+|  |  ├── Frame (1).svg
+|  |  ├── Frame (2).png
+|  |  ├── Frame (2).svg
+|  |  ├── Frame (3).png
+|  |  ├── Frame (3).svg
+|  |  ├── Frame (4).svg
+|  |  ├── Frame (5).svg
+|  |  ├── Frame (6).svg
+|  |  ├── Frame (7).svg
+|  |  ├── Frame 2147225185.png
+|  |  ├── Frame 2147225186.png
+|  |  ├── Frame 2147225191 (1).png
+|  |  ├── Frame 2147225191 (2).png
+|  |  ├── Frame 2147225191.png
+|  |  ├── frist.png
+|  |  ├── gift.png
+|  |  ├── Group (3).png
+|  |  ├── Group 36811.svg
+|  |  ├── Group 42 (1).png
+|  |  ├── Group.svg
+|  |  ├── headphone.png
+|  |  ├── honda-11.svg
+|  |  ├── ic_sharp-email.png
+|  |  ├── ic_sharp-email.svg
+|  |  ├── image (1).png
+|  |  ├── image (3).png
+|  |  ├── image (4).png
+|  |  ├── image (5).png
+|  |  ├── image (6).png
+|  |  ├── image (7).png
+|  |  ├── image (8).png
+|  |  ├── image.png
+|  |  ├── Inside The 5 Billion Apple Headquarters - Tech Vision (360p, h264).mp4
+|  |  ├── intagramlogo.png
+|  |  ├── lady.png
+|  |  ├── left-aro.png
+|  |  ├── logo-amazon.svg
+|  |  ├── logo.png
+|  |  ├── lotto-1.svg
+|  |  ├── pluslogo.png
+|  |  ├── puma-logo.svg
+|  |  ├── Rectangle 154.png
+|  |  ├── Rectangle 2041.png
+|  |  ├── Rectangle 2042 (1).png
+|  |  ├── Rectangle 2042 (2).png
+|  |  ├── Rectangle 2042 (3).png
+|  |  ├── Rectangle 2042.png
+|  |  ├── right-aro.png
+|  |  ├── ronald.png
+|  |  ├── rounded-img.png
+|  |  ├── savanna.png
+|  |  ├── Screenshot.png
+|  |  ├── security.png
+|  |  ├── star_half.png
+|  |  ├── star_outline.png
+|  |  ├── star_purple500.png
+|  |  ├── tewiterlogo.png
+|  |  ├── time.png
+|  |  ├── video-button.png
+|  |  ├── whatsapp-icon-logo-svgrepo-com.svg
+|  |  └── working-01.jpg
+|  ├── file.svg
+|  ├── globe.svg
+|  ├── next.svg
+|  ├── vercel.svg
+|  └── window.svg
+├── README.md
+├── refactor.js
+├── refactor2.js
+├── src
+|  ├── app
+|  |  ├── about
+|  |  |  └── page.jsx
+|  |  ├── blog
+|  |  |  ├── page.jsx
+|  |  |  └── [slug]
+|  |  ├── contact
+|  |  |  └── page.jsx
+|  |  ├── cost-calculator
+|  |  |  └── page.jsx
+|  |  ├── dashboard
+|  |  |  ├── invoices
+|  |  |  ├── layout.jsx
+|  |  |  ├── page.jsx
+|  |  |  ├── profile
+|  |  |  └── shipments
+|  |  ├── globals.css
+|  |  ├── icon.png
+|  |  ├── layout.js
+|  |  ├── loading.jsx
+|  |  ├── not-found.jsx
+|  |  ├── page.jsx
+|  |  ├── rates
+|  |  |  └── page.jsx
+|  |  ├── services
+|  |  |  └── page.jsx
+|  |  ├── shop
+|  |  |  └── page.jsx
+|  |  ├── signin
+|  |  |  ├── page.jsx
+|  |  |  └── SignInForm.jsx
+|  |  ├── signup
+|  |  |  ├── page.jsx
+|  |  |  └── SignUpForm.jsx
+|  |  └── tracking
+|  |     └── page.jsx
+|  ├── components
+|  |  ├── about
+|  |  |  └── MainContent.jsx
+|  |  ├── BackToTop.jsx
+|  |  ├── blog
+|  |  |  └── MainContent.jsx
+|  |  ├── calculator
+|  |  |  ├── BenefitsSection.jsx
+|  |  |  ├── CalculatorSection.jsx
+|  |  |  ├── ConsolidationTip.jsx
+|  |  |  ├── Header.jsx
+|  |  |  └── QuickInfoStrip.jsx
+|  |  ├── contact
+|  |  |  └── MainContent.jsx
+|  |  ├── Footer.jsx
+|  |  ├── GlobalScripts.jsx
+|  |  ├── home
+|  |  |  ├── Blog.jsx
+|  |  |  ├── CtaBanner.jsx
+|  |  |  ├── CustomerFeedback.jsx
+|  |  |  ├── Faq.jsx
+|  |  |  ├── HeroHeader.jsx
+|  |  |  ├── HowItWorks.jsx
+|  |  |  ├── PopularBrands.jsx
+|  |  |  ├── QuickTrackSection.jsx
+|  |  |  ├── StatsSection.jsx
+|  |  |  └── WhyChooseUs.jsx
+|  |  ├── Motion.jsx
+|  |  ├── Navbar.jsx
+|  |  ├── ProgressBar.jsx
+|  |  ├── rates
+|  |  |  └── MainContent.jsx
+|  |  ├── read-more
+|  |  |  └── MainContent.jsx
+|  |  ├── services
+|  |  |  └── MainContent.jsx
+|  |  ├── shop
+|  |  |  └── MainContent.jsx
+|  |  ├── Skeleton.jsx
+|  |  ├── ThemeProvider.jsx
+|  |  └── tracking
+|  |     ├── HelpSection.jsx
+|  |     ├── HeroSection.jsx
+|  |     └── TrackingSection.jsx
+|  └── data
+|     └── blogPosts.js
+└── structure.txt
+
+directory: 916 file: 6006
+
+ignored: directory (85)
+
+
+[2K[1G

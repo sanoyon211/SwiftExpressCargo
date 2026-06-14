@@ -1,154 +1,178 @@
 "use client";
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react';
+import { Menu, X, Package, User, Sun, Moon } from 'lucide-react';
 
 export default function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
+  // Handle scroll effect
   useEffect(() => {
-    setMounted(true);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Handle Theme (Dark/Light Mode)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const savedTheme = localStorage.getItem('theme');
 
-  const getLinkClass = (path) => {
-    return pathname === path
-      ? "text-indigo-700 dark:text-indigo-500 font-medium"
-      : "text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-500 transition-colors";
+      if (savedTheme === 'dark' || (!savedTheme && isSystemDark)) {
+        setIsDark(true);
+        document.documentElement.classList.add('dark');
+      } else {
+        setIsDark(false);
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
+    }
   };
 
-  const getMobileLinkClass = (path) => {
-    return pathname === path
-      ? "text-indigo-700 font-medium py-3 border-b border-slate-100 dark:border-white/5 flex items-center gap-3"
-      : "text-slate-500 dark:text-slate-400 font-medium py-3 border-b border-slate-100 dark:border-white/5 flex items-center gap-3";
-  };
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Rates', path: '/rates' },
+    { name: 'Tracking', path: '/tracking' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-white/95 dark:bg-slate-950/80 backdrop-blur-md shadow-sm border-b border-slate-100 dark:border-white/5 py-2 transition-colors duration-300">
-      <div className="md:hidden px-6 flex justify-between items-center h-14">
-        <Link href="/">
-          <Image
-            src="/assets/logo.png"
-            alt="Logo"
-            width={101}
-            height={53}
-            className="w-[101px] h-[53px] object-contain"
-          />
-        </Link>
-        <div className="flex items-center gap-4">
-          {mounted && (
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10 shadow-sm py-3'
+          : 'bg-transparent py-5'
+        }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5 focus:outline-none group">
+            <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
+              <Package size={20} className="text-white" />
+            </div>
+            <span className={`font-bold text-xl tracking-tight transition-colors ${isScrolled ? 'text-slate-900 dark:text-white' : 'text-white'
+              }`}>
+              SwiftExpress
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-1 lg:gap-2">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.path;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive
+                      ? (isScrolled ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10' : 'text-white bg-white/10')
+                      : (isScrolled ? 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5' : 'text-slate-200 hover:text-white hover:bg-white/10')
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Right Action Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+
+            {/* Theme Toggle Button (Desktop) */}
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400"
-              aria-label="Toggle Dark Mode"
+              onClick={toggleTheme}
+              className={`p-2 rounded-full transition-colors focus:outline-none ${isScrolled
+                  ? 'text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/10'
+                  : 'text-white/80 hover:bg-white/10 hover:text-white'
+                }`}
+              aria-label="Toggle Theme"
             >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
-          )}
-          <button onClick={toggleMenu} className="text-2xl text-slate-800 dark:text-slate-200 transition-colors">
-            <i className={isMobileMenuOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i>
-          </button>
+
+            <Link href="/login" className={`flex items-center gap-2 text-sm font-semibold transition-colors ${isScrolled ? 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white' : 'text-slate-100 hover:text-white'
+              }`}>
+              <User size={16} /> Sign In
+            </Link>
+
+            <Link href="/tracking">
+              <button className="h-10 px-5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950 shadow-sm flex items-center gap-2">
+                Track Package
+              </button>
+            </Link>
+          </div>
+
+          {/* Mobile Buttons (Theme + Hamburger menu) */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Theme Toggle Button (Mobile) */}
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-md focus:outline-none transition-colors ${isScrolled ? 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5' : 'text-white hover:bg-white/10'
+                }`}
+              aria-label="Toggle Theme"
+            >
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+
+            {/* Hamburger Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-md focus:outline-none transition-colors ${isScrolled ? 'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5' : 'text-white hover:bg-white/10'
+                }`}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
         </div>
       </div>
 
-      <div className="hidden md:flex justify-center">
-        <nav className="container flex items-center justify-between h-14">
-          <Link href="/">
-            <Image
-              src="/assets/logo.png"
-              alt="Logo"
-              width={101}
-              height={53}
-              className="w-[101px] h-[53px] object-contain"
-            />
+      {/* Mobile Menu Panel */}
+      {isOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-white/10 shadow-lg py-4 px-4 flex flex-col gap-2">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.path}
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-white/5 rounded-lg transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+          <div className="border-t border-slate-100 dark:border-white/10 my-2"></div>
+          <Link href="/login" onClick={() => setIsOpen(false)} className="block px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-white/5 rounded-lg transition-colors">
+            Sign In
           </Link>
-          <ul className="flex gap-4 md:gap-8">
-            <li><Link href="/" className={getLinkClass("/")}>Home</Link></li>
-            <li><Link href="/services" className={getLinkClass("/services")}>Services</Link></li>
-            <li><Link href="/about" className={getLinkClass("/about")}>About Us</Link></li>
-            <li><Link href="/rates" className={getLinkClass("/rates")}>Rates</Link></li>
-            <li><Link href="/cost-calculator" className={getLinkClass("/cost-calculator")}>Cost Calculator</Link></li>
-            <li><Link href="/tracking" className={getLinkClass("/tracking")}>Track</Link></li>
-            <li><Link href="/contact" className={getLinkClass("/contact")}>Contact</Link></li>
-          </ul>
-          <div className="flex items-center gap-3 ml-4">
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400"
-                aria-label="Toggle Dark Mode"
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-            )}
-            <Link href="/signin">
-              <button className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-sm hover:from-indigo-700 hover:to-indigo-600 transition-all duration-300 inline-flex items-center justify-center shadow-md text-sm px-6 py-2.5">
-                Sign In
-              </button>
-            </Link>
-            <Link href="/signup">
-              <button className="bg-transparent text-indigo-700 border-[1.5px] border-indigo-700 rounded-full px-8 py-3 font-medium hover:bg-indigo-50 hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center text-sm px-6 py-2.5">
-                Sign Up
-              </button>
-            </Link>
-          </div>
-        </nav>
-      </div>
-      
-      {/* Mobile Menu */}
-      <nav className={`${isMobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4"} absolute z-50 right-0 top-full w-full md:hidden transition-all duration-300`}>
-        <div className="mx-4 mt-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-100 dark:border-white/5 p-6 dark:border dark:border-white/5 max-h-[calc(100vh-100px)] overflow-y-auto scrollbar-hide">
-          <ul className="flex flex-col gap-2 mb-6">
-            <li>
-              <Link onClick={toggleMenu} href="/" className={getMobileLinkClass("/")}>
-                <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center"><i className="fas fa-home text-indigo-700 text-sm"></i></div>Home
-              </Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} href="/services" className={getMobileLinkClass("/services")}>
-                <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center"><i className="fas fa-shipping-fast text-indigo-700 text-sm"></i></div>Services
-              </Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} href="/about" className={getMobileLinkClass("/about")}>
-                <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center"><i className="fas fa-info-circle text-indigo-700 text-sm"></i></div>About Us
-              </Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} href="/rates" className={getMobileLinkClass("/rates")}>
-                <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center"><i className="fas fa-dollar-sign text-indigo-700 text-sm"></i></div>Rates
-              </Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} href="/tracking" className={getMobileLinkClass("/tracking")}>
-                <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center"><i className="fas fa-search-location text-indigo-700 text-sm"></i></div>Track
-              </Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} href="/contact" className={getMobileLinkClass("/contact")}>
-                <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center"><i className="fas fa-envelope text-indigo-700 text-sm"></i></div>Contact
-              </Link>
-            </li>
-          </ul>
-          <div className="flex gap-3">
-            <Link href="/signin" className="flex-1" onClick={toggleMenu}>
-              <button className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-sm hover:from-indigo-700 hover:to-indigo-600 transition-all duration-300 inline-flex items-center justify-center shadow-md w-full text-sm py-3 justify-center">Sign In</button>
-            </Link>
-            <Link href="/signup" className="flex-1" onClick={toggleMenu}>
-              <button className="bg-transparent text-indigo-700 border-[1.5px] border-indigo-700 rounded-full px-8 py-3 font-medium hover:bg-indigo-50 hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center w-full text-sm py-3 justify-center">Sign Up</button>
-            </Link>
-          </div>
+          <Link href="/tracking" onClick={() => setIsOpen(false)} className="block mt-2">
+            <button className="w-full h-12 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">
+              Track Package
+            </button>
+          </Link>
         </div>
-      </nav>
-    </div>
+      )}
+    </nav>
   );
 }
-
-

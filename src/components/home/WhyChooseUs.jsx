@@ -1,51 +1,89 @@
+"use client";
+
 import React from 'react';
+import { Package, ShieldCheck, MapPin, Headset } from 'lucide-react';
 
 export default function WhyChooseUs() {
+  const features = [
+    {
+      id: 1,
+      title: 'Package Consolidation',
+      description: 'Combine multiple packages into one shipment. Our smart consolidation process saves you significantly on international shipping costs.',
+      icon: Package,
+    },
+    {
+      id: 2,
+      title: 'Security & Reliability',
+      description: 'Your packages are fully insured, meticulously tracked, and handled with the utmost care in our climate-controlled facilities.',
+      icon: ShieldCheck,
+    },
+    {
+      id: 3,
+      title: 'Real-time Tracking',
+      description: 'Experience complete transparency. Track your shipment at every micro-step, from our US warehouse directly to your doorstep.',
+      icon: MapPin,
+    },
+    {
+      id: 4,
+      title: '24/7 Global Support',
+      description: 'Our dedicated support team is always available. Whether its a holiday or midnight, we are here to assist you with your cargo.',
+      icon: Headset,
+    },
+  ];
+
   return (
-    <section className="py-10 md:py-8 md:py-16 px-4 md:py-8 md:py-16 px-4 bg-slate-50 dark:bg-slate-800/50">
-      <div className="container">
-        <div className="text-center mb-16 reveal">
-          <span className="text-indigo-700 font-medium tracking-wider uppercase text-sm mb-3 block">Our Advantage</span>
-          <h3 className="font-semibold text-3xl md:text-3xl md:text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-6 tracking-tight">Why Choose Us</h3>
-          <p className="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">We provide the best shipping experience with top-notch service, modern tracking, and absolute reliability.</p>
+    <section className="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-white/10 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section Header */}
+        <div className="max-w-2xl mb-16 sm:mb-20">
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 block">
+            Our Advantage
+          </span>
+          <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 dark:text-white tracking-tight mb-4">
+            Why choose <br className="hidden sm:block" /> Swift Express?
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
+            We don't just ship packages; we deliver peace of mind. Experience a premium logistics service built on reliability, speed, and modern technology.
+          </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 stagger reveal">
-          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] p-4 md:p-4 md:p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-white/5 dark:hover:border-slate-600 transition-colors">
-            <div className="w-20 h-20 bg-indigo-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
-              <i className="fas fa-box-open text-indigo-600 text-3xl"></i>
-            </div>
-            <h4 className="font-medium text-xl text-slate-800 dark:text-slate-100 mt-2 tracking-tight">Package Consolidation</h4>
-            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Combine multiple packages into one shipment to save significantly on international shipping costs.</p>
-          </div>
-          
-          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] p-4 md:p-4 md:p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-white/5 dark:hover:border-slate-600 transition-colors">
-            <div className="w-20 h-20 bg-indigo-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
-              <i className="fas fa-shield-alt text-indigo-600 text-3xl"></i>
-            </div>
-            <h4 className="font-medium text-xl text-slate-800 dark:text-slate-100 mt-2 tracking-tight">Security & Reliability</h4>
-            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Your packages are fully insured, meticulously tracked, and handled with the utmost care and security.</p>
-          </div>
-          
-          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] p-4 md:p-4 md:p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-white/5 dark:hover:border-slate-600 transition-colors">
-            <div className="w-20 h-20 bg-indigo-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
-              <i className="fas fa-map-marker-alt text-indigo-600 text-3xl"></i>
-            </div>
-            <h4 className="font-medium text-xl text-slate-800 dark:text-slate-100 mt-2 tracking-tight">Real-time Tracking</h4>
-            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Track your shipment at every step from our warehouse pickup directly to the final delivery destination.</p>
-          </div>
-          
-          <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] p-4 md:p-4 md:p-8 flex flex-col items-center text-center gap-5 dark:border dark:border-white/5 dark:hover:border-slate-600 transition-colors">
-            <div className="w-20 h-20 bg-indigo-50 rounded-[20px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
-              <i className="fas fa-headset text-indigo-600 text-3xl"></i>
-            </div>
-            <h4 className="font-medium text-xl text-slate-800 dark:text-slate-100 mt-2 tracking-tight">24/7 Support</h4>
-            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Our dedicated global support team is always available to assist you with any inquiries around the clock.</p>
-          </div>
+
+        {/* Premium Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={feature.id}
+                className="group relative bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] p-8 sm:p-10 border border-slate-200 dark:border-white/10 overflow-hidden flex flex-col justify-between min-h-[300px] sm:min-h-[340px] transition-all duration-300 hover:shadow-lg hover:border-slate-300 dark:hover:border-white/20 dark:hover:bg-slate-800/50"
+              >
+                {/* Subtle Hover Glow (Decorative) */}
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                {/* Top: Icon Box */}
+                <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm mb-12 group-hover:scale-110 transition-transform duration-500">
+                  <Icon
+                    size={28}
+                    className="text-slate-700 dark:text-slate-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300"
+                    strokeWidth={1.5}
+                  />
+                </div>
+
+                {/* Bottom: Content */}
+                <div className="relative z-10">
+                  <h3 className="font-bold text-xl sm:text-2xl text-slate-900 dark:text-white mb-3 sm:mb-4 tracking-tight">
+                    {feature.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );
 }
-
-

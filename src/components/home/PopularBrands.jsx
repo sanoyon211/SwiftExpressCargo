@@ -1,59 +1,80 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 
 export default function PopularBrands() {
+  const brands = [
+    { id: 1, name: 'Fila', url: 'https://www.fila.com/', logo: '/assets/Fila_logo.svg' },
+    { id: 2, name: 'Puma', url: 'https://us.puma.com/', logo: '/assets/puma-logo.svg' },
+    { id: 3, name: 'Chanel', url: 'https://www.chanel.com/', logo: '/assets/chanel-2.svg' },
+    { id: 4, name: 'Honda', url: 'https://www.honda.com/', logo: '/assets/honda-11.svg' },
+    { id: 5, name: 'Apple', url: 'https://www.apple.com/', logo: '/assets/apple-11.svg' },
+    { id: 6, name: 'Amazon', url: 'https://www.amazon.com/', logo: '/assets/logo-amazon.svg' },
+    { id: 7, name: 'Adidas', url: 'https://www.adidas.com/', logo: '/assets/adidas.svg' },
+  ];
+
+  // Double the array to ensure seamless infinite looping animation
+  const duplicatedBrands = [...brands, ...brands, ...brands];
+
   return (
-    <section className="py-10 md:py-8 md:py-16 px-4 md:py-8 md:py-16 px-4 bg-white dark:bg-slate-900">
-      <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 reveal gap-6">
-          <div>
-            <span className="text-indigo-700 font-medium tracking-wider uppercase text-sm mb-3 block">Top Retailers</span>
-            <h2 className="font-semibold text-3xl md:text-2xl md:text-3xl text-slate-900 dark:text-slate-50 tracking-tight">Popular Brands</h2>
-            <p className="text-slate-500 dark:text-slate-400 mt-3 text-lg">Shop your favorite US brands and we'll deliver them safely.</p>
-          </div>
-          <Link href="/shop">
-            <button className="bg-transparent text-indigo-700 border-[1.5px] border-indigo-700 rounded-full px-8 py-3 font-medium hover:bg-indigo-50 hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center">View All Brands</button>
-          </Link>
+    <section className="py-16 bg-slate-50 border-b border-slate-200 dark:bg-slate-900/40 dark:border-white/5 overflow-hidden transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+        <div>
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 block">
+            Top Retailers
+          </span>
+          <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 dark:text-white tracking-tight">
+            Supported US Brands & Stores
+          </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 stagger reveal">
-          {/* Fila */}
-          <a href="https://www.fila.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-white/5">
-            <img src="/assets/Fila_logo.svg" alt="Fila" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium group-hover:text-indigo-700 transition-colors">Fila</span>
-          </a>
-          {/* Puma */}
-          <a href="https://us.puma.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-white/5">
-            <img src="/assets/puma-logo.svg" alt="Puma" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium group-hover:text-indigo-700 transition-colors">Puma</span>
-          </a>
-          {/* Chanel */}
-          <a href="https://www.chanel.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-white/5">
-            <img src="/assets/chanel-2.svg" alt="Chanel" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium group-hover:text-indigo-700 transition-colors">Chanel</span>
-          </a>
-          {/* Honda */}
-          <a href="https://www.honda.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-white/5">
-            <img src="/assets/honda-11.svg" alt="Honda" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium group-hover:text-indigo-700 transition-colors">Honda</span>
-          </a>
-          {/* Apple */}
-          <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-white/5">
-            <img src="/assets/apple-11.svg" alt="Apple" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium group-hover:text-indigo-700 transition-colors">Apple</span>
-          </a>
-          {/* Amazon */}
-          <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-white/5">
-            <img src="/assets/logo-amazon.svg" alt="Amazon" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium group-hover:text-indigo-700 transition-colors">Amazon</span>
-          </a>
-          {/* Adidas */}
-          <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center justify-center gap-4 group dark:border dark:border-white/5">
-            <img src="/assets/adidas.svg" alt="Adidas" className="h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:invert" />
-            <span className="text-slate-500 dark:text-slate-400 text-sm font-medium group-hover:text-indigo-700 transition-colors">Adidas</span>
-          </a>
+        <Link href="/shop" className="shrink-0 w-full md:w-auto">
+          <button className="w-full md:w-auto h-10 px-5 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-md hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none">
+            Explore All Brands
+          </button>
+        </Link>
+      </div>
+
+      {/* Infinite Scrolling Marquee Wrapper */}
+      <div className="relative w-full flex items-center overflow-hidden py-4">
+
+        {/* Left & Right Gradients for Soft Edge Fade Effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-950 z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent dark:from-slate-950 z-10 pointer-events-none"></div>
+
+        {/* Scrolling Track */}
+        <div className="flex gap-16 animate-marquee whitespace-nowrap hover:[animation-play-state:paused] items-center">
+          {duplicatedBrands.map((brand, index) => (
+            <a
+              key={`${brand.id}-${index}`}
+              href={brand.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center min-w-[100px] sm:min-w-[130px] transition-transform duration-300 focus:outline-none hover:scale-110 dark:invert"
+              aria-label={`Shop at ${brand.name}`}
+            >
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                className="max-h-10 sm:max-h-12 object-contain"
+                loading="lazy"
+              />
+            </a>
+          ))}
         </div>
       </div>
+
+      {/* Tailwind CSS Custom Keyframe Animation Injector */}
+      <style jsx global>{`
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-33.33%); }
+        }
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }

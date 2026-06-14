@@ -56,20 +56,6 @@ export default function GlobalScripts() {
       counterObserver.observe(el);
     });
 
-    // Smooth Image Loading
-    document.querySelectorAll('img').forEach((img) => {
-      img.addEventListener('load', () => {
-        img.style.opacity = '1';
-      });
-
-      if (!img.complete) {
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
-      } else {
-        img.style.opacity = '1';
-      }
-    });
-
     return () => {
       revealObserver.disconnect();
       counterObserver.disconnect();

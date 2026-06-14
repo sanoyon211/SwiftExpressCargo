@@ -1,73 +1,115 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { Plus, Minus, Mail } from 'lucide-react';
 
 export default function Faq() {
-  return (
-    <section className="py-10 md:py-8 md:py-16 px-4 md:py-8 md:py-16 px-4 bg-white dark:bg-slate-900 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white dark:bg-slate-900 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+  const [openIndex, setOpenIndex] = useState(0); // First FAQ open by default
 
-      <div className="container relative z-10">
-        <div className="text-center mb-16 reveal">
-          <span className="text-indigo-700 font-medium tracking-wider uppercase text-sm mb-3 block">Got Questions?</span>
-          <h3 className="font-semibold text-3xl md:text-3xl md:text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-6 tracking-tight">Frequently Asked Questions</h3>
-          <p className="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">Find detailed answers to common questions about our international shipping services and policies.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto stagger reveal">
-          {/* FAQ 1 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
-            <input type="checkbox" id="faq1" className="hidden peer" />
-            <label htmlFor="faq1" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">How long does shipping take?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
-                <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
-              </span>
-            </label>
-            <div className="max-h-0 overflow-hidden peer-checked:max-h-64 transition-all duration-500 ease-in-out bg-slate-50/50 dark:bg-slate-900/50">
-              <p className="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed pt-2">Standard shipping from USA to Bangladesh takes 7-14 business days. Express shipping takes 3-5 business days. We also offer economy shipping which takes 14-21 business days at significantly reduced rates.</p>
+  const toggleFaq = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const faqs = [
+    {
+      question: "How long does shipping take?",
+      answer: "Standard shipping from USA to Bangladesh takes 7-14 business days. Express shipping takes 3-5 business days. We also offer economy shipping which takes 14-21 business days at significantly reduced rates."
+    },
+    {
+      question: "What items are restricted?",
+      answer: "Restricted items include hazardous materials, flammable liquids, batteries over a certain size, firearms, and perishable goods. Please check our comprehensive restricted items list on our services page before placing your order."
+    },
+    {
+      question: "How is shipping cost calculated?",
+      answer: "Shipping cost is based on the actual weight or volumetric weight (whichever is higher) of your package. Use our intuitive cost calculator to get an instant estimate. Consolidating multiple packages can save you up to 40% on shipping costs."
+    },
+    {
+      question: "Is there a weight limit per package?",
+      answer: "Individual packages can weigh up to 70 lbs (32 kg). For heavier items, we offer specialized freight shipping services. Contact our support team for special arrangements regarding oversized or heavy cargo."
+    }
+  ];
+
+  return (
+    <section className="py-16 sm:py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-white/5 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+          {/* Left Column: Heading & Support CTA */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <span className="text-indigo-600 dark:text-indigo-400 font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 block">
+              Got Questions?
+            </span>
+            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 dark:text-white tracking-tight mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-8">
+              Find detailed answers to common questions about our international shipping services, pricing, and operational policies.
+            </p>
+
+            {/* Support CTA Box */}
+            <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10">
+              <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mb-4">
+                <Mail size={20} className="text-indigo-600 dark:text-indigo-400" />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Still have questions?</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                Can't find the answer you're looking for? Please chat to our friendly team.
+              </p>
+              <Link href="/contact">
+                <button className="text-indigo-600 dark:text-indigo-400 font-medium text-sm hover:underline focus:outline-none">
+                  Get in touch
+                </button>
+              </Link>
             </div>
           </div>
-          
-          {/* FAQ 2 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
-            <input type="checkbox" id="faq2" className="hidden peer" />
-            <label htmlFor="faq2" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">What items are restricted?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
-                <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
-              </span>
-            </label>
-            <div className="max-h-0 overflow-hidden peer-checked:max-h-64 transition-all duration-500 ease-in-out bg-slate-50/50 dark:bg-slate-900/50">
-              <p className="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed pt-2">Restricted items include hazardous materials, flammable liquids, batteries over a certain size, firearms, and perishable goods. Please check our comprehensive restricted items list on our services page before placing your order.</p>
-            </div>
+
+          {/* Right Column: Clean Flush Accordion */}
+          <div className="lg:col-span-7 flex flex-col">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <div
+                  key={index}
+                  className="border-b border-slate-200 dark:border-white/10 last:border-0"
+                >
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full flex justify-between items-center py-6 text-left focus:outline-none group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className={`font-semibold text-base sm:text-lg pr-6 transition-colors duration-200 ${isOpen ? "text-indigo-600 dark:text-indigo-400" : "text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400"
+                      }`}>
+                      {faq.question}
+                    </span>
+
+                    <div className="shrink-0 text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">
+                      {isOpen ? (
+                        <Minus size={20} strokeWidth={2} />
+                      ) : (
+                        <Plus size={20} strokeWidth={2} />
+                      )}
+                    </div>
+                  </button>
+
+                  {/* Modern Grid Animation for Accordion */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="pb-6 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed pr-6 sm:pr-12">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-          
-          {/* FAQ 3 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
-            <input type="checkbox" id="faq3" className="hidden peer" />
-            <label htmlFor="faq3" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">How is shipping cost calculated?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
-                <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
-              </span>
-            </label>
-            <div className="max-h-0 overflow-hidden peer-checked:max-h-64 transition-all duration-500 ease-in-out bg-slate-50/50 dark:bg-slate-900/50">
-              <p className="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed pt-2">Shipping cost is based on the actual weight or volumetric weight (whichever is higher) of your package. Use our intuitive cost calculator to get an instant estimate. Consolidating multiple packages can save you up to 40% on shipping costs.</p>
-            </div>
-          </div>
-          
-          {/* FAQ 4 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
-            <input type="checkbox" id="faq4" className="hidden peer" />
-            <label htmlFor="faq4" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">Is there a weight limit per package?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
-                <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
-              </span>
-            </label>
-            <div className="max-h-0 overflow-hidden peer-checked:max-h-64 transition-all duration-500 ease-in-out bg-slate-50/50 dark:bg-slate-900/50">
-              <p className="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed pt-2">Individual packages can weigh up to 70 lbs (32 kg). For heavier items, we offer specialized freight shipping services. Contact our support team for special arrangements regarding oversized or heavy cargo.</p>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
