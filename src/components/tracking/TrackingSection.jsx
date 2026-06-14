@@ -77,11 +77,11 @@ export default function TrackingSection() {
 
   return (
     <>
-      <section className="py-10 md:py-16 px-4 px-4">
+      <section className="py-10 md:py-8 md:py-16 px-4 px-4">
       <div className="max-w-3xl mx-auto">
         {/*  Search Box  */}
-        <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-lg p-5 md:p-8 mb-8 dark:border dark:border-slate-700">
-          <h2 className="font-bold text-2xl text-slate-900 dark:text-slate-50 mb-2">
+        <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm p-5 md:p-4 md:p-8 mb-8 dark:border dark:border-white/5">
+          <h2 className="font-semibold text-2xl text-slate-900 dark:text-slate-50 mb-2 tracking-tight">
             Enter Tracking Number
           </h2>
           <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
@@ -90,20 +90,20 @@ export default function TrackingSection() {
 
           <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row gap-3">
             <div className="flex-1 relative">
-              <i className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-teal-500"></i>
+              <i className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-indigo-600"></i>
               <input
                 type="text"
                 value={inputId}
                 onChange={(e) => setInputId(e.target.value)}
                 placeholder="e.g. SEC-2025-001234"
-                className="w-full pl-11 pr-4 py-4 border-2 border-slate-200 dark:border-slate-700 bg-transparent rounded-xl focus:outline-none focus:border-teal-500 text-slate-900 dark:text-slate-50 transition-colors"
+                className="w-full pl-11 pr-4 py-4 border-2 border-slate-100 dark:border-white/5 bg-transparent rounded-md focus:outline-none focus:border-indigo-600 text-slate-900 dark:text-slate-50 transition-colors"
                 required
               />
             </div>
             <button
               type="submit"
               disabled={searchState === 'loading'}
-              className="bg-gradient-to-r from-teal-500 to-emerald-400 text-white hover:shadow-lg transition-all px-8 py-4 rounded-xl text-base font-semibold disabled:opacity-70 flex items-center justify-center gap-2"
+              className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white hover:shadow-sm transition-all px-8 py-4 rounded-md text-base font-medium disabled:opacity-70 flex items-center justify-center gap-2"
             >
               {searchState === 'loading' ? (
                 <><i className="fas fa-circle-notch fa-spin"></i> Searching...</>
@@ -118,13 +118,13 @@ export default function TrackingSection() {
             <span className="text-slate-500 dark:text-slate-400 text-xs">Try demo:</span>
             <button
               onClick={() => { setInputId('SEC-2025-001234'); handleSearch('SEC-2025-001234'); }}
-              className="text-xs bg-[#F1F6F2] dark:bg-slate-700 text-teal-500 px-3 py-1 rounded-full hover:bg-teal-500 hover:text-white transition-colors"
+              className="text-xs bg-[#F1F6F2] dark:bg-slate-700 text-indigo-600 px-3 py-1 rounded-full hover:bg-indigo-600 hover:text-white transition-colors"
             >
               SEC-2025-001234
             </button>
             <button
               onClick={() => { setInputId('SEC-2025-005678'); handleSearch('SEC-2025-005678'); }}
-              className="text-xs bg-[#F1F6F2] dark:bg-slate-700 text-teal-500 px-3 py-1 rounded-full hover:bg-teal-500 hover:text-white transition-colors"
+              className="text-xs bg-[#F1F6F2] dark:bg-slate-700 text-indigo-600 px-3 py-1 rounded-full hover:bg-indigo-600 hover:text-white transition-colors"
             >
               SEC-2025-005678
             </button>
@@ -135,15 +135,15 @@ export default function TrackingSection() {
         {searchState === 'success' && data && (
           <div className="tracking-result animate-fade-in-up">
             {/*  Package Info  */}
-            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-lg overflow-hidden mb-6 dark:border dark:border-slate-700">
-              <div className="bg-gradient-to-r from-teal-500 to-emerald-400 p-6 text-white">
+            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm overflow-hidden mb-6 dark:border dark:border-white/5">
+              <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 p-6 text-white">
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                   <div>
                     <p className="text-white/80 text-sm mb-1">Tracking Number</p>
-                    <h3 className="font-bold text-xl">{data.id}</h3>
+                    <h3 className="font-semibold text-xl tracking-tight">{data.id}</h3>
                   </div>
                   <div className="text-right">
-                    <span className="inline-block bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    <span className="inline-block bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-full border border-white/30">
                       {data.status}
                     </span>
                   </div>
@@ -153,27 +153,27 @@ export default function TrackingSection() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div>
                     <p className="text-slate-500 dark:text-slate-400 text-xs mb-1">From</p>
-                    <p className="font-semibold text-slate-900 dark:text-slate-50 text-sm">{data.from}</p>
+                    <p className="font-medium text-slate-900 dark:text-slate-50 text-sm">{data.from}</p>
                   </div>
                   <div>
                     <p className="text-slate-500 dark:text-slate-400 text-xs mb-1">To</p>
-                    <p className="font-semibold text-slate-900 dark:text-slate-50 text-sm">{data.to}</p>
+                    <p className="font-medium text-slate-900 dark:text-slate-50 text-sm">{data.to}</p>
                   </div>
                   <div>
                     <p className="text-slate-500 dark:text-slate-400 text-xs mb-1">Est. Delivery</p>
-                    <p className="font-semibold text-slate-900 dark:text-slate-50 text-sm">{data.estDelivery}</p>
+                    <p className="font-medium text-slate-900 dark:text-slate-50 text-sm">{data.estDelivery}</p>
                   </div>
                   <div>
                     <p className="text-slate-500 dark:text-slate-400 text-xs mb-1">Weight</p>
-                    <p className="font-semibold text-slate-900 dark:text-slate-50 text-sm">{data.weight}</p>
+                    <p className="font-medium text-slate-900 dark:text-slate-50 text-sm">{data.weight}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/*  Timeline / History  */}
-            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-lg p-5 md:p-8 mb-6 dark:border dark:border-slate-700">
-              <h3 className="font-bold text-xl text-slate-900 dark:text-slate-50 mb-6">Tracking History</h3>
+            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm p-5 md:p-4 md:p-8 mb-6 dark:border dark:border-white/5">
+              <h3 className="font-semibold text-xl text-slate-900 dark:text-slate-50 mb-6 tracking-tight">Tracking History</h3>
               <div className="flex flex-col gap-0 relative">
                 {/* Vertical Line */}
                 <div className="absolute left-[11px] top-4 bottom-4 w-0.5 bg-slate-200 dark:bg-slate-700 z-0"></div>
@@ -181,12 +181,12 @@ export default function TrackingSection() {
                 {data.history.map((step, idx) => (
                   <div key={idx} className="relative z-10 flex gap-6 pb-6 last:pb-0 group">
                     <div className="flex flex-col items-center">
-                      <div className={`w-6 h-6 rounded-full flex items-center justify-center ${step.completed ? 'bg-teal-500' : 'bg-slate-200 dark:bg-slate-700'}`}>
+                      <div className={`w-6 h-6 rounded-full flex items-center justify-center ${step.completed ? 'bg-indigo-600' : 'bg-slate-200 dark:bg-slate-700'}`}>
                         {step.completed && <i className="fas fa-check text-white text-[10px]"></i>}
                       </div>
                     </div>
                     <div className="flex-1 pb-2">
-                      <h4 className={`font-bold text-sm ${step.completed ? 'text-slate-900 dark:text-slate-50' : 'text-slate-400 dark:text-slate-500'}`}>{step.status}</h4>
+                      <h4 className={`font-semibold text-sm ${step.completed ? 'text-slate-900 dark:text-slate-50' : 'text-slate-400 dark:text-slate-500'}`}>{step.status}</h4>
                       {step.location && <p className="text-xs text-slate-500 dark:text-slate-400 mt-1"><i className="fas fa-map-marker-alt mr-1"></i>{step.location}</p>}
                       <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">{step.date} {step.time}</p>
                     </div>
@@ -196,15 +196,15 @@ export default function TrackingSection() {
             </div>
 
             {/*  Map Placeholder  */}
-            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-lg p-6 mb-6 dark:border dark:border-slate-700">
-              <h3 className="font-bold text-xl text-slate-900 dark:text-slate-50 mb-4">Current Location</h3>
+            <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm p-6 mb-6 dark:border dark:border-white/5">
+              <h3 className="font-semibold text-xl text-slate-900 dark:text-slate-50 mb-4 tracking-tight">Current Location</h3>
               <div className="bg-slate-100 dark:bg-slate-900 rounded-[24px] h-52 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                 <div className="text-center z-10 relative">
-                  <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-teal-500/30 animate-bounce">
+                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm shadow-indigo-600/30 animate-bounce">
                     <i className="fas fa-map-marker-alt text-white text-2xl"></i>
                   </div>
-                  <p className="font-semibold text-slate-900 dark:text-slate-50">{data.location}</p>
+                  <p className="font-medium text-slate-900 dark:text-slate-50">{data.location}</p>
                   <p className="text-slate-500 dark:text-slate-400 text-sm">{data.locationDesc}</p>
                 </div>
               </div>

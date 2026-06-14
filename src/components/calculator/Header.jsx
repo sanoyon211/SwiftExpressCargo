@@ -17,7 +17,7 @@ export default function Header() {
             🧮 Instant Price Estimate
           </span>
           <h1
-            className="font-bold text-[40px] md:text-[64px] text-white leading-tight mb-4"
+            className="font-semibold text-[40px] md:text-[64px] text-white leading-tight mb-4"
           >
             Cost Calculator
           </h1>
@@ -33,10 +33,10 @@ export default function Header() {
         href="https://wa.me/8801715825331"
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute right-5 bottom-5 md:right-10 md:bottom-10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/40"
+        className="absolute right-5 bottom-5 md:right-10 md:bottom-10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-sm hover:shadow-indigo-600/40"
       >
         <div
-          className="bg-gradient-to-r from-teal-500 to-emerald-400 w-[52px] h-[52px] md:w-[60px] md:h-[60px] rounded-full flex justify-center items-center shadow-lg pulse-green"
+          className="bg-gradient-to-r from-indigo-600 to-indigo-500 w-[52px] h-[52px] md:w-[60px] md:h-[60px] rounded-full flex justify-center items-center shadow-sm pulse-green"
         >
           <i className="fab fa-whatsapp text-white text-2xl"></i>
         </div>

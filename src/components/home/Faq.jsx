@@ -2,23 +2,23 @@ import React from 'react';
 
 export default function Faq() {
   return (
-    <section className="py-10 md:py-16 px-4 md:py-24 px-4 bg-white dark:bg-slate-900 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-slate-50 dark:bg-slate-900 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+    <section className="py-10 md:py-8 md:py-16 px-4 md:py-8 md:py-16 px-4 bg-white dark:bg-slate-900 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white dark:bg-slate-900 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
       <div className="container relative z-10">
         <div className="text-center mb-16 reveal">
-          <span className="text-teal-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Got Questions?</span>
-          <h3 className="font-bold text-3xl md:text-5xl text-slate-900 dark:text-slate-50 mb-6">Frequently Asked Questions</h3>
+          <span className="text-indigo-700 font-medium tracking-wider uppercase text-sm mb-3 block">Got Questions?</span>
+          <h3 className="font-semibold text-3xl md:text-3xl md:text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-6 tracking-tight">Frequently Asked Questions</h3>
           <p className="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">Find detailed answers to common questions about our international shipping services and policies.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto stagger reveal">
           {/* FAQ 1 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-slate-700">
+          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
             <input type="checkbox" id="faq1" className="hidden peer" />
             <label htmlFor="faq1" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-teal-600 transition-colors">How long does shipping take?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 peer-checked:bg-teal-50 transition-colors relative text-slate-400 group-hover:text-teal-500 group-hover:bg-teal-50">
+              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">How long does shipping take?</span>
+              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
                 <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
               </span>
             </label>
@@ -28,11 +28,11 @@ export default function Faq() {
           </div>
           
           {/* FAQ 2 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-slate-700">
+          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
             <input type="checkbox" id="faq2" className="hidden peer" />
             <label htmlFor="faq2" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-teal-600 transition-colors">What items are restricted?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 peer-checked:bg-teal-50 transition-colors relative text-slate-400 group-hover:text-teal-500 group-hover:bg-teal-50">
+              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">What items are restricted?</span>
+              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
                 <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
               </span>
             </label>
@@ -42,11 +42,11 @@ export default function Faq() {
           </div>
           
           {/* FAQ 3 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-slate-700">
+          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
             <input type="checkbox" id="faq3" className="hidden peer" />
             <label htmlFor="faq3" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-teal-600 transition-colors">How is shipping cost calculated?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 peer-checked:bg-teal-50 transition-colors relative text-slate-400 group-hover:text-teal-500 group-hover:bg-teal-50">
+              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">How is shipping cost calculated?</span>
+              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
                 <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
               </span>
             </label>
@@ -56,11 +56,11 @@ export default function Faq() {
           </div>
           
           {/* FAQ 4 */}
-          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-slate-700">
+          <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 dark:border dark:border-white/5">
             <input type="checkbox" id="faq4" className="hidden peer" />
             <label htmlFor="faq4" className="flex justify-between items-center p-6 cursor-pointer group">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-teal-600 transition-colors">Is there a weight limit per package?</span>
-              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 peer-checked:bg-teal-50 transition-colors relative text-slate-400 group-hover:text-teal-500 group-hover:bg-teal-50">
+              <span className="font-medium text-slate-800 dark:text-slate-100 text-lg pr-4 group-hover:text-indigo-700 transition-colors">Is there a weight limit per package?</span>
+              <span className="w-10 h-10 min-w-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-900 peer-checked:bg-indigo-50 transition-colors relative text-slate-400 group-hover:text-indigo-600 group-hover:bg-indigo-50">
                 <i className="fas fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i>
               </span>
             </label>

@@ -7,16 +7,16 @@ export default function ConsolidationTip() {
       <section className="py-10 px-4 bg-white dark:bg-slate-900">
       <div className="container reveal">
         <div
-          className="bg-gradient-to-r from-slate-900 to-[#1a3d8c] rounded-[32px] p-5 md:p-12"
+          className="bg-gradient-to-r from-slate-900 to-[#1a3d8c] rounded-[32px] p-5 md:p-6 md:p-12"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
             <div className="text-white">
               <div
-                className="inline-block bg-white/20 dark:bg-slate-800/20 text-white text-xs px-3 py-1.5 rounded-full mb-4 font-semibold"
+                className="inline-block bg-white/20 dark:bg-slate-800/20 text-white text-xs px-3 py-1.5 rounded-full mb-4 font-medium"
               >
                 💡 PRO TIP
               </div>
-              <h3 className="font-bold text-2xl md:text-3xl mb-3">
+              <h3 className="font-semibold text-2xl md:text-3xl mb-3 tracking-tight">
                 Save up to 40% with Package Consolidation
               </h3>
               <p className="text-white/80 leading-relaxed">
@@ -33,7 +33,7 @@ export default function ConsolidationTip() {
                   <span className="text-white/80 text-sm"
                     >Without Consolidation</span
                   >
-                  <span className="text-red-300 font-bold">5 × $15 = $75</span>
+                  <span className="text-red-300 font-semibold">5 × $15 = $75</span>
                 </div>
                 <div className="h-2 bg-white/20 dark:bg-slate-800/20 rounded-full overflow-hidden">
                   <div
@@ -47,17 +47,17 @@ export default function ConsolidationTip() {
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-white/80 text-sm">With Consolidation</span>
-                  <span className="text-teal-400 font-bold">1 × $45 = $45</span>
+                  <span className="text-indigo-500 font-semibold">1 × $45 = $45</span>
                 </div>
                 <div className="h-2 bg-white/20 dark:bg-slate-800/20 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-teal-400 rounded-full"
+                    className="h-full bg-indigo-500 rounded-full"
                     style={{ 'width': '60%' }}
                   ></div>
                 </div>
               </div>
               <p className="text-white/70 text-xs text-right">
-                Save <strong className="text-teal-400">$30 (40%)</strong> on 5
+                Save <strong className="text-indigo-500">$30 (40%)</strong> on 5
                 packages
               </p>
             </div>

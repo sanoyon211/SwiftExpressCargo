@@ -6,25 +6,25 @@
   --background: #f8fafc; /* Slate 50 */
   --foreground: #0f172a; /* Slate 900 */
   --primary-navy: #0f172a; /* Slate 900 */
-  --primary-teal: #0d9488; /* Teal 600 */
-  --primary-emerald: #10b981; /* Emerald 500 */
-  --accent-light: #ccfbf1; /* Teal 50 */
+  --primary-teal: #4338ca; /* Indigo 700 */
+  --primary-emerald: #4f46e5; /* Indigo 600 */
+  --accent-light: #eef2ff; /* Indigo 50 */
   --white: #ffffff;
   --transition-fast: 0.2s ease;
   --transition-med: 0.3s ease;
   --transition-slow: 0.5s ease;
-  --gradient: linear-gradient(135deg, #0d9488, #10b981);
-  --gradient-hover: linear-gradient(135deg, #0f766e, #059669);
+  --gradient: linear-gradient(135deg, #4338ca, #4f46e5);
+  --gradient-hover: linear-gradient(135deg, #3730a3, #4338ca);
   --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-  --shadow-float: 0 10px 40px -10px rgba(15, 23, 42, 0.1);
+  --shadow-float: 0 10px 40px -10px rgba(15, 23, 42, 0.08);
 }
 
 .dark {
   --background: #020617; /* Slate 950 */
   --foreground: #f8fafc; /* Slate 50 */
   --primary-navy: #f8fafc; /* Slate 50 */
-  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
-  --shadow-float: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.15);
+  --shadow-float: 0 10px 40px -10px rgba(0, 0, 0, 0.25);
 }
 
 @theme inline {
@@ -57,7 +57,7 @@ body {
 
 /* ===== SELECTION ===== */
 ::selection {
-  background: rgba(13, 148, 136, 0.2);
+  background: rgba(67, 56, 202, 0.2);
   color: var(--primary-teal);
 }
 
@@ -114,14 +114,14 @@ body {
 /* ===== PULSE ANIMATION ===== */
 .pulse-green { animation: pulseGreen 2s ease-in-out infinite; }
 @keyframes pulseGreen {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-  50% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(79, 70, 229, 0); }
 }
 
 /* ===== INPUT FOCUS STYLES ===== */
 input:focus, textarea:focus, select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.15);
   border-color: var(--primary-teal);
   transition: all 0.2s ease;
 }

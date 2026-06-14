@@ -34,7 +34,7 @@ export default function SignInForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-400">
           Email address
         </label>
         <div className="mt-1">
@@ -44,8 +44,8 @@ export default function SignInForm() {
             autoComplete="email"
             {...register("email")}
             className={`appearance-none block w-full px-4 py-3 border ${
-              errors.email ? "border-red-500" : "border-slate-200 dark:border-slate-700"
-            } rounded-[16px] shadow-sm placeholder-slate-400 focus:outline-none focus:ring-teal-500 focus:border-teal-500 transition-colors sm:text-sm bg-white dark:bg-slate-800 dark:text-slate-50`}
+              errors.email ? "border-red-500" : "border-slate-100 dark:border-white/5"
+            } rounded-[16px] shadow-sm placeholder-slate-400 focus:outline-none focus:ring-indigo-600 focus:border-indigo-600 transition-colors sm:text-sm bg-white dark:bg-slate-800 dark:text-slate-50`}
             placeholder="Enter your email"
           />
           {errors.email && (
@@ -56,11 +56,11 @@ export default function SignInForm() {
 
       <div className="space-y-1">
         <div className="flex items-center justify-between">
-          <label htmlFor="password" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+          <label htmlFor="password" className="block text-sm font-medium text-slate-700 dark:text-slate-400">
             Password
           </label>
           <div className="text-sm">
-            <Link href="#" className="font-medium text-teal-600 dark:text-teal-400 hover:text-teal-500 transition-colors">
+            <Link href="#" className="font-medium text-indigo-700 dark:text-indigo-500 hover:text-indigo-600 transition-colors">
               Forgot your password?
             </Link>
           </div>
@@ -72,8 +72,8 @@ export default function SignInForm() {
             autoComplete="current-password"
             {...register("password")}
             className={`appearance-none block w-full px-4 py-3 border ${
-              errors.password ? "border-red-500" : "border-slate-200 dark:border-slate-700"
-            } rounded-[16px] shadow-sm placeholder-slate-400 focus:outline-none focus:ring-teal-500 focus:border-teal-500 transition-colors sm:text-sm bg-white dark:bg-slate-800 dark:text-slate-50`}
+              errors.password ? "border-red-500" : "border-slate-100 dark:border-white/5"
+            } rounded-[16px] shadow-sm placeholder-slate-400 focus:outline-none focus:ring-indigo-600 focus:border-indigo-600 transition-colors sm:text-sm bg-white dark:bg-slate-800 dark:text-slate-50`}
             placeholder="Enter your password"
           />
           {errors.password && (
@@ -87,9 +87,9 @@ export default function SignInForm() {
           id="rememberMe"
           type="checkbox"
           {...register("rememberMe")}
-          className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-slate-300 rounded cursor-pointer"
+          className="h-4 w-4 text-indigo-700 focus:ring-indigo-600 border-slate-300 rounded cursor-pointer"
         />
-        <label htmlFor="rememberMe" className="ml-2 block text-sm text-slate-700 dark:text-slate-300 cursor-pointer">
+        <label htmlFor="rememberMe" className="ml-2 block text-sm text-slate-700 dark:text-slate-400 cursor-pointer">
           Remember me for 30 days
         </label>
       </div>
@@ -98,7 +98,7 @@ export default function SignInForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full flex justify-center py-3 px-4 border border-transparent rounded-[24px] shadow-sm text-sm font-medium text-white bg-gradient-to-r from-teal-500 to-emerald-400 hover:from-teal-600 hover:to-emerald-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full flex justify-center py-3 px-4 border border-slate-100 dark:border-white/5 rounded-[24px] shadow-sm text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <span className="flex items-center">
