@@ -1,175 +1,256 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { blogPosts } from '@/data/blogPosts';
-
-const featuredPost = blogPosts.find(p => p.isFeatured) || blogPosts[0];
+import { Search, User, ArrowRight, ChevronRight, Mail, BookOpen } from 'lucide-react';
 
 export default function MainContent() {
+  const featuredPost = blogPosts.find(p => p.isFeatured) || blogPosts[0];
+  const regularPosts = blogPosts.filter(p => p.slug !== featuredPost.slug);
+
+  const [activeFilter, setActiveFilter] = useState('All');
+  const filters = ['All', 'Tips', 'Guides', 'Customs', 'Savings'];
+
   return (
     <>
-      {/* HEADER */}
-    <header
-      style={{ backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url("/assets/image.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}
-      className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center dark:border-b dark:border-slate-800"
-    >
-      <div className="flex justify-center pt-32 pb-20 px-4 text-center hero-text">
-        <div>
-          <span className="inline-block bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30">
-            📝 Shipping Tips & News
+      {/* 1. HERO SECTION (Immersive Dark Header) */}
+      <header className="relative w-full min-h-[400px] sm:min-h-[500px] flex items-center justify-center overflow-hidden bg-slate-950 border-b border-slate-800">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-slate-950/70 mix-blend-multiply z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
+          <img
+            src="/assets/image.png"
+            alt="Our Blog"
+            className="w-full h-full object-cover scale-105"
+            suppressHydrationWarning
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-24 pb-16 text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 shadow-sm">
+            <BookOpen size={16} /> Shipping Tips & News
           </span>
-          <h1 className="font-semibold text-[40px] md:text-[64px] text-white leading-tight mb-4 tracking-tight">
-            Our Blog
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-600">Blog</span>
           </h1>
-          <p className="text-white/80 text-lg max-w-lg mx-auto mb-8">
-            Expert guides, shipping tips and industry news
+          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            Expert guides, industry updates, and smart shipping tips to help you navigate international logistics effortlessly.
           </p>
         </div>
-      </div>
-      <a href="https://wa.me/8801715825331" target="_blank" className="absolute right-5 bottom-5 md:right-10 md:bottom-10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-sm hover:shadow-indigo-600/40">
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 w-14 h-14 rounded-full flex items-center justify-center shadow-sm pulse-green">
-          <i className="fab fa-whatsapp text-white text-2xl"></i>
-        </div>
-      </a>
-    </header>
+      </header>
 
-    {/* FEATURED POST */}
-    <section className="py-12 px-4 bg-white dark:bg-slate-900">
-      <div className="container reveal">
-        {featuredPost && (
-          <Link href={`/blog/${featuredPost.slug}`} className="group block">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white dark:bg-slate-800 rounded-[32px] overflow-hidden shadow-sm border border-slate-100 dark:border-white/5 hover:shadow-md transition-all duration-500 dark:border dark:border-white/5">
-              <div className="overflow-hidden h-64 md:h-auto">
-                <img
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5 md:p-5 md:p-10 flex flex-col justify-center">
-                <span className="inline-block bg-gradient-to-r from-indigo-600 to-indigo-500 text-white text-xs font-medium px-4 py-1.5 rounded-full mb-4 w-fit">
-                  Featured Post
-                </span>
-                <h2 className="font-semibold text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-4 group-hover:text-indigo-600 transition-colors tracking-tight">
-                  {featuredPost.title}
-                </h2>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  {featuredPost.excerpt}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center">
-                      <i className="fas fa-user text-white text-xs"></i>
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-900 dark:text-slate-50 text-sm">{featuredPost.author.name}</p>
-                      <p className="text-slate-500 dark:text-slate-400 text-xs">{featuredPost.date}</p>
-                    </div>
-                  </div>
-                  <span className="inline-flex items-center gap-2 text-indigo-600 font-medium text-sm group-hover:gap-3 transition-all">
-                    Read More <i className="fas fa-arrow-right text-xs"></i>
-                  </span>
+      {/* 2. FEATURED POST SECTION */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-white/5 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="mb-8">
+            <h2 className="font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight">
+              Featured Article
+            </h2>
+          </div>
+
+          {featuredPost && (
+            <Link href={`/blog/${featuredPost.slug}`} className="group block focus:outline-none">
+              <div className="grid lg:grid-cols-2 gap-8 items-center bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] p-4 sm:p-6 lg:p-8 border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-slate-300 dark:hover:border-white/20 transition-all duration-500">
+
+                {/* Image */}
+                <div className="relative w-full aspect-video lg:aspect-auto lg:h-[400px] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0">
+                  <img
+                    src={featuredPost.image || featuredPost.thumbnail}
+                    alt={featuredPost.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    suppressHydrationWarning
+                  />
                 </div>
+
+                {/* Content */}
+                <div className="flex flex-col justify-center py-4 sm:py-6 lg:px-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-flex px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-400 text-xs font-bold tracking-wide uppercase">
+                      Featured Post
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                      {featuredPost.date || 'Recent'}
+                    </span>
+                  </div>
+
+                  <h3 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors tracking-tight leading-tight">
+                    {featuredPost.title}
+                  </h3>
+
+                  <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-8 line-clamp-3">
+                    {featuredPost.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between border-t border-slate-200 dark:border-white/10 pt-6 mt-auto">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center">
+                        <User size={18} className="text-slate-500 dark:text-slate-400" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-slate-900 dark:text-white text-sm">
+                          {featuredPost.author?.name || 'Admin'}
+                        </span>
+                        <span className="text-slate-500 dark:text-slate-400 text-xs">Author</span>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold text-sm group-hover:gap-3 transition-all">
+                      Read Article <ArrowRight size={18} strokeWidth={2.5} />
+                    </span>
+                  </div>
+                </div>
+
               </div>
+            </Link>
+          )}
+        </div>
+      </section>
+
+      {/* 3. ALL POSTS SECTION */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Top Bar: Search & Filters */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+
+            {/* Search Bar */}
+            <div className="relative w-full md:max-w-sm">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Search size={18} className="text-slate-400" />
+              </div>
+              <input
+                type="text"
+                placeholder="Search articles..."
+                className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all shadow-sm"
+              />
             </div>
-          </Link>
-        )}
-      </div>
-    </section>
 
-    {/* ALL POSTS */}
-    <section className="py-12 px-4 pb-24">
-      <div className="container">
-        {/* Filter + Search */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between mb-10 reveal">
-          <div className="relative w-full sm:w-72">
-            <i className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 text-sm"></i>
-            <input
-              type="text"
-              placeholder="Search articles..."
-              className="w-full pl-11 pr-4 py-3 border-2 border-slate-100 dark:border-white/5 rounded-md focus:outline-none focus:border-indigo-600 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-50"
-            />
+            {/* Filter Pills */}
+            <div className="flex flex-wrap gap-2">
+              {filters.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none ${activeFilter === filter
+                    ? 'bg-indigo-600 text-white shadow-md'
+                    : 'bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:border-indigo-300 dark:hover:border-indigo-500/50 hover:text-indigo-600 dark:hover:text-indigo-400'
+                    }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            <button className="filter-btn active text-sm px-4 py-2 rounded-full border-2 border-slate-100 dark:border-white/5 font-medium">All</button>
-            <button className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-100 dark:border-white/5 font-medium text-slate-500 dark:text-slate-400">Tips</button>
-            <button className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-100 dark:border-white/5 font-medium text-slate-500 dark:text-slate-400">Guides</button>
-            <button className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-100 dark:border-white/5 font-medium text-slate-500 dark:text-slate-400">Customs</button>
-            <button className="filter-btn text-sm px-4 py-2 rounded-full border-2 border-slate-100 dark:border-white/5 font-medium text-slate-500 dark:text-slate-400">Savings</button>
-          </div>
-        </div>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 stagger reveal">
-          {blogPosts.filter(p => !p.isFeatured).map((post) => (
-            <article key={post.slug} className="blog-card bg-white dark:bg-slate-800 rounded-[24px] shadow-sm overflow-hidden border border-slate-100 dark:border-white/5">
-              <div className="overflow-hidden h-52">
-                <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="badge text-xs">{post.category}</span>
-                  <span className="text-slate-500 dark:text-slate-400 text-xs">{post.date}</span>
+          {/* Blog Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            {regularPosts.map((post) => (
+              <article
+                key={post.slug}
+                className="group flex flex-col bg-slate-50 dark:bg-slate-900/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 transition-all duration-300 hover:shadow-lg hover:border-slate-300 dark:hover:border-white/20"
+              >
+                <div className="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0">
+                  <img
+                    src={post.thumbnail}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    suppressHydrationWarning
+                  />
                 </div>
-                <h3 className="font-semibold text-lg text-slate-900 dark:text-slate-50 mb-2 hover:text-indigo-600 transition-colors tracking-tight">
-                  {post.title}
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-white/5">
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center">
-                      <i className="fas fa-user text-white text-xs"></i>
-                    </div>
-                    <span className="text-slate-500 dark:text-slate-400 text-xs">{post.author.name}</span>
+
+                <div className="flex flex-col flex-1 p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-flex px-2.5 py-1 rounded-md bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-xs font-semibold tracking-wide uppercase">
+                      {post.category}
+                    </span>
+                    <span className="text-slate-400 text-xs font-medium">{post.date}</span>
                   </div>
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1.5 text-indigo-600 font-medium text-sm hover:gap-2.5 transition-all">
-                    Read <i className="fas fa-arrow-right text-xs"></i>
-                  </Link>
+
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-5 mt-auto border-t border-slate-200 dark:border-white/10">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center">
+                        <User size={14} className="text-slate-500 dark:text-slate-400" />
+                      </div>
+                      <span className="text-slate-600 dark:text-slate-400 text-xs font-medium">
+                        {post.author?.name || 'Admin'}
+                      </span>
+                    </div>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-1.5 text-indigo-600 dark:text-indigo-400 font-semibold text-sm group-hover:gap-2.5 transition-all focus:outline-none"
+                    >
+                      Read <ArrowRight size={16} strokeWidth={2.5} />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
+              </article>
+            ))}
+          </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center gap-2 mt-12 reveal">
-          <button className="w-10 h-10 rounded-md bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-medium text-sm flex items-center justify-center">1</button>
-          <button className="w-10 h-10 rounded-md border-2 border-slate-100 dark:border-white/5 text-slate-500 dark:text-slate-400 font-medium text-sm flex items-center justify-center hover:border-indigo-600 hover:text-indigo-600 transition-colors">2</button>
-          <button className="w-10 h-10 rounded-md border-2 border-slate-100 dark:border-white/5 text-slate-500 dark:text-slate-400 font-medium text-sm flex items-center justify-center hover:border-indigo-600 hover:text-indigo-600 transition-colors">3</button>
-          <button className="w-10 h-10 rounded-md border-2 border-slate-100 dark:border-white/5 text-slate-500 dark:text-slate-400 font-medium text-sm flex items-center justify-center hover:border-indigo-600 hover:text-indigo-600 transition-colors">
-            <i className="fas fa-chevron-right text-xs"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    {/* NEWSLETTER */}
-    <section className="py-12 px-4 bg-white dark:bg-slate-900">
-      <div className="container">
-        <div className="bg-gradient-to-r from-[#F1F6F2] to-[#E8F8F5] dark:from-slate-800 dark:to-indigo-600/30 rounded-[32px] p-5 md:p-6 md:p-12 text-center border border-slate-100 dark:border-white/5 reveal">
-          <i className="fas fa-envelope-open-text text-indigo-600 text-2xl md:text-3xl mb-4"></i>
-          <h3 className="font-semibold text-2xl md:text-3xl text-slate-900 dark:text-slate-50 mb-3 tracking-tight">
-            Subscribe for Shipping Tips
-          </h3>
-          <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-lg mx-auto">
-            Get weekly guides, cost-saving tips and shipping news delivered to your inbox.
-          </p>
-          <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 w-full px-5 py-3.5 border-2 border-slate-100 dark:border-white/5 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-md focus:outline-none focus:border-indigo-600 text-sm"
-            />
-            <button className="w-full sm:w-auto subscribe-btn bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md px-8 py-3.5 font-medium hover:-translate-y-0.5 hover:shadow-sm hover:from-indigo-700 hover:to-indigo-600 transition-all duration-300 inline-flex items-center justify-center shadow-md whitespace-nowrap">
-              Subscribe
+          {/* Pagination */}
+          <div className="flex justify-center items-center gap-2 mt-16">
+            <button className="w-10 h-10 rounded-lg bg-indigo-600 text-white font-semibold text-sm flex items-center justify-center shadow-md focus:outline-none">
+              1
+            </button>
+            <button className="w-10 h-10 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 font-medium text-sm flex items-center justify-center hover:border-indigo-500 hover:text-indigo-600 transition-colors focus:outline-none">
+              2
+            </button>
+            <button className="w-10 h-10 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 font-medium text-sm flex items-center justify-center hover:border-indigo-500 hover:text-indigo-600 transition-colors focus:outline-none">
+              3
+            </button>
+            <span className="text-slate-400 mx-1">...</span>
+            <button className="w-10 h-10 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:border-indigo-500 hover:text-indigo-600 transition-colors focus:outline-none">
+              <ChevronRight size={18} />
             </button>
           </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* 4. NEWSLETTER CTA (Immersive Minimalist Banner) */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-slate-900 rounded-[2rem] px-6 py-12 sm:p-16 overflow-hidden text-center shadow-2xl border border-slate-800">
+
+            {/* Subtle Elegance Glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[300px] bg-indigo-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
+              <div className="w-16 h-16 bg-white/10 rounded-2xl border border-white/10 flex items-center justify-center mb-6 shadow-sm">
+                <Mail size={32} className="text-white" strokeWidth={1.5} />
+              </div>
+
+              <h2 className="font-bold text-white text-3xl sm:text-4xl mb-4 tracking-tight">
+                Subscribe to our Newsletter
+              </h2>
+
+              <p className="text-slate-400 text-base sm:text-lg mb-10 font-normal leading-relaxed">
+                Get weekly guides, exclusive cost-saving tips, and the latest international shipping news delivered directly to your inbox.
+              </p>
+
+              <div className="w-full flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 w-full h-14 px-5 bg-white/5 border border-white/10 text-white rounded-xl text-base placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all backdrop-blur-sm"
+                />
+                <button className="w-full sm:w-auto h-14 px-8 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-sm flex items-center justify-center gap-2 whitespace-nowrap">
+                  Subscribe Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
-
-
