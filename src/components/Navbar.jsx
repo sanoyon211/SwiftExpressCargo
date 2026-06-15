@@ -53,13 +53,13 @@ export default function Navbar() {
     { name: 'Services', path: '/services' },
     { name: 'Rates', path: '/rates' },
     { name: 'Tracking', path: '/tracking' },
-    { name: 'Cost Calculator', path: '/cost-calculator' },
+    { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 w-full z-50 transition-all duration-300  ${isScrolled
         ? 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10 shadow-sm py-3'
         : 'bg-transparent py-5'
         }`}
@@ -112,7 +112,7 @@ export default function Navbar() {
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <Link href="/login" className={`flex items-center gap-2 text-sm font-semibold transition-colors ${isScrolled ? 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white' : 'text-slate-100 hover:text-white'
+            <Link href="/signin" className={`flex items-center gap-2 text-sm font-semibold transition-colors ${isScrolled ? 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white' : 'text-slate-100 hover:text-white'
               }`}>
               <User size={16} /> Sign In
             </Link>

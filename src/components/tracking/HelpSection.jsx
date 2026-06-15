@@ -1,57 +1,64 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
+import { Mail, MessageSquare } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function HelpSection() {
   return (
-    <>
-      <section className="py-10 md:py-8 md:py-16 px-4 bg-white dark:bg-slate-900 px-4">
-      <div className="max-w-3xl mx-auto text-center reveal">
-        <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-50 mb-3 tracking-tight">Need Help?</h3>
-        <p className="text-slate-500 dark:text-slate-400 mb-8">
-          Can't find your package or have questions? Our support team is here
-          24/7.
+    <section className="py-16 sm:py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <h3 className="font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white mb-4 tracking-tight">
+          Need Help?
+        </h3>
+        <p className="text-slate-600 dark:text-slate-400 mb-12 max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
+          Can't find your package or have questions? Our expert support team is here 24/7 to assist you.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+          {/* WhatsApp Card */}
           <a
             href="https://wa.me/8801715825331"
             target="_blank"
-            className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] p-6 text-center"
+            rel="noopener noreferrer"
+            className="group bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-emerald-400 dark:hover:border-emerald-500/50 hover:shadow-lg focus:outline-none flex flex-col items-center"
           >
-            <div
-              className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3"
-            >
-              <i className="fab fa-whatsapp text-white text-xl"></i>
+            <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-500/10 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-emerald-500 text-emerald-600 dark:text-emerald-400 group-hover:text-white border border-emerald-200 dark:border-emerald-500/20">
+              <FaWhatsapp size={28} />
             </div>
-            <h4 className="font-medium text-slate-900 dark:text-slate-50 mb-1 tracking-tight">WhatsApp</h4>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">+880 1715-825331</p>
+            <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">WhatsApp</h4>
+            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">+880 1715-825331</p>
           </a>
+
+          {/* Email Card */}
           <a
             href="mailto:support@swiftexpress.com"
-            className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] p-6 text-center"
+            className="group bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-indigo-400 dark:hover:border-indigo-500/50 hover:shadow-lg focus:outline-none flex flex-col items-center"
           >
-            <div
-              className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3"
-            >
-              <i className="fas fa-envelope text-white text-lg"></i>
+            <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-500/10 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-indigo-600 text-indigo-600 dark:text-indigo-400 group-hover:text-white border border-indigo-200 dark:border-indigo-500/20">
+              <Mail size={26} strokeWidth={1.5} />
             </div>
-            <h4 className="font-medium text-slate-900 dark:text-slate-50 mb-1 tracking-tight">Email Support</h4>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">support@swiftexpress.com</p>
+            <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">Email Support</h4>
+            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">support@swiftexpress.com</p>
           </a>
-          <a
+
+          {/* Live Chat Card */}
+          <Link
             href="/contact"
-            className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-white/5 rounded-[24px] p-6 text-center"
+            className="group bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-blue-400 dark:hover:border-blue-500/50 hover:shadow-lg focus:outline-none flex flex-col items-center"
           >
-            <div
-              className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3"
-            >
-              <i className="fas fa-comments text-white text-lg"></i>
+            <div className="w-14 h-14 bg-blue-100 dark:bg-blue-500/10 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600 text-blue-600 dark:text-blue-400 group-hover:text-white border border-blue-200 dark:border-blue-500/20">
+              <MessageSquare size={26} strokeWidth={1.5} />
             </div>
-            <h4 className="font-medium text-slate-900 dark:text-slate-50 mb-1 tracking-tight">Live Chat</h4>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">Available 24/7</p>
-          </a>
+            <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">Live Chat</h4>
+            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">Available 24/7</p>
+          </Link>
+
         </div>
       </div>
     </section>
-    </>
   );
 }

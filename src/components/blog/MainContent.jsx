@@ -14,27 +14,28 @@ export default function MainContent() {
 
   return (
     <>
-      {/* 1. HERO SECTION (Immersive Dark Header) */}
-      <header className="relative w-full min-h-[400px] sm:min-h-[500px] flex items-center justify-center overflow-hidden bg-slate-950 border-b border-slate-800">
+      {/* HEADER SECTION */}
+      <header className="relative w-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden bg-[#0A0F1C] border-b border-white/5">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-slate-950/70 mix-blend-multiply z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
-          <img
-            src="/assets/image.png"
-            alt="Our Blog"
-            className="w-full h-full object-cover scale-105"
-            suppressHydrationWarning
-          />
+          <div className="absolute inset-0 bg-[#0A0F1C]/80 mix-blend-multiply z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/50 to-transparent z-10"></div>
+          <img src="/assets/image.png" alt="Our Blog" className="w-full h-full object-cover scale-105" suppressHydrationWarning />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-24 pb-16 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 shadow-sm">
-            <BookOpen size={16} /> Shipping Tips & News
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-600">Blog</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-32 pb-20 text-center flex flex-col items-center">
+
+          {/* Glassmorphism Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 shadow-sm">
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span className="text-slate-300 text-xs sm:text-sm font-medium tracking-wide">News & Updates</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+            Shipping Tips,<br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-600">Industry Insights.</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
             Expert guides, industry updates, and smart shipping tips to help you navigate international logistics effortlessly.
           </p>
         </div>

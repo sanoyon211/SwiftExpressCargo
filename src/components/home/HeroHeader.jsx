@@ -66,7 +66,7 @@ export default function HeroHeader() {
           <StaggerItem>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15] max-w-4xl mx-auto drop-shadow-sm">
               Shipping Excellence, <br className="hidden sm:block" />
-              Delivered <span className="text-white">Swiftly.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-600">Delivered Swiftly.</span>
             </h1>
           </StaggerItem>
 

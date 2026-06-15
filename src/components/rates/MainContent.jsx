@@ -1,433 +1,393 @@
 "use client";
+
 import React, { useState } from 'react';
 import Link from 'next/link';
+import {
+  Calculator, ArrowRight, Package, FileText, Undo2, Store,
+  PlusCircle, Truck, Plane, ShieldCheck, UserCheck, Camera, Layers, Info, Star
+} from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function MainContent() {
   const [activeTab, setActiveTab] = useState('package');
 
   return (
     <>
-      {/*  HEADER  */}
-      <header
-        style={{ backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url("/assets/image (6).png")', backgroundSize: 'cover', backgroundPosition: 'center' }}
-        className="relative min-h-[400px] md:min-h-[500px] w-full flex flex-col justify-center items-center dark:border-b dark:border-slate-800"
-      >
-        <div className="flex justify-center pt-32 pb-20 px-4 text-center hero-text">
-          <div>
-            <span className="inline-block bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full mb-5 border border-white/30">
-              💰 Transparent Pricing
-            </span>
-            <h1 className="font-semibold text-[40px] md:text-[64px] text-white leading-tight mb-4 tracking-tight">
-              Shipping Rates
-            </h1>
-            <p className="text-white/80 text-lg max-w-lg mx-auto mb-8">
-              Clear, competitive pricing with no hidden fees
-            </p>
-            
-          </div>
+      {/* 1. HEADER SECTION (Immersive Dark Hero) */}
+      <header className="relative w-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden bg-[#0A0F1C] border-b border-white/5">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[#0A0F1C]/80 mix-blend-multiply z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/50 to-transparent z-10"></div>
+          <img
+            src="/assets/image (6).png"
+            alt="Shipping Rates"
+            className="w-full h-full object-cover scale-105"
+            suppressHydrationWarning
+          />
         </div>
-        <a href="https://wa.me/8801715825331" target="_blank" className="absolute right-5 bottom-5 md:right-10 md:bottom-10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-sm hover:shadow-indigo-600/40">
-          <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 w-14 h-14 rounded-full flex items-center justify-center shadow-sm pulse-green">
-            <i className="fab fa-whatsapp text-white text-2xl"></i>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-32 pb-20 text-center flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 shadow-sm">
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span className="text-slate-300 text-xs sm:text-sm font-medium tracking-wide">Transparent Pricing</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+            Shipping <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-600">Rates.</span>
+          </h1>
+
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+            Clear, competitive pricing with absolutely no hidden fees. Know exactly what you pay before you ship.
+          </p>
+        </div>
+
+        {/* Floating WhatsApp */}
+        <a
+          href="https://wa.me/8801715825331"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed right-6 bottom-6 md:right-8 md:bottom-8 z-50 group focus:outline-none"
+          aria-label="Chat on WhatsApp"
+        >
+          <div className="relative bg-[#25D366] hover:bg-[#20bd5a] h-14 w-14 md:h-16 md:w-16 rounded-full flex justify-center items-center shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
+            <FaWhatsapp className="text-white text-3xl md:text-4xl" />
+            <span className="absolute -top-1 -right-1 flex h-3 w-3 md:h-4 md:w-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 md:h-4 md:w-4 bg-red-500 border-2 border-[#25D366]"></span>
+            </span>
           </div>
         </a>
       </header>
 
-      {/*  PROMO BANNER  */}
-      <section className="py-8 px-4">
-        <div className="container reveal">
-          <div className="relative bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-[32px] px-8 md:px-12 py-8 overflow-hidden">
-            <img src="/assets/Frame 2147225186.png" alt="" className="absolute right-0 top-0 h-full opacity-20 hidden md:block" />
-            <img src="/assets/Frame 2147225185.png" alt="" className="absolute left-0 top-0 h-full opacity-20 hidden md:block" />
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h2 className="font-semibold text-2xl md:text-3xl text-white mb-2 tracking-tight">Save big with smart shopping!</h2>
-                <p className="text-white/80 text-sm md:text-base max-w-lg">
-                  Consolidate multiple packages and save up to 40% on your total shipping cost. Shop from any US store today.
-                </p>
-              </div>
-              <a href="/shop" className="flex-shrink-0">
-                <button className="bg-white dark:bg-slate-800 text-indigo-600 font-semibold px-8 py-3 rounded-full hover:shadow-sm transition-all hover:-translate-y-1 whitespace-nowrap dark:border dark:border-white/5">
-                  Shop Now →
+      {/* 2. PROMO BANNER (Sleek SaaS Style) */}
+      <section className="py-8 sm:py-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-indigo-600 dark:bg-indigo-900/40 border border-indigo-500/20 rounded-[2rem] px-8 sm:px-12 py-8 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            {/* Decorative Glows */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <div className="relative z-10 max-w-2xl text-center md:text-left">
+              <h2 className="font-bold text-2xl sm:text-3xl text-white mb-2 tracking-tight">Save big with smart shopping!</h2>
+              <p className="text-indigo-100 text-sm sm:text-base leading-relaxed">
+                Consolidate multiple packages and save up to 40% on your total shipping cost. Shop from any US store today.
+              </p>
+            </div>
+
+            <Link href="/services" className="relative z-10 shrink-0 focus:outline-none">
+              <button className="bg-white text-indigo-600 font-bold px-8 py-3.5 rounded-xl hover:bg-slate-50 hover:shadow-lg transition-all focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 flex items-center gap-2">
+                Learn More <ArrowRight size={18} />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. RATES TABS & DATA */}
+      <section className="py-12 sm:py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Segmented Control (Tabs) */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex flex-wrap sm:flex-nowrap p-1.5 bg-slate-200/60 dark:bg-slate-800/60 rounded-2xl md:rounded-full w-full sm:w-auto overflow-hidden">
+              {[
+                { id: 'package', label: 'Package Rates' },
+                { id: 'brokerage', label: 'Brokerage' },
+                { id: 'warranty', label: 'Returns' },
+                { id: 'pickup', label: 'Pickup' },
+                { id: 'additional', label: 'Extras' }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex-1 sm:flex-none px-4 sm:px-6 py-2.5 rounded-xl md:rounded-full text-sm font-semibold transition-all duration-300 focus:outline-none ${activeTab === tab.id
+                      ? 'bg-white dark:bg-slate-950 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                >
+                  {tab.label}
                 </button>
-              </a>
+              ))}
             </div>
+          </div>
+
+          {/* Tab Content Wrapper */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-sm border border-slate-200 dark:border-white/10 p-6 sm:p-10 transition-all duration-300 min-h-[400px]">
+
+            {/* PACKAGE RATES */}
+            {activeTab === 'package' && (
+              <div className="animate-in fade-in zoom-in-95 duration-300">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl flex items-center justify-center border border-indigo-100 dark:border-indigo-500/20">
+                    <Package className="text-indigo-600 dark:text-indigo-400" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-2xl text-slate-900 dark:text-white tracking-tight">Package Rates</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Based on actual weight per shipment</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden mb-6">
+                  <div className="flex justify-between bg-slate-50 dark:bg-slate-800/50 px-6 py-4 border-b border-slate-200 dark:border-white/10">
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Package Weight</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Rate (USD)</span>
+                  </div>
+                  <div className="flex flex-col divide-y divide-slate-100 dark:divide-slate-800/60">
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">0.5 lb</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$10.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">1 lb</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$15.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">2 lbs</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$20.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">3 lbs</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$25.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4 bg-indigo-50/50 dark:bg-indigo-500/5">
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Additional lb</span>
+                      <span className="font-bold text-indigo-700 dark:text-indigo-400">$5.00 / lb</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4 bg-yellow-50/50 dark:bg-yellow-500/5">
+                      <span className="flex items-center gap-2 font-semibold text-yellow-700 dark:text-yellow-500"><Star size={14} /> Packages over 25 lbs</span>
+                      <span className="font-bold text-yellow-700 dark:text-yellow-500">$50.00 flat + $4/lb</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 dark:bg-slate-800/30 rounded-xl p-4 flex items-start gap-3 border border-slate-200 dark:border-white/5">
+                  <Info className="text-slate-400 shrink-0 mt-0.5" size={18} />
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Rates are for standard shipping. Express and economy options are available at checkout. Volumetric weight may apply for oversized packages.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* BROKERAGE FEES */}
+            {activeTab === 'brokerage' && (
+              <div className="animate-in fade-in zoom-in-95 duration-300">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl flex items-center justify-center border border-indigo-100 dark:border-indigo-500/20">
+                    <FileText className="text-indigo-600 dark:text-indigo-400" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-2xl text-slate-900 dark:text-white tracking-tight">Brokerage Fees</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Customs clearance fee based on declared value (CIF)</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden mb-6">
+                  <div className="flex justify-between bg-slate-50 dark:bg-slate-800/50 px-6 py-4 border-b border-slate-200 dark:border-white/10">
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Package CIF Value</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Fee (USD)</span>
+                  </div>
+                  <div className="flex flex-col divide-y divide-slate-100 dark:divide-slate-800/60">
+                    <div className="flex justify-between items-center px-6 py-4 bg-emerald-50/50 dark:bg-emerald-500/5">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">$0 – $500.00</span>
+                      <span className="font-bold text-emerald-600 dark:text-emerald-400">FREE</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">$501 – $1,000.00</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$10.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">$1,001 – $2,000.00</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$15.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">$2,001 – $3,000.00</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$20.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4 bg-indigo-50/50 dark:bg-indigo-500/5">
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Over $3,000.00</span>
+                      <span className="font-bold text-indigo-700 dark:text-indigo-400">0.5% of CIF</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 dark:bg-slate-800/30 rounded-xl p-4 flex items-start gap-3 border border-slate-200 dark:border-white/5">
+                  <Info className="text-slate-400 shrink-0 mt-0.5" size={18} />
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    CIF = Cost + Insurance + Freight. This fee covers customs documentation and clearance services. Import duties and VAT are separate and collected directly by customs.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* WARRANTY & RETURNS */}
+            {activeTab === 'warranty' && (
+              <div className="animate-in fade-in zoom-in-95 duration-300">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl flex items-center justify-center border border-indigo-100 dark:border-indigo-500/20">
+                    <Undo2 className="text-indigo-600 dark:text-indigo-400" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-2xl text-slate-900 dark:text-white tracking-tight">Warranty & Returns</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Return shipping fees based on declared value</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden mb-6">
+                  <div className="flex justify-between bg-slate-50 dark:bg-slate-800/50 px-6 py-4 border-b border-slate-200 dark:border-white/10">
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Declared Value</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Service Fee</span>
+                  </div>
+                  <div className="flex flex-col divide-y divide-slate-100 dark:divide-slate-800/60">
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">Up to $500</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$10.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">$501 – $1,000</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$15.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">$1,001 – $2,000</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$20.00</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4 bg-indigo-50/50 dark:bg-indigo-500/5">
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Over $2,000</span>
+                      <span className="font-bold text-indigo-700 dark:text-indigo-400">1% of value</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 dark:bg-slate-800/30 rounded-xl p-4 flex items-start gap-3 border border-slate-200 dark:border-white/5">
+                  <Info className="text-slate-400 shrink-0 mt-0.5" size={18} />
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Returns must be initiated within 30 days of delivery. Items must be unused and in original packaging. We handle the entire return process with US retailers on your behalf.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* PICKUP */}
+            {activeTab === 'pickup' && (
+              <div className="animate-in fade-in zoom-in-95 duration-300">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl flex items-center justify-center border border-indigo-100 dark:border-indigo-500/20">
+                    <Store className="text-indigo-600 dark:text-indigo-400" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-2xl text-slate-900 dark:text-white tracking-tight">Pickup at Warehouse</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Self-pickup rates from our facilities</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden">
+                  <div className="flex justify-between bg-slate-50 dark:bg-slate-800/50 px-6 py-4 border-b border-slate-200 dark:border-white/10">
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Weight</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Rate (USD)</span>
+                  </div>
+                  <div className="flex flex-col divide-y divide-slate-100 dark:divide-slate-800/60">
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">1 Kg</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$10.00 / Kg</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">2 Kg</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$18.00 / Kg</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4">
+                      <span className="font-medium text-slate-700 dark:text-slate-300">3 Kg</span>
+                      <span className="font-bold text-slate-900 dark:text-white">$25.00 / Kg</span>
+                    </div>
+                    <div className="flex justify-between items-center px-6 py-4 bg-indigo-50/50 dark:bg-indigo-500/5">
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">5+ Kg</span>
+                      <span className="font-bold text-indigo-700 dark:text-indigo-400">$7.00 / Kg</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ADDITIONAL CHARGES */}
+            {activeTab === 'additional' && (
+              <div className="animate-in fade-in zoom-in-95 duration-300">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl flex items-center justify-center border border-indigo-100 dark:border-indigo-500/20">
+                    <PlusCircle className="text-indigo-600 dark:text-indigo-400" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-2xl text-slate-900 dark:text-white tracking-tight">Additional Charges</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Optional services and their respective fees</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { title: "Local Delivery", desc: "Within Dhaka city (some exceptions apply)", price: "FREE", icon: Truck, highlight: true },
+                    { title: "Express Shipping", desc: "Per shipment, delivered in 3-5 days", price: "+$100", icon: Plane },
+                    { title: "Package Insurance", desc: "Of declared value (min. $5 per shipment)", price: "1.5%", icon: ShieldCheck },
+                    { title: "Membership Fee", desc: "No monthly or annual fees ever", price: "FREE", icon: UserCheck, highlight: true },
+                    { title: "Package Photos", desc: "Per package, photos sent before shipping", price: "$2.00", icon: Camera },
+                    { title: "Consolidation", desc: "Combine packages at no extra charge", price: "FREE", icon: Layers, highlight: true },
+                  ].map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={i} className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-white/5 rounded-2xl p-5 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-colors">
+                        <div className="flex items-center gap-3 mb-4">
+                          <Icon size={18} className="text-slate-500 dark:text-slate-400" />
+                          <h4 className="font-bold text-slate-900 dark:text-white text-sm">{item.title}</h4>
+                        </div>
+                        <p className={`text-2xl font-bold tracking-tight mb-1 ${item.highlight ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-900 dark:text-white'}`}>
+                          {item.price}
+                        </p>
+                        <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">{item.desc}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
       </section>
 
-      {/*  RATES TABS  */}
-      <section className="py-12 px-4">
-        <div className="container">
-          {/*  Tab Navigation  */}
-          <div className="flex flex-wrap gap-3 justify-center mb-10 reveal">
-            <button 
-              className={`px-5 py-2.5 rounded-full font-medium border-2 border-slate-100 dark:border-white/5 text-sm transition-colors ${activeTab === 'package' ? 'bg-indigo-50 text-indigo-700 border-indigo-600 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:border-indigo-600'}`} 
-              onClick={() => setActiveTab('package')}
-            >Package Rates</button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-medium border-2 border-slate-100 dark:border-white/5 text-sm transition-colors ${activeTab === 'brokerage' ? 'bg-indigo-50 text-indigo-700 border-indigo-600 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:border-indigo-600'}`} 
-              onClick={() => setActiveTab('brokerage')}
-            >Brokerage Fees</button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-medium border-2 border-slate-100 dark:border-white/5 text-sm transition-colors ${activeTab === 'warranty' ? 'bg-indigo-50 text-indigo-700 border-indigo-600 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:border-indigo-600'}`} 
-              onClick={() => setActiveTab('warranty')}
-            >Warranty & Returns</button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-medium border-2 border-slate-100 dark:border-white/5 text-sm transition-colors ${activeTab === 'pickup' ? 'bg-indigo-50 text-indigo-700 border-indigo-600 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:border-indigo-600'}`} 
-              onClick={() => setActiveTab('pickup')}
-            >Pickup at Warehouse</button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-medium border-2 border-slate-100 dark:border-white/5 text-sm transition-colors ${activeTab === 'additional' ? 'bg-indigo-50 text-indigo-700 border-indigo-600 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:border-indigo-600'}`} 
-              onClick={() => setActiveTab('additional')}
-            >Additional Charges</button>
-          </div>
+      {/* 4. CALCULATOR CTA (SaaS Split Card) */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-50 dark:bg-slate-900 rounded-[2rem] p-6 sm:p-12 border border-slate-200 dark:border-white/10 shadow-sm flex flex-col md:flex-row items-center gap-10 lg:gap-16">
 
-          {/*  Package Rates  */}
-          {activeTab === 'package' && (
-          <div className="tab-content active animate-in fade-in duration-300" id="tab-package">
-            <div className="max-w-3xl mx-auto reveal">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-md flex items-center justify-center">
-                  <i className="fas fa-box text-white text-lg"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-50 tracking-tight">Package Rates</h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Based on actual weight per shipment</p>
-                </div>
-              </div>
-              <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm border border-slate-100 dark:border-white/5 overflow-hidden dark:border dark:border-white/5">
-                <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 px-6 py-4 flex justify-between">
-                  <span className="text-white font-semibold">Package Weight</span>
-                  <span className="text-white font-semibold">Rate (USD)</span>
-                </div>
-                <div className="divide-y divide-slate-200">
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">0.5 lb</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$10.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">1 lb</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$15.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">2 lbs</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$20.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">3 lbs</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$25.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">Additional lb</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$5.00 / lb</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center bg-[#FFF8E7] dark:bg-yellow-900/20">
-                    <div className="flex items-center gap-3">
-                      <i className="fas fa-star text-yellow-500 text-xs"></i><span className="text-[#555] dark:text-slate-400 font-medium">Packages over 25 lbs</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-yellow-100 dark:bg-yellow-600/30 px-4 py-1.5 rounded-full text-sm">$50.00 flat</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 bg-[#F1F6F2] dark:bg-slate-700 rounded-[24px] p-4 flex items-start gap-3">
-                <i className="fas fa-info-circle text-indigo-600 mt-0.5"></i>
-                <p className="text-slate-500 dark:text-slate-400 text-sm">
-                  Rates are for standard shipping. Express and economy options available at checkout. Volumetric weight may apply for oversized packages.
-                </p>
-              </div>
+            {/* Image Side */}
+            <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-white/5 shrink-0">
+              <img src="/assets/image (4).png" alt="Shipping Calculator" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" suppressHydrationWarning />
             </div>
-          </div>
-          )}
 
-          {/*  Brokerage Fees  */}
-          {activeTab === 'brokerage' && (
-          <div className="tab-content animate-in fade-in duration-300" id="tab-brokerage">
-            <div className="max-w-3xl mx-auto reveal">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-md flex items-center justify-center">
-                  <i className="fas fa-passport text-white text-lg"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-50 tracking-tight">Brokerage Fees</h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Customs clearance fee based on declared value (CIF)</p>
-                </div>
-              </div>
-              <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm border border-slate-100 dark:border-white/5 overflow-hidden dark:border dark:border-white/5">
-                <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 px-6 py-4 flex justify-between">
-                  <span className="text-white font-semibold">Package CIF Value (USD)</span>
-                  <span className="text-white font-semibold">Fee (USD)</span>
-                </div>
-                <div className="divide-y divide-slate-200">
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">$0 – $500.00</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">FREE</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">$501 – $1,000.00</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$10.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">$1,001 – $2,000.00</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$15.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">$2,001 – $3,000.00</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$20.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">Over $3,000.00</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">0.5% of CIF</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 bg-[#F1F6F2] dark:bg-slate-700 rounded-[24px] p-4 flex items-start gap-3">
-                <i className="fas fa-info-circle text-indigo-600 mt-0.5"></i>
-                <p className="text-slate-500 dark:text-slate-400 text-sm">
-                  CIF = Cost + Insurance + Freight. This fee covers customs documentation and clearance services. Import duties and VAT are separate and collected by customs.
-                </p>
-              </div>
-            </div>
-          </div>
-          )}
-
-          {/*  Warranty & Returns  */}
-          {activeTab === 'warranty' && (
-          <div className="tab-content animate-in fade-in duration-300" id="tab-warranty">
-            <div className="max-w-3xl mx-auto reveal">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-md flex items-center justify-center">
-                  <i className="fas fa-undo text-white text-lg"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-50 tracking-tight">Warranty Program & Returns</h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Return shipping fees based on declared value</p>
-                </div>
-              </div>
-              <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm border border-slate-100 dark:border-white/5 overflow-hidden dark:border dark:border-white/5">
-                <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 px-6 py-4 flex justify-between">
-                  <span className="text-white font-semibold">Declared Value (USD)</span>
-                  <span className="text-white font-semibold">Service Fee (USD)</span>
-                </div>
-                <div className="divide-y divide-slate-200">
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">Up to $500</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$10.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">$501 – $1,000</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$15.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">$1,001 – $2,000</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$20.00</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">Over $2,000</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">1% of value</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 bg-[#F1F6F2] dark:bg-slate-700 rounded-[24px] p-4 flex items-start gap-3">
-                <i className="fas fa-info-circle text-indigo-600 mt-0.5"></i>
-                <p className="text-slate-500 dark:text-slate-400 text-sm">
-                  Returns must be initiated within 30 days of delivery. Items must be unused and in original packaging. We handle the entire return process with US retailers.
-                </p>
-              </div>
-            </div>
-          </div>
-          )}
-
-          {/*  Pickup at Warehouse  */}
-          {activeTab === 'pickup' && (
-          <div className="tab-content animate-in fade-in duration-300" id="tab-pickup">
-            <div className="max-w-3xl mx-auto reveal">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-md flex items-center justify-center">
-                  <i className="fas fa-warehouse text-white text-lg"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-50 tracking-tight">Pickup at USA Warehouse</h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Self-pickup rates from our US warehouse</p>
-                </div>
-              </div>
-              <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-sm border border-slate-100 dark:border-white/5 overflow-hidden dark:border dark:border-white/5">
-                <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 px-6 py-4 flex justify-between">
-                  <span className="text-white font-semibold">Weight</span>
-                  <span className="text-white font-semibold">Rate (USD)</span>
-                </div>
-                <div className="divide-y divide-slate-200">
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">1 Kg</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$10.00 / Kg</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-600 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">2 Kg</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$18.00 / Kg</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">3 Kg</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$25.00 / Kg</span>
-                  </div>
-                  <div className="rate-row flex justify-between px-6 py-4 items-center">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span><span className="text-[#555] dark:text-slate-400 font-medium">5+ Kg</span>
-                    </div>
-                    <span className="font-semibold text-slate-900 dark:text-slate-50 bg-[#F1F6F2] dark:bg-slate-700 px-4 py-1.5 rounded-full text-sm">$7.00 / Kg</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          )}
-
-          {/*  Additional Charges  */}
-          {activeTab === 'additional' && (
-          <div className="tab-content animate-in fade-in duration-300" id="tab-additional">
-            <div className="max-w-3xl mx-auto reveal">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-md flex items-center justify-center">
-                  <i className="fas fa-plus-circle text-white text-lg"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-50 tracking-tight">Additional Charges</h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Optional and applicable service fees</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-white/5 p-5 shadow-sm dark:border dark:border-white/5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-600/15 to-indigo-500/15 rounded-md flex items-center justify-center">
-                      <i className="fas fa-truck text-indigo-600"></i>
-                    </div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-50 tracking-tight">Local Delivery</h4>
-                  </div>
-                  <p className="text-2xl font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent mb-1">FREE</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-xs">Within Dhaka city (some exceptions apply)</p>
-                </div>
-                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-white/5 p-5 shadow-sm dark:border dark:border-white/5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-600/15 to-indigo-500/15 rounded-md flex items-center justify-center">
-                      <i className="fas fa-plane text-indigo-600"></i>
-                    </div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-50 tracking-tight">Express Shipping</h4>
-                  </div>
-                  <p className="text-2xl font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent mb-1">+$100</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-xs">Per shipment, delivered in 3-5 days</p>
-                </div>
-                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-white/5 p-5 shadow-sm dark:border dark:border-white/5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-600/15 to-indigo-500/15 rounded-md flex items-center justify-center">
-                      <i className="fas fa-shield-alt text-indigo-600"></i>
-                    </div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-50 tracking-tight">Package Insurance</h4>
-                  </div>
-                  <p className="text-2xl font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent mb-1">1.5%</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-xs">Of declared value (min. $5 per shipment)</p>
-                </div>
-                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-white/5 p-5 shadow-sm dark:border dark:border-white/5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-600/15 to-indigo-500/15 rounded-md flex items-center justify-center">
-                      <i className="fas fa-user-check text-indigo-600"></i>
-                    </div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-50 tracking-tight">Membership Fee</h4>
-                  </div>
-                  <p className="text-2xl font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent mb-1">FREE</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-xs">No monthly or annual fees ever</p>
-                </div>
-                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-white/5 p-5 shadow-sm dark:border dark:border-white/5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-600/15 to-indigo-500/15 rounded-md flex items-center justify-center">
-                      <i className="fas fa-camera text-indigo-600"></i>
-                    </div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-50 tracking-tight">Package Photography</h4>
-                  </div>
-                  <p className="text-2xl font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent mb-1">$2.00</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-xs">Per package, photos sent before shipping</p>
-                </div>
-                <div className="transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sm hover:border-indigo-600/10 dark:hover:shadow-md bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-white/5 p-5 shadow-sm dark:border dark:border-white/5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-600/15 to-indigo-500/15 rounded-md flex items-center justify-center">
-                      <i className="fas fa-boxes text-indigo-600"></i>
-                    </div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-50 tracking-tight">Consolidation</h4>
-                  </div>
-                  <p className="text-2xl font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent mb-1">FREE</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-xs">Combine packages at no extra charge</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          )}
-        </div>
-      </section>
-
-      {/*  CALCULATOR CTA  */}
-      <section className="py-12 px-4 bg-slate-50 dark:bg-slate-900">
-        <div className="container">
-          <div className="bg-white dark:bg-slate-800 rounded-[32px] p-5 md:p-6 md:p-12 border border-slate-100 dark:border-white/5 shadow-sm flex flex-col md:flex-row items-center gap-4 md:gap-8 reveal dark:border dark:border-white/5">
-            <div className="w-full md:w-1/3">
-              <img src="/assets/image (4).png" alt="Calculator" className="w-full h-auto rounded-[24px]" />
-            </div>
-            <div className="w-full md:w-2/3">
-              <h3 className="font-semibold text-3xl text-slate-900 dark:text-slate-50 mb-4 tracking-tight">Want a precise estimate?</h3>
-              <p className="text-slate-500 dark:text-slate-400 mb-6">
+            {/* Text Side */}
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="font-bold text-3xl text-slate-900 dark:text-white mb-4 tracking-tight">Need a precise estimate?</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-8">
                 Use our advanced shipping calculator to get an exact quote based on dimensions, weight, and destination. Compare different shipping methods instantly.
               </p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2">
-                  <i className="fas fa-check-circle text-indigo-600"></i><span className="text-sm font-medium text-slate-900 dark:text-slate-50">Instant Quotes</span>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+                <div className="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-white/5 shadow-sm">
+                  <Calculator size={14} className="text-indigo-600 dark:text-indigo-400" />
+                  <span className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Instant Quotes</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <i className="fas fa-check-circle text-indigo-600"></i><span className="text-sm font-medium text-slate-900 dark:text-slate-50">Compare Methods</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fas fa-check-circle text-indigo-600"></i><span className="text-sm font-medium text-slate-900 dark:text-slate-50">No Sign-up Needed</span>
+                <div className="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-white/5 shadow-sm">
+                  <UserCheck size={14} className="text-indigo-600 dark:text-indigo-400" />
+                  <span className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">No Sign-up Needed</span>
                 </div>
               </div>
-              <a href="/cost-calculator">
-                <button className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-full px-8 py-3 font-medium hover:-translate-y-0.5 hover:shadow-sm hover:from-indigo-700 hover:to-indigo-600 transition-all duration-300 inline-flex items-center justify-center shadow-md px-8 py-3 w-full sm:w-auto">Open Cost Calculator</button>
-              </a>
+
+              <Link href="/cost-calculator" className="block focus:outline-none">
+                <button className="w-full sm:w-auto px-8 h-14 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition-all focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 flex items-center justify-center gap-2">
+                  Open Cost Calculator <ArrowRight size={18} />
+                </button>
+              </Link>
             </div>
+
           </div>
         </div>
       </section>
     </>
   );
 }
-
-
