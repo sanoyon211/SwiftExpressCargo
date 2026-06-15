@@ -67,22 +67,7 @@ export default function MainContent() {
           </p>
         </div>
 
-        {/* Floating WhatsApp Button */}
-        <a
-          href="https://wa.me/8801715825331"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed right-6 bottom-6 md:right-8 md:bottom-8 z-50 group focus:outline-none"
-          aria-label="Chat on WhatsApp"
-        >
-          <div className="relative bg-[#25D366] hover:bg-[#20bd5a] h-14 w-14 md:h-16 md:w-16 rounded-full flex justify-center items-center shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
-            <FaWhatsapp className="text-white text-3xl md:text-4xl" />
-            <span className="absolute -top-1 -right-1 flex h-3 w-3 md:h-4 md:w-4">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 md:h-4 md:w-4 bg-red-500 border-2 border-[#25D366]"></span>
-            </span>
-          </div>
-        </a>
+
       </header>
 
       {/* 2. HOW TO SHOP SECTION */}

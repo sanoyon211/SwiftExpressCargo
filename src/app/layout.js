@@ -21,20 +21,21 @@ import BackToTop from "../components/BackToTop";
 import ProgressBar from "../components/ProgressBar";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { Toaster } from "sonner";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-      </head>
-      <body className={`${inter.variable} font-sans bg-slate-50 dark:bg-slate-900 dark:text-slate-50 antialiased transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col`}>
+      <body
+        className={`${inter.variable} font-sans bg-slate-50 dark:bg-[#0A0F1C] dark:text-slate-50 antialiased transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ProgressBar />
           <Navbar />
           <main className="flex-grow flex flex-col">{children}</main>
           <Footer />
           <BackToTop />
+          <WhatsAppButton />
           <GlobalScripts />
           <Toaster richColors position="top-right" />
         </ThemeProvider>

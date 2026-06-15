@@ -1,37 +1,51 @@
 import Link from 'next/link';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Home, Headset, MapPinOff } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <div className={`min-h-[80vh] flex items-center justify-center bg-slate-50 dark:bg-slate-900 px-4 py-8 md:py-16 sm:px-6 lg:px-8 ${inter.className}`}>
-      <div className="max-w-max mx-auto text-center">
-        <main className="sm:flex">
-          <p className="text-2xl md:text-3xl font-semibold text-indigo-700 sm:text-3xl md:text-2xl md:text-3xl">404</p>
-          <div className="sm:ml-6 sm:pl-6 sm:border-l sm:border-slate-100 dark:border-white/5">
-            <h1 className="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight sm:text-3xl md:text-2xl md:text-3xl">
-              Page not found
-            </h1>
-            <p className="mt-4 text-base text-slate-500 dark:text-slate-400">
-              Please check the URL in the address bar and try again.
-            </p>
-            <div className="mt-8 flex space-x-3 sm:border-l-transparent sm:pl-0">
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center px-6 py-3 border border-slate-100 dark:border-white/5 text-base font-medium rounded-[24px] text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 transition-all duration-300 shadow-md hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-              >
-                Go back home
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 border border-slate-100 dark:border-white/5 text-base font-medium rounded-[24px] text-indigo-600 bg-indigo-50 hover:bg-indigo-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-              >
-                Contact support
-              </Link>
-            </div>
+    <div className="min-h-[80vh] flex items-center justify-center bg-slate-50 dark:bg-[#0A0F1C] px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden transition-colors duration-300">
+
+      {/* Decorative Background Glow (Centers focus on the error message) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/5 dark:bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-0" />
+
+      <div className="max-w-2xl mx-auto text-center relative z-10">
+
+        {/* Animated/Themed Icon */}
+        <div className="flex justify-center mb-8">
+          <div className="w-24 h-24 bg-indigo-50 dark:bg-[#0f1629] rounded-3xl flex items-center justify-center border border-indigo-100 dark:border-white/10 shadow-inner transform -rotate-6 transition-transform hover:rotate-0 duration-300">
+            <MapPinOff className="text-indigo-600 dark:text-indigo-400" size={48} strokeWidth={1.5} />
           </div>
-        </main>
+        </div>
+
+        {/* Error Text Section */}
+        <p className="text-sm sm:text-base font-extrabold text-indigo-600 dark:text-indigo-400 tracking-[0.2em] uppercase mb-3">
+          Error 404
+        </p>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
+          Destination Not Found
+        </h1>
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg mx-auto leading-relaxed">
+          Oops! It looks like this page has drifted off course. Please check the URL or let us guide you back to the correct path.
+        </p>
+
+        {/* Action Buttons (Matched with global Tracking/Auth buttons) */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-transparent text-sm font-bold rounded-xl text-white bg-indigo-600 hover:bg-indigo-500 transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 dark:focus:ring-offset-[#0A0F1C] hover:-translate-y-0.5"
+          >
+            <Home size={18} />
+            Back to Home
+          </Link>
+          <Link
+            href="/contact"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-slate-200 dark:border-white/10 text-sm font-bold rounded-xl text-slate-700 dark:text-slate-300 bg-white dark:bg-[#0f1629] hover:bg-slate-50 dark:hover:bg-[#151e32] transition-all duration-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 dark:focus:ring-offset-[#0A0F1C] hover:-translate-y-0.5"
+          >
+            <Headset size={18} />
+            Contact Support
+          </Link>
+        </div>
+
       </div>
     </div>
   );
