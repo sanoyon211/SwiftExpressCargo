@@ -104,7 +104,7 @@ export default function MainContent() {
                 ))}
               </ul>
               <Link href="/signup" className="block w-full mt-auto">
-                <button className="w-full py-4 border-2 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-500 dark:hover:text-indigo-400 transition-colors focus:outline-none">
+                <button className="w-full py-4 border-2 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-lg hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-500 dark:hover:text-indigo-400 transition-colors focus:outline-none">
                   Get Started Free
                 </button>
               </Link>
@@ -138,7 +138,7 @@ export default function MainContent() {
                 ))}
               </ul>
               <Link href="/signup" className="block w-full mt-auto relative z-10">
-                <button className="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-600/25 transition-all focus:outline-none">
+                <button className="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg shadow-lg shadow-indigo-600/25 transition-all focus:outline-none">
                   Get Started Free
                 </button>
               </Link>
@@ -165,7 +165,7 @@ export default function MainContent() {
                 ))}
               </ul>
               <Link href="/signup" className="block w-full mt-auto">
-                <button className="w-full py-4 border-2 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-500 dark:hover:text-indigo-400 transition-colors focus:outline-none">
+                <button className="w-full py-4 border-2 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-lg hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-500 dark:hover:text-indigo-400 transition-colors focus:outline-none">
                   Get Started Free
                 </button>
               </Link>
@@ -238,7 +238,7 @@ export default function MainContent() {
               </p>
 
               <Link href="/signup" className="focus:outline-none">
-                <button className="h-14 px-10 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-colors focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
+                <button className="h-14 px-10 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg transition-colors focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
                   Create Free Account <ArrowRight size={18} />
                 </button>
               </Link>

@@ -74,7 +74,7 @@ export default function MainContent() {
             </div>
 
             <Link href="/services" className="relative z-10 shrink-0 focus:outline-none">
-              <button className="bg-white text-indigo-600 font-bold px-8 py-3.5 rounded-xl hover:bg-slate-50 hover:shadow-lg transition-all focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 flex items-center gap-2">
+              <button className="bg-white text-indigo-600 font-bold px-8 py-3.5 rounded-lg hover:bg-slate-50 hover:shadow-lg transition-all focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 flex items-center gap-2">
                 Learn More <ArrowRight size={18} />
               </button>
             </Link>
@@ -99,7 +99,7 @@ export default function MainContent() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex-1 sm:flex-none px-4 sm:px-6 py-2.5 rounded-xl md:rounded-full text-sm font-semibold transition-all duration-300 focus:outline-none ${activeTab === tab.id
+                  className={`flex-1 sm:flex-none px-4 sm:px-6 py-2.5 rounded-lg md:rounded-full text-sm font-semibold transition-all duration-300 focus:outline-none ${activeTab === tab.id
                       ? 'bg-white dark:bg-slate-950 text-indigo-600 dark:text-indigo-400 shadow-sm'
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                     }`}
@@ -379,7 +379,7 @@ export default function MainContent() {
               </div>
 
               <Link href="/cost-calculator" className="block focus:outline-none">
-                <button className="w-full sm:w-auto px-8 h-14 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition-all focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 flex items-center justify-center gap-2">
+                <button className="w-full sm:w-auto px-8 h-14 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-md transition-all focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 flex items-center justify-center gap-2">
                   Open Cost Calculator <ArrowRight size={18} />
                 </button>
               </Link>

@@ -50,7 +50,7 @@ export default function SignInForm() {
             autoComplete="email"
             {...register("email")}
             className={`appearance-none block w-full pl-11 pr-4 h-12 bg-slate-50 dark:bg-slate-900/50 border ${errors.email ? "border-red-500 focus:ring-red-500" : "border-slate-200 dark:border-white/10 focus:ring-indigo-500 focus:border-transparent"
-              } rounded-xl shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 text-slate-900 dark:text-white transition-all text-sm`}
+              } rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 text-slate-900 dark:text-white transition-all text-sm`}
             placeholder="you@example.com"
           />
         </div>
@@ -79,7 +79,7 @@ export default function SignInForm() {
             autoComplete="current-password"
             {...register("password")}
             className={`appearance-none block w-full pl-11 pr-4 h-12 bg-slate-50 dark:bg-slate-900/50 border ${errors.password ? "border-red-500 focus:ring-red-500" : "border-slate-200 dark:border-white/10 focus:ring-indigo-500 focus:border-transparent"
-              } rounded-xl shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 text-slate-900 dark:text-white transition-all text-sm`}
+              } rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 text-slate-900 dark:text-white transition-all text-sm`}
             placeholder="••••••••"
           />
         </div>
@@ -106,7 +106,7 @@ export default function SignInForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full h-12 flex justify-center items-center gap-2 border border-transparent rounded-xl shadow-md text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-950 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full h-12 flex justify-center items-center gap-2 border border-transparent rounded-lg shadow-md text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-950 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>

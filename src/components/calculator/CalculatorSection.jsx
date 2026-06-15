@@ -88,7 +88,7 @@ export default function CalculatorSection() {
                 <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Category</label>
                 <div className="relative">
                   <Tag size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-                  <select className="w-full h-12 pl-11 pr-10 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white appearance-none cursor-pointer outline-none transition-all">
+                  <select className="w-full h-12 pl-11 pr-10 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white appearance-none cursor-pointer outline-none transition-all">
                     <option value="">Select product type...</option>
                     <option value="electronics">Electronics & Gadgets</option>
                     <option value="clothing">Clothing & Fashion</option>
@@ -112,7 +112,7 @@ export default function CalculatorSection() {
                       placeholder="0.00"
                       min="0.1"
                       step="0.1"
-                      className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white outline-none transition-all"
+                      className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function CalculatorSection() {
                     <select
                       value={unit}
                       onChange={(e) => setUnit(e.target.value)}
-                      className="w-full h-12 pl-11 pr-10 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white appearance-none cursor-pointer outline-none transition-all"
+                      className="w-full h-12 pl-11 pr-10 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white appearance-none cursor-pointer outline-none transition-all"
                     >
                       <option value="lb">Pounds (lb)</option>
                       <option value="kg">Kilograms (kg)</option>
@@ -153,7 +153,7 @@ export default function CalculatorSection() {
                     placeholder="0.00"
                     min="0"
                     step="0.01"
-                    className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white outline-none transition-all"
+                    className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-slate-900 dark:text-white outline-none transition-all"
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function CalculatorSection() {
                 <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Delivery Speed</label>
                 <div className="space-y-3">
                   {/* Standard */}
-                  <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all ${speed === 'standard' ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-500/10 ring-1 ring-indigo-600' : 'border-slate-200 dark:border-white/10 hover:border-indigo-300 dark:hover:border-white/20'}`}>
+                  <label className={`flex items-center justify-between p-4 border rounded-lg cursor-pointer transition-all ${speed === 'standard' ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-500/10 ring-1 ring-indigo-600' : 'border-slate-200 dark:border-white/10 hover:border-indigo-300 dark:hover:border-white/20'}`}>
                     <div className="flex items-center gap-4">
                       <input type="radio" name="speed" checked={speed === 'standard'} onChange={() => setSpeed('standard')} className="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 cursor-pointer" />
                       <div>
@@ -175,7 +175,7 @@ export default function CalculatorSection() {
                   </label>
 
                   {/* Express */}
-                  <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all ${speed === 'express' ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-500/10 ring-1 ring-indigo-600' : 'border-slate-200 dark:border-white/10 hover:border-indigo-300 dark:hover:border-white/20'}`}>
+                  <label className={`flex items-center justify-between p-4 border rounded-lg cursor-pointer transition-all ${speed === 'express' ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-500/10 ring-1 ring-indigo-600' : 'border-slate-200 dark:border-white/10 hover:border-indigo-300 dark:hover:border-white/20'}`}>
                     <div className="flex items-center gap-4">
                       <input type="radio" name="speed" checked={speed === 'express'} onChange={() => setSpeed('express')} className="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 cursor-pointer" />
                       <div>
@@ -187,7 +187,7 @@ export default function CalculatorSection() {
                   </label>
 
                   {/* Economy */}
-                  <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all ${speed === 'economy' ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-500/10 ring-1 ring-indigo-600' : 'border-slate-200 dark:border-white/10 hover:border-indigo-300 dark:hover:border-white/20'}`}>
+                  <label className={`flex items-center justify-between p-4 border rounded-lg cursor-pointer transition-all ${speed === 'economy' ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-500/10 ring-1 ring-indigo-600' : 'border-slate-200 dark:border-white/10 hover:border-indigo-300 dark:hover:border-white/20'}`}>
                     <div className="flex items-center gap-4">
                       <input type="radio" name="speed" checked={speed === 'economy'} onChange={() => setSpeed('economy')} className="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 cursor-pointer" />
                       <div>
@@ -204,14 +204,14 @@ export default function CalculatorSection() {
               <div>
                 <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Add-ons (Optional)</label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <label className="flex items-start gap-3 p-3 border border-slate-200 dark:border-white/10 rounded-xl cursor-pointer hover:border-indigo-400 transition-colors">
+                  <label className="flex items-start gap-3 p-3 border border-slate-200 dark:border-white/10 rounded-lg cursor-pointer hover:border-indigo-400 transition-colors">
                     <input type="checkbox" checked={insurance} onChange={(e) => setInsurance(e.target.checked)} className="mt-0.5 w-4 h-4 text-indigo-600 rounded cursor-pointer focus:ring-indigo-500" />
                     <div>
                       <p className="text-sm font-semibold text-slate-900 dark:text-white">Insurance</p>
                       <p className="text-xs text-slate-500 mt-0.5">1.5% of value</p>
                     </div>
                   </label>
-                  <label className="flex items-start gap-3 p-3 border border-slate-200 dark:border-white/10 rounded-xl cursor-pointer hover:border-indigo-400 transition-colors">
+                  <label className="flex items-start gap-3 p-3 border border-slate-200 dark:border-white/10 rounded-lg cursor-pointer hover:border-indigo-400 transition-colors">
                     <input type="checkbox" checked={photo} onChange={(e) => setPhoto(e.target.checked)} className="mt-0.5 w-4 h-4 text-indigo-600 rounded cursor-pointer focus:ring-indigo-500" />
                     <div>
                       <p className="text-sm font-semibold text-slate-900 dark:text-white">Photos</p>
@@ -223,7 +223,7 @@ export default function CalculatorSection() {
 
               <button
                 onClick={handleCalculate}
-                className="w-full h-14 bg-slate-900 dark:bg-indigo-600 hover:bg-slate-800 dark:hover:bg-indigo-500 text-white rounded-xl font-bold text-sm sm:text-base shadow-md transition-all flex items-center justify-center gap-2 focus:outline-none"
+                className="w-full h-14 bg-slate-900 dark:bg-indigo-600 hover:bg-slate-800 dark:hover:bg-indigo-500 text-white rounded-lg font-bold text-sm sm:text-base shadow-md transition-all flex items-center justify-center gap-2 focus:outline-none"
               >
                 <Calculator size={18} /> Calculate Shipping Cost
               </button>
@@ -293,7 +293,7 @@ export default function CalculatorSection() {
 
               <div className="mt-auto pt-4 border-t border-slate-200 dark:border-white/10">
                 <Link href="/signup" className="block w-full">
-                  <button className="w-full h-14 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                  <button className="w-full h-14 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-all shadow-md flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     <UserPlus size={18} /> Sign Up to Ship
                   </button>
                 </Link>

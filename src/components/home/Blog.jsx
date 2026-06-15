@@ -32,7 +32,7 @@ export default function Blog() {
           </div>
 
           <Link href="/blog" className="shrink-0 w-full sm:w-auto">
-            <button className="w-full sm:w-auto h-11 px-6 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-md hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-600">
+            <button className="w-full sm:w-auto h-11 px-6 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-600">
               View All Posts
             </button>
           </Link>

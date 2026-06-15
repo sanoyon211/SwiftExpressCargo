@@ -123,7 +123,7 @@ export default function MainContent() {
               <input
                 type="text"
                 placeholder="Search articles..."
-                className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all shadow-sm"
+                className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-lg text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all shadow-sm"
               />
             </div>
 
@@ -242,9 +242,9 @@ export default function MainContent() {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="flex-1 w-full h-14 px-5 bg-white/5 border border-white/10 text-white rounded-xl text-base placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all backdrop-blur-sm"
+                  className="flex-1 w-full h-14 px-5 bg-white/5 border border-white/10 text-white rounded-lg text-base placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all backdrop-blur-sm"
                 />
-                <button className="w-full sm:w-auto h-14 px-8 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-sm flex items-center justify-center gap-2 whitespace-nowrap">
+                <button className="w-full sm:w-auto h-14 px-8 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-sm flex items-center justify-center gap-2 whitespace-nowrap">
                   Subscribe Now
                 </button>
               </div>

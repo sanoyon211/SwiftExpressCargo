@@ -115,10 +115,10 @@ export default function MainContent({ post }) {
               <input
                 type="text"
                 placeholder="Tracking number..."
-                className="w-full bg-white dark:bg-slate-800/20 text-white placeholder-white/60 border border-white/30 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-white mb-3"
+                className="w-full bg-white dark:bg-slate-800/20 text-white placeholder-white/60 border border-white/30 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-white mb-3"
               />
               <Link href="/tracking">
-                <button className="w-full bg-white dark:bg-slate-800 text-indigo-600 font-semibold py-2.5 rounded-md hover:shadow-sm transition text-sm dark:border dark:border-white/5">
+                <button className="w-full bg-white dark:bg-slate-800 text-indigo-600 font-semibold py-2.5 rounded-lg hover:shadow-sm transition text-sm dark:border dark:border-white/5">
                   Track Now
                 </button>
               </Link>

@@ -37,7 +37,7 @@ export default function DashboardLayout({ children }) {
                 key={item.name}
                 href={item.path}
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center px-4 py-3 rounded-md transition-colors ${
+                className={`flex items-center px-4 py-3 rounded-lg transition-colors ${
                   pathname === item.path
                     ? 'bg-indigo-50 dark:bg-indigo-600/10 text-indigo-700 dark:text-indigo-500 font-medium'
                     : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800'
@@ -50,7 +50,7 @@ export default function DashboardLayout({ children }) {
           </nav>
           
           <div className="absolute bottom-8 w-[calc(100%-2rem)]">
-            <button className="flex items-center px-4 py-3 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-md transition-colors w-full">
+            <button className="flex items-center px-4 py-3 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-colors w-full">
               <i className="fa-solid fa-arrow-right-from-bracket w-6 text-center mr-3"></i>
               Logout
             </button>

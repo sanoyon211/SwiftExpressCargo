@@ -17,7 +17,7 @@ export default function CtaBanner() {
 
           <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
 
-            <div className="w-16 h-16 bg-white/10 rounded-2xl border border-white/10 flex items-center justify-center mb-8 shadow-sm">
+            <div className="w-16 h-16 bg-white/10 rounded-xl border border-white/10 flex items-center justify-center mb-8 shadow-sm">
               <Rocket size={32} className="text-white" strokeWidth={1.5} />
             </div>
 
@@ -31,14 +31,14 @@ export default function CtaBanner() {
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
               <Link href="/signup" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto h-12 sm:h-14 px-8 bg-white hover:bg-slate-100 text-slate-900 text-sm sm:text-base font-bold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 flex items-center justify-center gap-2">
+                <button className="w-full sm:w-auto h-12 sm:h-14 px-8 bg-white hover:bg-slate-100 text-slate-900 text-sm sm:text-base font-bold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 flex items-center justify-center gap-2">
                   Create Free Account
                   <ArrowRight size={18} strokeWidth={2.5} />
                 </button>
               </Link>
 
               <Link href="/contact" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto h-12 sm:h-14 px-8 bg-transparent hover:bg-white/5 text-white border border-slate-700 hover:border-slate-500 text-sm sm:text-base font-bold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900 flex items-center justify-center">
+                <button className="w-full sm:w-auto h-12 sm:h-14 px-8 bg-transparent hover:bg-white/5 text-white border border-slate-700 hover:border-slate-500 text-sm sm:text-base font-bold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900 flex items-center justify-center">
                   Talk to Sales
                 </button>
               </Link>

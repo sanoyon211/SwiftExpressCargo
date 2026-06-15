@@ -66,14 +66,14 @@ export default function SignIn() {
             <div className="mt-6 grid grid-cols-2 gap-4">
               <button
                 type="button"
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 border border-slate-200 dark:border-white/10 rounded-xl shadow-sm bg-white dark:bg-slate-900 text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 dark:focus:ring-offset-slate-950"
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 border border-slate-200 dark:border-white/10 rounded-lg shadow-sm bg-white dark:bg-slate-900 text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 dark:focus:ring-offset-slate-950"
               >
                 <FcGoogle className="text-xl" />
                 <span>Google</span>
               </button>
               <button
                 type="button"
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 border border-slate-200 dark:border-white/10 rounded-xl shadow-sm bg-white dark:bg-slate-900 text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 dark:focus:ring-offset-slate-950"
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 border border-slate-200 dark:border-white/10 rounded-lg shadow-sm bg-white dark:bg-slate-900 text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 dark:focus:ring-offset-slate-950"
               >
                 <FaFacebook className="text-xl text-[#1877F2]" />
                 <span>Facebook</span>
@@ -111,7 +111,7 @@ export default function SignIn() {
 
           {/* Content Over Image */}
           <div className="absolute bottom-20 left-16 right-16 z-20">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl shadow-2xl">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-2xl">
               <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">
                 Fast & Reliable Logistics
               </h3>

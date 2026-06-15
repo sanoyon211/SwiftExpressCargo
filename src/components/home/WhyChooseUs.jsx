@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                 {/* Top: Icon Box */}
-                <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm mb-12 group-hover:scale-110 transition-transform duration-500">
+                <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm mb-12 group-hover:scale-110 transition-transform duration-500">
                   <Icon
                     size={28}
                     className="text-slate-700 dark:text-slate-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300"

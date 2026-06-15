@@ -152,7 +152,7 @@ export default function MainContent() {
                 placeholder="Search brands..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all shadow-sm"
+                className="w-full h-12 pl-11 pr-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-lg text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all shadow-sm"
               />
             </div>
 
@@ -245,7 +245,7 @@ export default function MainContent() {
               </p>
 
               <Link href="/contact" className="focus:outline-none">
-                <button className="h-14 px-8 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-colors focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-sm flex items-center justify-center gap-2 whitespace-nowrap">
+                <button className="h-14 px-8 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-sm flex items-center justify-center gap-2 whitespace-nowrap">
                   Contact Support
                 </button>
               </Link>

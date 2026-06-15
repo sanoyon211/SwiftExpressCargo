@@ -91,7 +91,7 @@ export default function HeroHeader() {
                   />
                 </div>
                 <Link href="/tracking" className="w-full sm:w-auto">
-                  <button className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-100 font-semibold px-8 py-3.5 sm:py-3.5 rounded-xl sm:rounded-full transition-colors flex items-center justify-center gap-2">
+                  <button className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-100 font-semibold px-8 py-3.5 sm:py-3.5 rounded-lg sm:rounded-full transition-colors flex items-center justify-center gap-2">
                     Track
                     <ArrowRight size={18} />
                   </button>

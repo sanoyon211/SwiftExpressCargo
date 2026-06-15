@@ -30,7 +30,7 @@ export default function PopularBrands() {
         </div>
 
         <Link href="/shop" className="shrink-0 w-full md:w-auto">
-          <button className="w-full md:w-auto h-10 px-5 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-md hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none">
+          <button className="w-full md:w-auto h-10 px-5 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none">
             Explore All Brands
           </button>
         </Link>
