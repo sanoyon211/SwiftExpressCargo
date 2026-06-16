@@ -6,6 +6,7 @@ import {
   Search, Plane, Truck, Globe, Check,
   Package, ShieldCheck, Camera, Undo2, ShoppingBag, FileCheck, ArrowRight
 } from 'lucide-react';
+import Faq from '../home/Faq';
 
 export default function MainContent() {
   const additionalServices = [
@@ -219,6 +220,8 @@ export default function MainContent() {
           </div>
         </div>
       </section>
+
+      <Faq />
 
       {/* 4. CALL TO ACTION (Dark Banner) */}
       <section className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
