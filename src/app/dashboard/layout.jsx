@@ -2,13 +2,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { PieChart, Package, Receipt, Settings, LogOut, Menu } from 'lucide-react';
+import { PieChart, Package, Receipt, Settings, LogOut, Menu, ArrowLeft } from 'lucide-react';
 
 export default function DashboardLayout({ children }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
 
-  // 🔴 FontAwesome-এর বদলে Lucide React আইকন কম্পোনেন্ট ব্যবহার করা হয়েছে
   const menuItems = [
     { name: 'Overview', path: '/dashboard', icon: PieChart },
     { name: 'Shipments', path: '/dashboard/shipments', icon: Package },
@@ -17,10 +16,10 @@ export default function DashboardLayout({ children }) {
   ];
 
   return (
-    // মেইন গ্লোবাল ব্যাকগ্রাউন্ডের সাথে ম্যাচ করানো হয়েছে
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0A0F1C] pt-20 sm:pt-24 flex transition-colors duration-300">
+    // Navbar নেই তাই pt-0 করে দেওয়া হয়েছে
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0A0F1C] flex transition-colors duration-300">
 
-      {/* Mobile sidebar overlay (Blur effect added for premium feel) */}
+      {/* Mobile sidebar overlay */}
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 md:hidden transition-opacity"
@@ -29,11 +28,20 @@ export default function DashboardLayout({ children }) {
       )}
 
       {/* Sidebar Panel */}
-      <aside className={`fixed top-20 sm:top-24 left-0 h-[calc(100vh-5rem)] sm:h-[calc(100vh-6rem)] w-64 bg-white dark:bg-[#0f1629] border-r border-slate-200 dark:border-white/10 transform transition-transform duration-300 z-50 md:translate-x-0 ${isSidebarOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'}`}>
+      <aside className={`fixed top-0 left-0 h-screen w-64 bg-white dark:bg-[#0f1629] border-r border-slate-200 dark:border-white/10 transform transition-transform duration-300 z-50 md:translate-x-0 ${isSidebarOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'}`}>
         <div className="h-full px-4 py-6 overflow-y-auto flex flex-col">
 
-          {/* Sidebar Header */}
-          <div className="mb-8 px-4">
+          {/* 🚀 Back to Website Button */}
+          <div className="mb-6 px-4">
+            <Link
+              href="/"
+              className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors mb-6 group focus:outline-none"
+            >
+              <ArrowLeft size={16} strokeWidth={2.5} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Website
+            </Link>
+
+            {/* Sidebar Header */}
             <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">User Portal</h2>
             <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Manage your cargo</p>
           </div>
@@ -73,16 +81,21 @@ export default function DashboardLayout({ children }) {
       </aside>
 
       {/* Main Content Area */}
-      <div className="flex-1 md:ml-64 w-full flex flex-col">
+      <div className="flex-1 md:ml-64 w-full flex flex-col h-screen overflow-y-auto">
 
         {/* Mobile Header Toggle */}
-        <header className="bg-white dark:bg-[#0f1629] shadow-sm border-b border-slate-200 dark:border-white/10 py-4 px-4 sm:px-6 md:hidden flex items-center justify-between sticky top-20 sm:top-24 z-30">
-          <span className="font-bold text-slate-900 dark:text-white">Dashboard</span>
+        <header className="bg-white dark:bg-[#0f1629] shadow-sm border-b border-slate-200 dark:border-white/10 py-4 px-4 sm:px-6 md:hidden flex items-center justify-between sticky top-0 z-30">
+          <div className="flex items-center gap-3">
+            <Link href="/" className="text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 focus:outline-none">
+              <ArrowLeft size={20} strokeWidth={2.5} />
+            </Link>
+            <span className="font-bold text-slate-900 dark:text-white">Dashboard</span>
+          </div>
           <button
             onClick={() => setSidebarOpen(true)}
             className="p-2 -mr-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors focus:outline-none"
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-6 h-6" strokeWidth={2.5} />
           </button>
         </header>
 

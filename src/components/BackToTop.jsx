@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { ArrowUp } from 'lucide-react';
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +14,7 @@ export default function BackToTop() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -23,13 +24,13 @@ export default function BackToTop() {
 
   return (
     <button
-      className={`fixed bottom-[90px] right-5 w-12 h-12 rounded-full shadow-sm flex items-center justify-center transition-all duration-300 z-50 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-      } bg-slate-900 text-white hover:bg-indigo-600 dark:bg-white dark:text-slate-900 dark:hover:bg-indigo-600 dark:hover:text-white`}
+      //  পজিশন আগের জায়গায় (bottom-6) নিয়ে আসা হয়েছে
+      className={`fixed bottom-6 md:bottom-8 right-6 md:right-8 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-[80] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-90 pointer-events-none'
+        } bg-slate-900 text-white hover:bg-indigo-600 dark:bg-white dark:text-slate-900 dark:hover:bg-indigo-600 dark:hover:text-white hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(79,70,229,0.3)] dark:hover:shadow-[0_8px_20px_rgba(79,70,229,0.4)] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-[#0A0F1C]`}
       onClick={scrollToTop}
       aria-label="Back to top"
     >
-      <i className="fas fa-arrow-up"></i>
+      <ArrowUp size={22} strokeWidth={2.5} />
     </button>
   );
 }

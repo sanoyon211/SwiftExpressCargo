@@ -21,7 +21,6 @@ import BackToTop from "../components/BackToTop";
 import ProgressBar from "../components/ProgressBar";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { Toaster } from "sonner";
-import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function RootLayout({ children }) {
   return (
@@ -35,7 +34,6 @@ export default function RootLayout({ children }) {
           <main className="flex-grow flex flex-col">{children}</main>
           <Footer />
           <BackToTop />
-          <WhatsAppButton />
           <GlobalScripts />
           <Toaster richColors position="top-right" />
         </ThemeProvider>
