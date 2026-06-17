@@ -182,3 +182,7 @@ input:checked + label .minus { display: flex; }
     }
   }
 }
+
+button, a {
+  cursor: pointer;
+}

@@ -18,7 +18,7 @@ export default function PopularBrands() {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <section className="py-16 bg-slate-50 border-b border-slate-200 dark:bg-slate-900/40 dark:border-white/5 overflow-hidden transition-colors duration-300">
+    <section className="py-16 bg-slate-50  dark:bg-slate-900/40 dark:border-white/5 overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>
           <span className="text-indigo-600 dark:text-indigo-400 font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 block">

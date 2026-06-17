@@ -66,7 +66,7 @@ export default function CustomerFeedback() {
 
   return (
     // 🔴 Global Dark Theme Match
-    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#0A0F1C] border-t border-slate-200 dark:border-white/5 transition-colors duration-300">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#0A0F1C]  transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-start">

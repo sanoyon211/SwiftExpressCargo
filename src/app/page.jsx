@@ -17,12 +17,12 @@ export default function Home() {
     <>
       <HeroHeader />
       <StatsSection />
-      <PopularBrands />
       <WhyChooseUs />
       <HowItWorks />
       <QuickTrackSection />
       <Faq />
       <Blog />
+      <PopularBrands />
       <CustomerFeedback />
       <CtaBanner />
     </>
